@@ -1,0 +1,16 @@
+[SddmGreeterTheme]
+Name=BigLinux
+Description=Breeze mod to BigLinux
+Author=BigLinux
+Copyright=BigLinux
+License=CC-BY-SA
+Type=sddm-theme
+Version=0.1
+Website=https://github.com/biglinux/sddm-theme-biglinux
+Screenshot=preview.jpeg
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Email=bigbruno@gmail.com
+Theme-Id=breeze
+Theme-API=2.0
