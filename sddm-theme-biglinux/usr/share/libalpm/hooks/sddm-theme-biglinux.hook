@@ -1,0 +1,9 @@
+[Trigger]
+Type = Package
+Operation = Install
+Target = sddm-theme-biglinux
+
+[Action]
+Description = Change sddm configuration
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/sddm-theme-biglinux
