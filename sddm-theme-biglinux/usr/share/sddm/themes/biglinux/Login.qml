@@ -71,8 +71,10 @@ SessionManagementScreen {
             id: passwordBox
             font.pointSize: fontSize + 6
             Layout.fillWidth: true
-            topPadding: 5
-            leftPadding: 10
+            topPadding: 4
+            leftPadding: 14
+
+        color: "#dddddd"
 
         background: Rectangle {
             width: parent.width 
@@ -119,26 +121,6 @@ SessionManagementScreen {
                     passwordBox.forceActiveFocus()
                 }
             }
-        }
-
-        PlasmaComponents3.Button {
-            id: loginButton
-            Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
-            Layout.preferredHeight: passwordBox.implicitHeight
-            Layout.preferredWidth: loginButton.Layout.preferredHeight
-                        topPadding: 5
-        background: Rectangle {
-            width: parent.width 
-            height: 38
-            radius: 15
-            color: "#000000"
-            opacity: enabled ? 0.3 : 0.3
-            border.color : "#ffffff"
-            border.width : 1
-        }
-            icon.name: "go-next"
-
-            onClicked: startLogin();
         }
     }
 }
