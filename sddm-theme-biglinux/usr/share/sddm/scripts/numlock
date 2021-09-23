@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$(grep "NumLock=1" /home/$(grep User= /var/lib/sddm/state.conf | cut -f2 -d=)/.config/kcminputrc)" != "" ]; then
+    echo '[General]
+Numlock=on' > /etc/sddm.conf.d/enable_numlock.conf
+else
+    rm -f /etc/sddm.conf.d/enable_numlock.conf
+fi

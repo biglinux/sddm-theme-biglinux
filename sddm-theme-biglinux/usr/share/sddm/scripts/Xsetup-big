@@ -1,0 +1,32 @@
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+
+
+# if [ "$(xrandr | grep -c " connected")" -gt "1" ]; then
+#     /usr/local/bin/autorandr common
+# fi
+
+if [ ! -e "/etc/disable_text_in_sddm" ]; then
+    /usr/share/sddm/scripts/clock.sh &
+fi
+
+#/usr/share/sddm/scripts/numlock
+
+if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]; then
+    sed -i 's|Name=.*|Name=Central de Controle|g' /usr/share/xsessions/bigcontrolcenter.desktop
+    sed -i 's|Name=.*|Name=Leve (LXQt)|g' /usr/share/xsessions/lxqt.desktop
+    sed -i 's|Name=.*|Name=Clássico (KDE Plasma)|g' /usr/share/xsessions/plasma-classic.desktop
+    sed -i 's|Name=.*|Name=Moderno (KDE Plasma)|g' /usr/share/xsessions/plasma-new.desktop
+    sed -i 's|Name=.*|Name=Alternativo (KDE Plasma)|g' /usr/share/xsessions/plasma-topbar.desktop
+    sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Selecione o desktop: %1"|' /usr/share/sddm/themes/breeze/SessionButton.qml
+else
+    sed -i 's|Name=.*|Name=Control Center|g' /usr/share/xsessions/bigcontrolcenter.desktop
+    sed -i 's|Name=.*|Name=Lightweight (LXQt)|g' /usr/share/xsessions/lxqt.desktop
+    sed -i 's|Name=.*|Name=Classic (KDE Plasma)|g' /usr/share/xsessions/plasma-classic.desktop
+    sed -i 's|Name=.*|Name=New (KDE Plasma)|g' /usr/share/xsessions/plasma-new.desktop
+    sed -i 's|Name=.*|Name=Alternative (KDE Plasma)|g' /usr/share/xsessions/plasma-topbar.desktop
+    sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Change desktop: %1"|' /usr/share/sddm/themes/breeze/SessionButton.qml
+fi
+
+#Uncomment to add quote in login screen
+#/usr/share/sddm/themes/breeze/components/clock.sh 

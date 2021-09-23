@@ -4,3 +4,4 @@ mkdir -p /var/lib/sddm/.config
 cp -f /usr/share/sddm/themes/biglinux/config/kdeglobals /var/lib/sddm/.config/kdeglobals
 cp -f /usr/share/sddm/themes/biglinux/config/plasmarc /var/lib/sddm/.config/plasmarc
 chown -R sddm.sddm /var/lib/sddm/
+cp -f /usr/share/sddm/scripts/Xsetup-big /usr/share/sddm/scripts/Xsetup
