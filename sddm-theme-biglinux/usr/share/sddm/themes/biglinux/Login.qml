@@ -69,15 +69,17 @@ SessionManagementScreen {
 
         PlasmaComponents3.TextField {
             id: passwordBox
-            font.pointSize: fontSize + 6
+            font.pointSize: fontSize + 4
             Layout.fillWidth: true
-            topPadding: 5
-            leftPadding: 10
+            topPadding: 6
+            leftPadding: 20
+            rightPadding: 20
 
         background: Rectangle {
             width: parent.width 
             height: 38
-            radius: 15
+            radius: 50
+            
             color: "#000000"
             opacity: enabled ? 0.3 : 0.3
             border.color : "#ffffff"
@@ -126,17 +128,19 @@ SessionManagementScreen {
             Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
             Layout.preferredHeight: passwordBox.implicitHeight
             Layout.preferredWidth: loginButton.Layout.preferredHeight
-                        topPadding: 5
+            topPadding: 7
+            leftPadding: 9
         background: Rectangle {
-            width: parent.width 
+            width: 38
             height: 38
-            radius: 15
+            radius: 50
             color: "#000000"
             opacity: enabled ? 0.3 : 0.3
             border.color : "#ffffff"
             border.width : 1
         }
             icon.name: "go-next"
+            
 
             onClicked: startLogin();
         }

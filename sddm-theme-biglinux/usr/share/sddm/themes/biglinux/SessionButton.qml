@@ -29,7 +29,7 @@ PlasmaComponents.ToolButton {
     property int currentIndex: -1
 
     implicitWidth: minimumWidth
-    font.pointSize: 18
+    font.pointSize: 12
     anchors.centerIn: parent
 
     visible: menu.items.length > 1
@@ -42,6 +42,7 @@ PlasmaComponents.ToolButton {
 
     menu: QQC.Menu {
         id: menu
+        
         style: BreezeMenuStyle {}
         Instantiator {
             id: instantiator

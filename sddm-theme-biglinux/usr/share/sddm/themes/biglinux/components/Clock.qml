@@ -30,18 +30,32 @@ ColumnLayout {
         color: ColorScope.textColor
         style: softwareRendering ? Text.Outline : Text.Normal
         styleColor: softwareRendering ? ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
-        font.pointSize: 36
+        font.pointSize: 28
         Layout.alignment: Qt.AlignHCenter
     }
     Label {
-text: "O primeiro videocassete, criado em 1956, 
-possuía o tamanho de um piano"
+        text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
         color: ColorScope.textColor
         style: softwareRendering ? Text.Outline : Text.Normal
         styleColor: softwareRendering ? ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
-        font.pointSize: 18
+        font.pointSize: 16
         Layout.alignment: Qt.AlignHCenter
     }
+    Label {
+        text: ""
+    }
+    Label {
+        text: "O sal dos oceanos seria suficiente para cobrir 
+todos os continentes com uma camada de 152 metros"
+        color: ColorScope.textColor
+        style: softwareRendering ? Text.Outline : Text.Normal
+        styleColor: softwareRendering ? ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+        font.pointSize: 16
+        Layout.alignment: Qt.AlignHCenter
+        horizontalAlignment: Qt.AlignHCenter
+        verticalAlignment: Qt.AlignVCenter
+    }
+
     DataSource {
         id: timeSource
         engine: "time"

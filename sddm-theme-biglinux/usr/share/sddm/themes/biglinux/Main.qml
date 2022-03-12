@@ -21,6 +21,10 @@ import QtQuick 2.8
 
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.1
+
+//Ruscher
+import QtQuick.Controls 2.12 as QQC2
+
 import QtGraphicalEffects 1.0
 
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -104,6 +108,7 @@ PlasmaCore.ColorScope {
         Timer {
             id: fadeoutTimer
             running: true
+            
             interval: 60000
             onTriggered: {
                 if (!loginScreenRoot.blockUI) {
@@ -111,34 +116,25 @@ PlasmaCore.ColorScope {
                 }
             }
         }
-        WallpaperFader {
-            visible: config.type === "image"
-            anchors.fill: parent
-            state: loginScreenRoot.uiVisible ? "on" : "off"
-            source: wallpaper
-            mainStack: mainStack
-            footer: footer
-            clock: clock
-        }
 
-        DropShadow {
-            id: clockShadow
-            anchors.fill: clock
-            source: clock
-            visible: !softwareRendering
-            horizontalOffset: 1
-            verticalOffset: 1
-            radius: 6
-            samples: 14
-            spread: 0.3
-            color: root.lightBackground ? PlasmaCore.ColorScope.backgroundColor : "black" // black matches Breeze window decoration and desktopcontainment
-            Behavior on opacity {
-                OpacityAnimator {
-                    duration: 1000
-                    easing.type: Easing.InOutQuad
-                }
-            }
-        }
+        //DropShadow {
+            //id: clockShadow
+            //anchors.fill: clock
+            //source: clock
+            //visible: !softwareRendering
+            //horizontalOffset: 1
+            //verticalOffset: 1
+            //radius: 6
+            //samples: 14
+            //spread: 0.3
+            //color: root.lightBackground ? PlasmaCore.ColorScope.backgroundColor : "black" // black matches Breeze window decoration and desktopcontainment
+            //Behavior on opacity {
+                //OpacityAnimator {
+                    //duration: 1000
+                    //easing.type: Easing.InOutQuad
+                //}
+            //}
+        //}
 
         Clock {
             id: clock
@@ -154,6 +150,10 @@ PlasmaCore.ColorScope {
                 left: parent.left
                 right: parent.right
             }
+            
+
+            
+            
             height: root.height + units.gridUnit * 3
 
             focus: true //StackView is an implicit focus scope, so we need to give this focus so the item inside will have it
@@ -204,29 +204,32 @@ PlasmaCore.ColorScope {
                         iconSource: "system-suspend"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
                         onClicked: sddm.suspend()
-                        enabled: sddm.canSuspend
+                        //enabled: sddm.canSuspend 
+                        enabled: true //Ruscher
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: "system-reboot"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
                         onClicked: sddm.reboot()
-                        enabled: sddm.canReboot
+                        //enabled: sddm.canReboot
+                        enabled: true //Ruscher
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: "system-shutdown"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
                         onClicked: sddm.powerOff()
-                        enabled: sddm.canPowerOff
+                        //enabled: sddm.canPowerOff
+                        enabled: true //Ruscher
                         visible: !inputPanel.keyboardActive
-                    }
+                    }//,
                     //ActionButton {
-                        //iconSource: "system-user-prompt"
-                        //text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "For switching to a username and password prompt", "Other...")
-                        //onClicked: mainStack.push(userPromptComponent)
-                        //enabled: true
-                        //visible: !userListComponent.showUsernamePrompt && !inputPanel.keyboardActive
+                    //    iconSource: "system-user-prompt"
+                    //    text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "For switching to a username and password prompt", "Other...")
+                    //    onClicked: mainStack.push(userPromptComponent)
+                    //    enabled: true
+                    //    visible: !userListComponent.showUsernamePrompt && !inputPanel.keyboardActive
                     //}
                 ]
 
@@ -439,7 +442,7 @@ PlasmaCore.ColorScope {
             visible: !softwareRendering && config.showlogo == "shown"
             horizontalOffset: 1
             verticalOffset: 1
-            radius: 6
+            radius: 10
             samples: 14
             spread: 0.3
             color: "black" // matches Breeze window decoration and desktopcontainment
@@ -479,23 +482,19 @@ PlasmaCore.ColorScope {
             KeyboardButton {
             }
 
-
             Rectangle {
-           
             SessionButton {
-                
                 id: sessionButton
-                
             }
             color: "#55000000"
-            width: childrenRect.width + 10
-            height: childrenRect.height + 12
-            radius: 18
-            border.color : "#55ffffff"
+            width: childrenRect.width + 16
+            height: childrenRect.height + 16
+            radius: 50
+                       
+            border.color : "#999"
             border.width : 1
-anchors { horizontalCenter: parent.horizontalCenter 
-}
-}            
+            anchors { horizontalCenter: parent.horizontalCenter }
+            }            
 
             Item {
                 Layout.fillWidth: true
@@ -507,6 +506,7 @@ anchors { horizontalCenter: parent.horizontalCenter
 
     Connections {
         target: sddm
+        
         onLoginFailed: {
             notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed")
             footer.enabled = true

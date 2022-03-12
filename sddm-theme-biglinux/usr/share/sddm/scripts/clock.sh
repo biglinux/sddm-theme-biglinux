@@ -13,7 +13,7 @@ else
     fi
 fi
 
-cat <<'EOF' > /usr/share/sddm/themes/biglinux/components/Clock.qml
+cat << EOF > /usr/share/sddm/themes/biglinux/components/Clock.qml
 /*
  *   Copyright 2016 David Edmundson <davidedmundson@kde.org>
  *
@@ -46,30 +46,31 @@ ColumnLayout {
         color: ColorScope.textColor
         style: softwareRendering ? Text.Outline : Text.Normal
         styleColor: softwareRendering ? ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
-        font.pointSize: 36
+        font.pointSize: 28
         Layout.alignment: Qt.AlignHCenter
     }
     Label {
-EOF
-
-
-if [ -e "/usr/share/fortune/biglinux-ptbr" ]; then
-    echo "text: \"$(cat /tmp/biglinux_quote)\"" >> /usr/share/sddm/themes/biglinux/components/Clock.qml
-else
-    echo 'text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)' >> /usr/share/sddm/themes/biglinux/components/Clock.qml
-fi
-
-
-
-
-
-cat <<'EOF' >> /usr/share/sddm/themes/biglinux/components/Clock.qml
+        text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
         color: ColorScope.textColor
         style: softwareRendering ? Text.Outline : Text.Normal
         styleColor: softwareRendering ? ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
-        font.pointSize: 18
+        font.pointSize: 16
         Layout.alignment: Qt.AlignHCenter
     }
+    Label {
+        text: ""
+    }
+    Label {
+        text: "$(cat /tmp/biglinux_quote)"
+        color: ColorScope.textColor
+        style: softwareRendering ? Text.Outline : Text.Normal
+        styleColor: softwareRendering ? ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+        font.pointSize: 16
+        Layout.alignment: Qt.AlignHCenter
+        horizontalAlignment: Qt.AlignHCenter
+        verticalAlignment: Qt.AlignVCenter
+    }
+
     DataSource {
         id: timeSource
         engine: "time"
