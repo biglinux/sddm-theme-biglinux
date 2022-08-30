@@ -28,5 +28,8 @@ else
     sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Change desktop: %1"|' /usr/share/sddm/themes/biglinux/SessionButton.qml
 fi
 
-#Uncomment to add quote in login screen
-#/usr/share/sddm/themes/breeze/components/clock.sh 
+
+# nvidia prime support
+if [ -f "/sbin/prime-offload" ]; then
+    /sbin/prime-offload
+fi
