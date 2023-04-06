@@ -6,6 +6,19 @@
 #     /usr/local/bin/autorandr common
 # fi
 
+# Show background before greeter
+sddmTheme="$(grep -oP '(\bCurrent=)\K.*' /etc/sddm.conf.d/kde_settings.conf)"
+if [ "$sddmTheme" = "" ]; then
+    sddmTheme=breeze
+fi
+sddmWallpaper="$(grep -ioP '(\bbackground=)\K.*' /usr/share/sddm/themes/$sddmTheme/theme.conf.user)"
+
+if [ -e "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" ]; then
+    feh --bg-fill "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" &
+else
+    feh --bg-fill "$sddmWallpaper" &
+fi
+
 if [ ! -e "/etc/disable_text_in_sddm" ]; then
     /usr/share/sddm/scripts/clock.sh &
 fi
