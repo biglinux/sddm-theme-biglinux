@@ -9,7 +9,7 @@
 # Show background before greeter
 sddmTheme="$(grep -oP '(\bCurrent=)\K.*' /etc/sddm.conf.d/kde_settings.conf)"
 if [ "$sddmTheme" = "" ]; then
-    sddmTheme=breeze
+    sddmTheme=biglinux
 fi
 sddmWallpaper="$(grep -ioP '(\bbackground=)\K.*' /usr/share/sddm/themes/$sddmTheme/theme.conf.user)"
 
