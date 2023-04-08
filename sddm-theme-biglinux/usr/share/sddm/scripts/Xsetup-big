@@ -13,10 +13,12 @@ if [ "$sddmTheme" = "" ]; then
 fi
 sddmWallpaper="$(grep -ioP '(\bbackground=)\K.*' /usr/share/sddm/themes/$sddmTheme/theme.conf.user)"
 
-if [ -e "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" ]; then
-    feh --bg-fill "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" &
-else
-    feh --bg-fill "$sddmWallpaper" &
+if [ ! -e "/livefs-pkgs.txt" ]; then
+    if [ -e "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" ]; then
+        feh --bg-fill "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" &
+    else
+        feh --bg-fill "$sddmWallpaper" &
+    fi
 fi
 
 if [ ! -e "/etc/disable_text_in_sddm" ]; then
