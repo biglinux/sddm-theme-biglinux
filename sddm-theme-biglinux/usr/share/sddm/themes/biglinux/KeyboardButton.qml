@@ -5,33 +5,24 @@ import org.kde.plasma.components 2.0 as PlasmaComponents // Because PC3 ToolButt
 
 import QtQuick.Controls 1.3 as QQC
 
-PlasmaComponents.ToolButton {
-    id: keyboardButton
-
-    property int currentIndex: -1
-
-    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Keyboard Layout: %1", instantiator.objectAt(currentIndex).shortName)
-    implicitWidth: minimumWidth
-
-    visible: menu.items.length > 1
-
-    Component.onCompleted: currentIndex = Qt.binding(function() {return keyboard.currentLayout});
-
-    menu: QQC.Menu {
-        id: keyboardMenu
-        style: BreezeMenuStyle {}
-        Instantiator {
-            id: instantiator
-            model: keyboard.layouts
-            onObjectAdded: keyboardMenu.insertItem(index, object)
-            onObjectRemoved: keyboardMenu.removeItem( object )
-            delegate: QQC.MenuItem {
-                text: modelData.longName
-                property string shortName: modelData.shortName
-                onTriggered: {
-                    keyboard.currentLayout = model.index
-                }
-            }
-        }
+Item{
+    anchors {
+        top: parent.top
+        topMargin: units.largeSpacing
+        left: parent.left
+        leftMargin: units.largeSpacing
     }
-}
+
+    Image{
+        source: "/usr/share/sddm/themes/biglinux/components/artwork/input-keyboard-virtual.svg" 
+        MouseArea {
+            anchors.fill: parent
+            onClicked: inputPanel.showHide() 
+            hoverEnabled: true
+            cursorShape: containsMouse ? Qt.PointingHandCursor : Qt.ArrowCursor
+        }
+        
+    }
+
+    visible: inputPanel.status == Loader.Ready
+    }

@@ -1,19 +1,3 @@
-#!/bin/bash
-
-#Detect language of quote
-if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]
-then
-    echo "$(/usr/bin/fortune biglinux-ptbr | sed "s|\"|¨|g;s|'|¨|g")" > /tmp/biglinux_quote
-else
-    if [ "$(grep LANG= /etc/locale.conf | grep es)" != "" ]
-    then
-        echo "$(/usr/bin/fortune biglinux-es | sed "s|\"|¨|g;s|'|¨|g")" > /tmp/biglinux_quote
-    else
-        echo "$(/usr/bin/fortune biglinux-en | sed "s|\"|¨|g;s|'|¨|g")" > /tmp/biglinux_quote
-    fi
-fi
-
-cat << EOF > /usr/share/sddm/themes/biglinux/components/PhrasesModel.qml
 
 /*
  *   Copyright 2023 Douglas Guimarães <dg2003gh@gmail.com>
@@ -41,7 +25,8 @@ import QtQuick.Layouts 1.1
 PlasmaComponents3.Label {
             id: phrasesLabel
             
-            text: "$(cat /tmp/biglinux_quote)"
+            text: "Em média, cada pessoa perde 4kg 
+de pele morta em um ano"
             font.pointSize: root.fontSize
             color: "#999"
             Layout.maximumWidth: units.gridUnit * 16
@@ -52,4 +37,3 @@ PlasmaComponents3.Label {
             font.italic: true
         }
 
-EOF

@@ -25,12 +25,12 @@ ListView {
     readonly property string selectedUser: currentItem ? currentItem.userName : ""
     readonly property int userItemWidth: units.gridUnit * 8
     readonly property int userItemHeight: units.gridUnit * 8
-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
-
+    property int fontSize:  PlasmaCore.Theme.defaultFont.pointSize
+    
     implicitHeight: userItemHeight
-
     activeFocusOnTab : true
-
+    width: parent.width / 5
+    
     /*
      * Signals that a user was explicitly selected
      */
@@ -49,8 +49,7 @@ ListView {
     delegate: UserDelegate {
         avatarPath: model.icon || ""
         iconSource: model.iconName || "user-identity"
-        fontSize: view.fontSize
-
+        fontSize: view.fontsize
         name: {
             var displayName = model.realName || model.name
 

@@ -26,7 +26,7 @@ import org.kde.plasma.workspace.components 2.0 as PW
 Row {
     id: row
 
-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize
+    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize - 2
 
     spacing: PlasmaCore.Units.smallSpacing
     visible: pmSource.data["Battery"]["Has Cumulative"]

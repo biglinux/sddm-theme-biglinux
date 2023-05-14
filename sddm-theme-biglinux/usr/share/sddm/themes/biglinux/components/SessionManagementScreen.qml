@@ -27,7 +27,7 @@ import org.kde.plasma.components 3.0 as PlasmaComponents3
 
 Item {
     id: root
-
+    
     /*
      * Any message to be displayed to the user, visible above the text fields
      */
@@ -36,7 +36,6 @@ Item {
     /*
      * A list of Items (typically ActionButtons) to be shown in a Row beneath the prompts
      */
-    property alias actionItems: actionItemsLayout.children
 
     /*
      * A model with a list of users to show in the view
@@ -61,31 +60,69 @@ Item {
 
     property alias userList: userListView
 
-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
+    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize
 
     default property alias _children: innerLayout.children
 
     UserList {
         id: userListView
+
         visible: showUserList && y > 0
         anchors {
-            bottom: parent.verticalCenter
-            left: parent.left
-            right: parent.right
+            horizontalCenter: parent.horizontalCenter
+            bottom: prompts.top 
+            bottomMargin: units.largeSpacing * 2
         }
-        fontSize: root.fontSize
+        
     }
+    
 
+    PlasmaComponents3.Button {
+
+        Layout.preferredHeight: 350
+        Layout.preferredWidth: 350
+        anchors{
+            top: userListView.verticalCenter
+            left: userListView.right
+            leftMargin: units.largeSpacing * 7
+        }
+        background: Rectangle {
+        color: "#00000000"
+    }
+        icon.name: "go-next"
+        
+        visible: userListView.count > 3 ? true : false
+    
+        onClicked: userListView.incrementCurrentIndex()
+    }
+    
+    
+    PlasmaComponents3.Button {
+
+        Layout.preferredHeight: 350
+        Layout.preferredWidth: 350
+        anchors{
+            top: userListView.verticalCenter
+            right: userListView.left
+            rightMargin: units.largeSpacing * 7
+        }
+        background: Rectangle {
+        color: "#00000000"
+    }
+        icon.name: "go-previous"
+        
+        visible: userListView.count > 3 ? true : false
+        onClicked: userListView.decrementCurrentIndex()
+    }
+    
     //goal is to show the prompts, in ~16 grid units high, then the action buttons
     //but collapse the space between the prompts and actions if there's no room
     //ui is constrained to 16 grid units wide, or the screen
     ColumnLayout {
         id: prompts
         anchors.top: parent.verticalCenter
-        anchors.topMargin: units.gridUnit * 0.5
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.bottom: parent.bottom
         PlasmaComponents3.Label {
             id: notificationsLabel
             font.pointSize: root.fontSize
@@ -110,13 +147,6 @@ Item {
                 Layout.fillHeight: true
             }
         }
-        Row { //deliberately not rowlayout as I'm not trying to resize child items
-            id: actionItemsLayout
-            spacing: units.largeSpacing / 2
-            Layout.alignment: Qt.AlignHCenter
-        }
-        Item {
-            Layout.fillHeight: true
-        }
+
     }
 }

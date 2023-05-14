@@ -34,10 +34,8 @@ SessionManagementScreen {
     * If username field is visible, it will be taken from that, otherwise from the "name" property of the currentIndex
     */
     function startLogin() {
-        var username = showUsernamePrompt ? userNameInput.text : userList.selectedUser
+        var username = userList.selectedUser
         var password = passwordBox.text
-
-        footer.enabled = false
         mainStack.enabled = false
         userListComponent.userList.opacity = 0.5
 
@@ -63,86 +61,85 @@ SessionManagementScreen {
                 passwordBox.forceActiveFocus()
             }
     }
-
-    RowLayout {
+            
+RowLayout {
+    Layout.fillWidth: true
+    spacing: 40
+    PlasmaComponents3.TextField {
+        id: passwordBox
+        font.pointSize: fontSize + 4
         Layout.fillWidth: true
-
-        PlasmaComponents3.TextField {
-            id: passwordBox
-            font.pointSize: fontSize + 4
-            Layout.fillWidth: true
-            topPadding: 6
-            leftPadding: 20
-            rightPadding: 20
-
+        Layout.leftMargin: 20
         background: Rectangle {
-            width: parent.width 
-            height: 38
-            radius: 50
-            
-            color: "#000000"
-            opacity: enabled ? 0.3 : 0.3
-            border.color : "#ffffff"
-            border.width : 1
-        }
+                        anchors.centerIn: parent
+                        width: parent.width + units.gridUnit * 1.5
+                        height: 40
+                        radius: 50
+                        color: "#000000"
+                        opacity: enabled ? 0.3 : 0.3
+                        border.color : "#ffffff"
+                        border.width : 1
+                    }
 
-            placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
-            focus: !showUsernamePrompt || lastUserName
-            echoMode: TextInput.Password
-            revealPasswordButtonShown: false // Disabled whilst SDDM does not have the breeze icon set loaded
+        placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
+        focus: !showUsernamePrompt || lastUserName
+        echoMode: TextInput.Password
+        revealPasswordButtonShown: true // Disabled whilst SDDM does not have the breeze icon set loaded
 
-            onAccepted: {
-                if (root.loginScreenUiVisible) {
-                    startLogin();
-                }
-            }
-
-            Keys.onEscapePressed: {
-                mainStack.currentItem.forceActiveFocus();
-            }
-
-            //if empty and left or right is pressed change selection in user switch
-            //this cannot be in keys.onLeftPressed as then it doesn't reach the password box
-            Keys.onPressed: {
-                if (event.key === Qt.Key_Left && !text) {
-                    userList.decrementCurrentIndex();
-                    event.accepted = true
-                }
-                if (event.key === Qt.Key_Right && !text) {
-                    userList.incrementCurrentIndex();
-                    event.accepted = true
-                }
-            }
-
-            Connections {
-                target: sddm
-                function onLoginFailed() {
-                    passwordBox.selectAll()
-                    passwordBox.forceActiveFocus()
-                }
+        onAccepted: {
+            if (root.loginScreenUiVisible) {
+                startLogin();
             }
         }
 
-        PlasmaComponents3.Button {
-            id: loginButton
-            Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
-            Layout.preferredHeight: passwordBox.implicitHeight
-            Layout.preferredWidth: loginButton.Layout.preferredHeight
-            topPadding: 7
-            leftPadding: 9
-        background: Rectangle {
-            width: 38
-            height: 38
-            radius: 50
-            color: "#000000"
-            opacity: enabled ? 0.3 : 0.3
-            border.color : "#ffffff"
-            border.width : 1
+        Keys.onEscapePressed: {
+            mainStack.currentItem.forceActiveFocus();
         }
-            icon.name: "go-next"
-            
 
-            onClicked: startLogin();
+        //if empty and left or right is pressed change selection in user switch
+        //this cannot be in keys.onLeftPressed as then it doesn't reach the password box
+        Keys.onPressed: {
+            if (event.key === Qt.Key_Left && !text) {
+                userList.decrementCurrentIndex();
+                event.accepted = true
+            }
+            if (event.key === Qt.Key_Right && !text) {
+                userList.incrementCurrentIndex();
+                event.accepted = true
+            }
+        }
+
+        Connections {
+            target: sddm
+            function onLoginFailed() {
+                passwordBox.selectAll()
+                passwordBox.forceActiveFocus()
+            }
         }
     }
+
+    PlasmaComponents3.Button {
+        id: loginButton
+        Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
+        Layout.preferredHeight: passwordBox.implicitHeight
+        Layout.preferredWidth: loginButton.Layout.preferredHeight
+        
+        background: Rectangle {
+                        anchors.centerIn: parent
+                        width: parent.width + units.gridUnit 
+                        height: 40
+                        radius: 50
+                        color: "#000000"
+                        opacity: enabled ? 0.3 : 0.3
+                        border.color : "#ffffff"
+                        border.width : 1
+                   }
+        icon.name: "go-next"
+        
+    
+        onClicked: startLogin();
+    }
+
+}
+    
 }

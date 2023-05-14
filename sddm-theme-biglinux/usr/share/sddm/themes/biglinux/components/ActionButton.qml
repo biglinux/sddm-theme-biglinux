@@ -36,7 +36,7 @@ Item {
 
     activeFocusOnTab: true
 
-    property int iconSize: units.gridUnit * 3
+    property int iconSize: units.gridUnit * 1.8
 
     implicitWidth: Math.max(iconSize + units.largeSpacing * 2, label.contentWidth)
     implicitHeight: iconSize + units.smallSpacing + label.implicitHeight
@@ -85,13 +85,12 @@ Item {
 
     PlasmaCore.IconItem {
         id: icon
-        anchors {
-            top: parent.top
-            horizontalCenter: parent.horizontalCenter
-        }
         width: iconSize
         height: iconSize
-
+        anchors { 
+            horizontalCenter: parent.horizontalCenter
+            bottom: parent.bottom
+        }
         colorGroup: PlasmaCore.ColorScope.colorGroup
         active: mouseArea.containsMouse || root.activeFocus
     }
@@ -100,10 +99,9 @@ Item {
         id: label
         font.pointSize: root.fontSize
         anchors {
-            top: icon.bottom
-            topMargin: (softwareRendering ? 1.5 : 1) * units.smallSpacing
-            left: parent.left
-            right: parent.right
+            verticalCenter: icon.verticalCenter
+            left: icon.right
+            
         }
         style: softwareRendering ? Text.Outline : Text.Normal
         styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
