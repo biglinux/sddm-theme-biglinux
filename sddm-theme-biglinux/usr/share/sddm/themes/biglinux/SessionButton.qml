@@ -30,7 +30,6 @@ PlasmaComponents.ToolButton {
 
     implicitWidth: minimumWidth
     font.pointSize: 12
-    anchors.centerIn: parent
 
     visible: menu.items.length > 1
 

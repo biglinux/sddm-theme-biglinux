@@ -38,8 +38,10 @@ FocusScope {
         sourceSize.height: parent.height
         fillMode: Image.PreserveAspectCrop
         smooth: true;
+        
     }
-
+    
+    
     states: [
         State {
             name: "imageBackground"
