@@ -44,8 +44,10 @@ FocusScope {
             id: shader
             
             anchors.centerIn: parent
-            width: parent.width / 2.1
-            height: parent.height / 1.2
+            implicitWidth: parent.width / 2.4
+            implicitHeight: parent.height / 1.2
+            width: Math.max(150, implicitWidth)
+            height: Math.max(150, implicitHeight)
             sourceItem: sceneImageBackground
             sourceRect: Qt.rect(x,y, width, height) 
             
