@@ -84,7 +84,7 @@ Item {
         anchors{
             top: userListView.verticalCenter
             left: userListView.right
-            leftMargin: units.largeSpacing * 7
+            leftMargin: units.largeSpacing * 5
         }
         background: Rectangle {
         color: "#00000000"
@@ -104,7 +104,7 @@ Item {
         anchors{
             top: userListView.verticalCenter
             right: userListView.left
-            rightMargin: units.largeSpacing * 7
+            rightMargin: units.largeSpacing * 5
         }
         background: Rectangle {
         color: "#00000000"
