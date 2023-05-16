@@ -1,0 +1,111 @@
+ #!/bin/sh
+# Xsetup - run as root before the login dialog appears
+
+
+# if [ "$(xrandr | grep -c " connected")" -gt "1" ]; then
+#     /usr/local/bin/autorandr common
+# fi
+
+
+# Read the content of /etc/sddm-biglinux.conf
+if [ -f "/etc/sddm-biglinux.conf" ]; then
+    content=$(cat "/etc/sddm-biglinux.conf")
+else
+    content=""
+fi
+
+# Check if the content is not "0"
+if [ "$content" != "0" ]; then
+
+    # If the content is empty or there's only one non-system user, set the last logged-in user as the single user
+    num_users=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print}' /etc/passwd | wc -l)
+    if [ -z "$content" ] && [ $num_users -eq 1 ]; then
+        username=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd)
+    elif [ -z "$content" ] && [ $num_users -gt 1 ]; then
+        username=$(grep -E "^User" /var/lib/sddm/state.conf | cut -d= -f2 | tr -d '[:space:]')
+    else
+        username="$content"
+    fi
+
+        # Verify the existence of the KDE Plasma user configuration directory
+        kde_config_dir="/home/$username/.config"
+        if [ -d "$kde_config_dir" ]; then
+            # Get the wallpaper file path configured in KDE Plasma
+            wallpaper_config_file="$kde_config_dir/plasma-org.kde.plasma.desktop-appletsrc"
+
+            # Check if the wallpaper configuration file exists
+            if [ -f "$wallpaper_config_file" ]; then
+                # Get the wallpaper image path
+                wallpaper=$(grep -m1 -Po "(?<=Image=).*" "$wallpaper_config_file" | tr -d '"' | tr -d ';')
+                
+                # Remove file://
+                wallpaper=${wallpaper#file://}
+
+                # Check if the wallpaper was found
+                if [ -n "$wallpaper" ]; then
+                    # Check if the wallpaper path starts with /usr/
+                    if [[ "$wallpaper" != /usr/* ]]; then
+                        # Copy the wallpaper to the SDDM theme folder and name it "wallpaper"
+                        cp -f "$wallpaper" "/usr/share/sddm/themes/biglinux/wallpaper"
+                        wallpaper="/usr/share/sddm/themes/biglinux/wallpaper"
+                    fi
+
+                    # Update the background in the SDDM theme configuration file
+                    sudo sed -i "s|^background=.*|background=$wallpaper|" /usr/share/sddm/themes/biglinux/theme.conf.user
+                    echo "SDDM background updated successfully."
+                else
+                    echo "KDE Plasma wallpaper not found for user $username."
+                fi
+            else
+                echo "KDE Plasma wallpaper configuration file not found for user $username."
+            fi
+        else
+            echo "KDE Plasma configuration directory not found for user $username."
+        fi
+    else
+        echo "SDDM background update skipped due to configuration."
+    fi
+
+
+# Show background before greeter
+sddmTheme="$(grep -oP '(\bCurrent=)\K.*' /etc/sddm.conf.d/kde_settings.conf)"
+if [ "$sddmTheme" = "" ]; then
+    sddmTheme=biglinux
+fi
+sddmWallpaper="$(grep -ioP '(\bbackground=)\K.*' /usr/share/sddm/themes/$sddmTheme/theme.conf.user)"
+
+if [ ! -e "/livefs-pkgs.txt" ]; then
+    if [ -e "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" ]; then
+        feh --bg-fill "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" &
+    else
+        feh --bg-fill "$sddmWallpaper" &
+    fi
+fi
+
+if [ ! -e "/etc/disable_text_in_sddm" ]; then
+    /usr/share/sddm/scripts/sortphrases &
+fi
+
+#/usr/share/sddm/scripts/numlock
+
+if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]; then
+    sed -i 's|Name=.*|Name=Central de Controle|g' /usr/share/xsessions/bigcontrolcenter.desktop
+    sed -i 's|Name=.*|Name=Leve (LXQt)|g' /usr/share/xsessions/lxqt.desktop
+    sed -i 's|Name=.*|Name=Clássico (KDE Plasma)|g' /usr/share/xsessions/plasma-classic.desktop
+    sed -i 's|Name=.*|Name=Moderno (KDE Plasma)|g' /usr/share/xsessions/plasma-new.desktop
+    sed -i 's|Name=.*|Name=Alternativo (KDE Plasma)|g' /usr/share/xsessions/plasma-topbar.desktop
+    sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Selecione o desktop: %1"|' /usr/share/sddm/themes/biglinux/SessionButton.qml
+else
+    sed -i 's|Name=.*|Name=Control Center|g' /usr/share/xsessions/bigcontrolcenter.desktop
+    sed -i 's|Name=.*|Name=Lightweight (LXQt)|g' /usr/share/xsessions/lxqt.desktop
+    sed -i 's|Name=.*|Name=Classic (KDE Plasma)|g' /usr/share/xsessions/plasma-classic.desktop
+    sed -i 's|Name=.*|Name=New (KDE Plasma)|g' /usr/share/xsessions/plasma-new.desktop
+    sed -i 's|Name=.*|Name=Alternative (KDE Plasma)|g' /usr/share/xsessions/plasma-topbar.desktop
+    sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Change desktop: %1"|' /usr/share/sddm/themes/biglinux/SessionButton.qml
+fi
+
+
+# nvidia prime support
+if [ -f "/sbin/prime-offload" ]; then
+    /sbin/prime-offload
+fi
