@@ -25,8 +25,7 @@ import QtQuick.Layouts 1.1
 PlasmaComponents3.Label {
             id: phrasesLabel
             
-            text: "Em média, cada pessoa perde 4kg 
-de pele morta em um ano"
+            text: ""
             font.pointSize: root.fontSize
             color: "#999"
             Layout.maximumWidth: units.gridUnit * 16
