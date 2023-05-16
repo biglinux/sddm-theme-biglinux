@@ -17,7 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-import QtQuick 2.2
+import QtQuick 2.12
+import QtGraphicalEffects 1.12
 
 FocusScope {
     id: sceneBackground
@@ -38,6 +39,24 @@ FocusScope {
         sourceSize.height: parent.height
         fillMode: Image.PreserveAspectCrop
         smooth: true;
+        
+        ShaderEffectSource {
+            id: shader
+            
+            anchors.centerIn: parent
+            width: parent.width / 2.1
+            height: parent.height / 1.2
+            sourceItem: sceneImageBackground
+            sourceRect: Qt.rect(x,y, width, height) 
+            
+        }
+        
+        FastBlur {
+                anchors.fill: shader
+                source: shader
+                radius: 32
+                transparentBorder: true
+            }
         
     }
     

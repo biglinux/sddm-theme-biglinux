@@ -24,12 +24,7 @@ import QtQuick 2.8
 
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.1
-
-//Ruscher
 import QtQuick.Controls 2.12 as QQC2
-
-import QtGraphicalEffects 1.0
-
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
@@ -53,7 +48,7 @@ PlasmaCore.ColorScope {
 
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
-
+    
     PlasmaCore.DataSource {
         id: keystateSource
         engine: "keystate"
@@ -121,107 +116,99 @@ PlasmaCore.ColorScope {
         }
        
        Item {
-            anchors.centerIn: parent
-            width: parent.width / 2.1
-            height: parent.height / 1.2
-           
-           Rectangle { 
-                id: backgroundBox
-                
-                anchors.fill: parent
-                color: "black"
-                opacity: 0.7
-                radius: 15
-                
+        anchors.centerIn: parent
+        implicitWidth: parent.width / 2.4
+        implicitHeight: parent.height / 1.2
+        width: Math.max(150, implicitWidth)
+        height: Math.max(150, implicitHeight)
+        
+        Rectangle { 
+            id: backgroundBox
+            
+            anchors.fill: parent
+            color: "black"
+            opacity: 0.7
+            radius: 15
+            
+        }
+
+        Battery {
+                anchors {
+                    top: parent.top
+                    topMargin: units.largeSpacing + 2.5
+                    right: parent.right
+                    rightMargin: units.largeSpacing
+                    
+                }
+        } 
+        
+        KeyboardButton {
+            
+        }
+        
+        Clock {
+            id: clock
+            visible: y > 0
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: (userListComponent.userList.y + mainStack.y)/2.8 - height/2
+        }
+        
+        SessionButton{
+            id:sessionButton
+            
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                bottom: phrasesModel.top
+                bottomMargin: units.largeSpacing * 2.2
+            }
+        }
+        
+        PhrasesModel {
+            id: phrasesModel
+            anchors{
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+                bottomMargin: units.gridUnit * 4
+            }
+        }
+        
+        Row { 
+            id: actionItems
+            spacing: units.largeSpacing / 2
+            
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+                bottomMargin: units.largeSpacing 
             }
             
-            FastBlur {
-                z: -1
-                anchors.fill: backgroundBox
-                source: wallpaper
-                radius: 64
-                transparentBorder: true
-            }
-            
-            Battery {
-                    anchors {
-                        top: parent.top
-                        topMargin: units.largeSpacing + 2.5
-                        right: parent.right
-                        rightMargin: units.largeSpacing
-                        
-                    }
-                } 
-                
-                Clock {
-                    id: clock
-                    visible: y > 0
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    y: (userListComponent.userList.y + mainStack.y)/2.8 - height/2
+                ActionButton {
+                    iconSource: "system-suspend"
+                    //text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
+                    onClicked: sddm.suspend()
+                    //enabled: sddm.canSuspend 
+                    enabled: true //Ruscher
+                    visible: !inputPanel.keyboardActive
                 }
-                
-                KeyboardButton {
-                    
+                ActionButton {
+                    iconSource: "system-reboot"
+                    //text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
+                    onClicked: sddm.reboot()
+                    //enabled: sddm.canReboot
+                    enabled: true //Ruscher
+                    visible: !inputPanel.keyboardActive
                 }
-                
-                Row { 
-                    id: actionItems
-                    spacing: units.largeSpacing / 2
-                    
-                    anchors {
-                        horizontalCenter: parent.horizontalCenter
-                        bottom: parent.bottom
-                        bottomMargin: units.largeSpacing 
-                    }
-                    
-                     ActionButton {
-                            iconSource: "system-suspend"
-                            //text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
-                            onClicked: sddm.suspend()
-                            //enabled: sddm.canSuspend 
-                            enabled: true //Ruscher
-                            visible: !inputPanel.keyboardActive
-                        }
-                        ActionButton {
-                            iconSource: "system-reboot"
-                            //text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
-                            onClicked: sddm.reboot()
-                            //enabled: sddm.canReboot
-                            enabled: true //Ruscher
-                            visible: !inputPanel.keyboardActive
-                        }
-                        ActionButton {
-                            iconSource: "system-shutdown"
-                            //text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
-                            onClicked: sddm.powerOff()
-                            //enabled: sddm.canPowerOff
-                            enabled: true //Ruscher
-                            visible: !inputPanel.keyboardActive
-                        }
+                ActionButton {
+                    iconSource: "system-shutdown"
+                    //text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
+                    onClicked: sddm.powerOff()
+                    //enabled: sddm.canPowerOff
+                    enabled: true //Ruscher
+                    visible: !inputPanel.keyboardActive
                 }
-                
-                Item {
-                    Layout.fillHeight: true
-                }
-                
-                PhrasesModel {
-                    anchors{
-                        horizontalCenter: parent.horizontalCenter
-                        bottom: sessionButton.top
-                        bottomMargin: units.largeSpacing * 3.5
-                    }
-                }
-                    
-                SessionButton{
-                    id:sessionButton
-                    
-                    anchors {
-                    horizontalCenter: parent.horizontalCenter
-                    bottom: parent.bottom
-                    bottomMargin: units.largeSpacing * 3.5
-                    }
-                }
+        }
     }
+    
         StackView {
             id: mainStack
             anchors {

@@ -62,6 +62,7 @@ if [ "$content" != "0" ]; then
         else
             echo "KDE Plasma configuration directory not found for user $username."
         fi
+    else
     fi
 else
     echo "SDDM background update skipped due to configuration."
@@ -84,7 +85,7 @@ if [ ! -e "/livefs-pkgs.txt" ]; then
 fi
 
 if [ ! -e "/etc/disable_text_in_sddm" ]; then
-    /usr/share/sddm/scripts/clock.sh &
+    /usr/share/sddm/scripts/sortphrases &
 fi
 
 #/usr/share/sddm/scripts/numlock
