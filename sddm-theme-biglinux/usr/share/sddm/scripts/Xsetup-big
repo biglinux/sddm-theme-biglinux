@@ -1,4 +1,4 @@
- #!/bin/sh
+#!/bin/sh
 # Xsetup - run as root before the login dialog appears
 
 
@@ -36,7 +36,7 @@ if [ "$content" != "0" ]; then
             # Check if the wallpaper configuration file exists
             if [ -f "$wallpaper_config_file" ]; then
                 # Get the wallpaper image path
-                wallpaper=$(grep -m1 -Po "(?<=Image=).*" "$wallpaper_config_file" | tr -d '"' | tr -d ';')
+                wallpaper=$(grep -m1 -Po "(?<=^Image=).*" "$wallpaper_config_file" | tr -d '"' | tr -d ';')
                 
                 # Remove file://
                 wallpaper=${wallpaper#file://}
@@ -62,9 +62,8 @@ if [ "$content" != "0" ]; then
         else
             echo "KDE Plasma configuration directory not found for user $username."
         fi
-    else
-        echo "SDDM background update skipped due to configuration."
-    fi
+fi
+
 
 
 # Show background before greeter

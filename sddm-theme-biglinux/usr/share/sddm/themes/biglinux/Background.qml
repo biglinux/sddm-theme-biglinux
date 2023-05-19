@@ -56,8 +56,9 @@ FocusScope {
         FastBlur {
                 anchors.fill: shader
                 source: shader
-                radius: 32
+                radius: 64
                 transparentBorder: true
+                cached: true
             }
         
     }
