@@ -26,6 +26,7 @@ ColumnLayout {
     readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
 
     Label {
+        id: time
         text: Qt.formatTime(timeSource.data["Local"]["DateTime"])
         color: ColorScope.textColor
         style: softwareRendering ? Text.Outline : Text.Normal
@@ -34,6 +35,7 @@ ColumnLayout {
         Layout.alignment: Qt.AlignHCenter
     }
     Label {
+        id: date
         text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
         color: "#999"
         style: softwareRendering ? Text.Outline : Text.Normal
