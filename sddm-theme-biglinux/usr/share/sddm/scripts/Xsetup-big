@@ -85,6 +85,10 @@ if [ ! -e "/etc/disable_text_in_sddm" ]; then
     /usr/share/sddm/scripts/sortphrases &
 fi
 
+if [ ! -e "/etc/disable_adaptable_color_scheme_in_sddm" ]; then
+    /usr/share/sddm/scripts/ToggleTheme &
+fi
+
 #/usr/share/sddm/scripts/numlock
 
 if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]; then
