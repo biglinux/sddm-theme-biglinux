@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+getSystemcolor=$(kreadconfig5 --group "Colors:Window" --key BackgroundNormal | sed 's|^|(|g;s|,|+|g;s|$|)/3|g' | bc )
+
+if [ $getSystemcolor -lt "127" ]; then
+
+    sed -i '/id: backgroundBox/,/opacity/s/color:.*/color: "black"/' /usr/share/sddm/themes/biglinux/Main.qml
+    sed -i '/id: time/,/style:/s/color:.*/color: "white"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
+    sed -i '/id: date/,/style:/s/color:.*/color: "#999"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
+    sed -i '/id: batteryLabel/,/text:/s/color:.*/color: "#fff"/' /usr/share/sddm/themes/biglinux/components/Battery.qml
+    sed -i '/id: userBorder/,/color/s/border.color:.*/border.color: "#fff"/' /usr/share/sddm/themes/biglinux/components/UserDelegate.qml
+    sed -i '/id: usernameDelegate/,/font.pointSize:/s/color:.*/color: "#fff"/' /usr/share/sddm/themes/biglinux/components/UserDelegate.qml
+    sed -i '/id: notificationsLabel/,/font.pointSize:/s/color:.*/color: "#fff"/' /usr/share/sddm/themes/biglinux/components/SessionManagementScreen.qml
+    sed -i '/id: textButton/,/anchors./s/color:.*/color: "#fff"/' /usr/share/sddm/themes/biglinux/SessionButton.qml
+    sed -i '/id: passwordBoxStyle/,/anchors./s/border.color:.*/border.color: "#fff"/' /usr/share/sddm/themes/biglinux/Login.qml
+    sed -i '/id: loginButtonStyle/,/anchors./s/border.color:.*/border.color: "#fff"/' /usr/share/sddm/themes/biglinux/Login.qml
+    sed -i '/id: phrasesLabel/,/font.italic/s/color:.*/color: "#999"/' /usr/share/sddm/themes/biglinux/components/PhrasesModel.qml
+    sed -i '/id: iconCircle/,/color/s/border.color:.*/border.color: "#55ffffff"/' /usr/share/sddm/themes/biglinux/components/ActionButton.qml
+    sed -i '/.ColorScheme-Text/,/.ColorScheme-PositiveText/s/color:.*/color:#fff;/' /usr/share/sddm/themes/biglinux/components/artwork/input-keyboard-virtual.svg
+    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#fff;/' /usr/share/sddm/themes/biglinux/components/artwork/logout_primary.svg
+    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#fff;/' /usr/share/sddm/themes/biglinux/components/artwork/restart_primary.svg
+    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#fff;/' /usr/share/sddm/themes/biglinux/components/artwork/shutdown_primary.svg
+    
+else
+    sed -i '/id: backgroundBox/,/opacity/s/color:.*/color: "white"/' /usr/share/sddm/themes/biglinux/Main.qml
+    sed -i '/id: time/,/style:/s/color:.*/color: "black"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
+    sed -i '/id: date/,/style:/s/color:.*/color: "#808080"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
+    sed -i '/id: batteryLabel/,/text:/s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/components/Battery.qml
+    sed -i '/id: userBorder/,/color/s/border.color:.*/border.color: "#000"/' /usr/share/sddm/themes/biglinux/components/UserDelegate.qml
+    sed -i '/id: usernameDelegate/,/font.pointSize:/s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/components/UserDelegate.qml
+    sed -i '/id: notificationsLabel/,/font.pointSize:/s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/components/SessionManagementScreen.qml
+    sed -i '/id: textButton/,/anchors./s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/SessionButton.qml
+    sed -i '/id: passwordBoxStyle/,/anchors./s/border.color:.*/border.color: "#000000"/' /usr/share/sddm/themes/biglinux/Login.qml
+    sed -i '/id: loginButtonStyle/,/anchors./s/border.color:.*/border.color: "#000000"/' /usr/share/sddm/themes/biglinux/Login.qml
+    sed -i '/id: phrasesLabel/,/font.pointSize/s/color:.*/color: "#808080"/' /usr/share/sddm/themes/biglinux/components/PhrasesModel.qml
+    sed -i '/id: iconCircle/,/color/s/border.color:.*/border.color: "#000000"/' /usr/share/sddm/themes/biglinux/components/ActionButton.qml
+    sed -i '/.ColorScheme-Text/,/.ColorScheme-PositiveText/s/color:.*/color:#000;/' /usr/share/sddm/themes/biglinux/components/artwork/input-keyboard-virtual.svg
+    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#000;/' /usr/share/sddm/themes/biglinux/components/artwork/logout_primary.svg
+    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#000;/' /usr/share/sddm/themes/biglinux/components/artwork/restart_primary.svg
+    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#000;/' /usr/share/sddm/themes/biglinux/components/artwork/shutdown_primary.svg
+fi

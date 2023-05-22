@@ -183,7 +183,7 @@ PlasmaCore.ColorScope {
             }
             
                 ActionButton {
-                    iconSource: "system-suspend"
+                    iconSource: "/usr/share/sddm/themes/biglinux/components/artwork/logout_primary.svg"
                     //text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
                     onClicked: sddm.suspend()
                     //enabled: sddm.canSuspend 
@@ -191,7 +191,7 @@ PlasmaCore.ColorScope {
                     visible: !inputPanel.keyboardActive
                 }
                 ActionButton {
-                    iconSource: "system-reboot"
+                    iconSource: "/usr/share/sddm/themes/biglinux/components/artwork/restart_primary.svg"
                     //text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
                     onClicked: sddm.reboot()
                     //enabled: sddm.canReboot
@@ -199,7 +199,7 @@ PlasmaCore.ColorScope {
                     visible: !inputPanel.keyboardActive
                 }
                 ActionButton {
-                    iconSource: "system-shutdown"
+                    iconSource: "/usr/share/sddm/themes/biglinux/components/artwork/shutdown_primary.svg"
                     //text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
                     onClicked: sddm.powerOff()
                     //enabled: sddm.canPowerOff

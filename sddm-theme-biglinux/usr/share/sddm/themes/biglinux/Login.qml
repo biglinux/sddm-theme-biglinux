@@ -71,13 +71,14 @@ RowLayout {
         Layout.fillWidth: true
         Layout.leftMargin: 20
         background: Rectangle {
+                        id: passwordBoxStyle
+                        border.color: "#ffffff"
                         anchors.centerIn: parent
                         width: parent.width + units.gridUnit * 1.5
                         height: 40
                         radius: 50
                         color: "#000000"
                         opacity: enabled ? 0.3 : 0.3
-                        border.color : "#ffffff"
                         border.width : 1
                     }
 
@@ -125,13 +126,14 @@ RowLayout {
         Layout.preferredWidth: loginButton.Layout.preferredHeight
         
         background: Rectangle {
+                        id: loginButtonStyle
+                        border.color: "#ffffff"
                         anchors.centerIn: parent
                         width: parent.width + units.gridUnit 
                         height: 40
                         radius: 50
                         color: "#000000"
                         opacity: enabled ? 0.3 : 0.3
-                        border.color : "#ffffff"
                         border.width : 1
                    }
         icon.name: "go-next"

@@ -53,11 +53,12 @@ Item {
 
     // Draw a translucent background circle under the user picture
     Rectangle {
+        id: userBorder
+        border.color: "#55ffffff"
         anchors.centerIn: imageSource
         width: imageSource.width - 2 // Subtract to prevent fringing
         height: width
         radius: width / 2
-        border.color : "#55ffffff"
         border.width : 1
         color: PlasmaCore.ColorScope.backgroundColor
         opacity: 0.6
@@ -162,6 +163,7 @@ Item {
 
     PlasmaComponents3.Label {
         id: usernameDelegate
+        color: "#000"
         font.pointSize: wrapper.fontSize
         anchors {
             bottom: parent.bottom
