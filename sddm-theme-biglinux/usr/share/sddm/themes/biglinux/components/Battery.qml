@@ -26,7 +26,7 @@ import org.kde.plasma.workspace.components 2.0 as PW
 Row {
     id: row
 
-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize - 2
+    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 1
 
     spacing: PlasmaCore.Units.smallSpacing
     visible: pmSource.data["Battery"]["Has Cumulative"]
@@ -49,7 +49,7 @@ Row {
 
     PlasmaComponents3.Label {
         id: batteryLabel
-        color: "#000"
+        color: "#fff"
         font.pointSize: row.fontSize
         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","%1%", battery.percent)
         Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Battery at %1%", battery.percent)

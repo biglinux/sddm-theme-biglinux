@@ -26,7 +26,8 @@ if [ "$content" != "0" ]; then
     else
         username="$content"
     fi
-
+        export username #exporting username var for toggleTheme script
+        
         # Verify the existence of the KDE Plasma user configuration directory
         kde_config_dir="/home/$username/.config"
         if [ -d "$kde_config_dir" ]; then
