@@ -10,12 +10,12 @@ QQCS.MenuStyle {
                     id: selectBackground
                     color:"#000"
                     opacity: 0.5
-                    radius: 15
                 }
                 itemDelegate.label: QQC.Label {
                     height: contentHeight * 2
                     verticalAlignment: Text.AlignVCenter
-                    color: styleData.selected ? PlasmaCore.ColorScope.highlightedTextColor : PlasmaCore.ColorScope.textColor
+                    horizontalAlignment: Text.AlignHCenter
+                    color:"#fff"
                     font.pointSize: 12
                     text: styleData.text
                 }
