@@ -37,7 +37,6 @@ PlasmaCore.ColorScope {
     // If we're using software rendering, draw outlines instead of shadows
     // See https://bugs.kde.org/show_bug.cgi?id=398317
     readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
-
     colorGroup: PlasmaCore.Theme.ComplementaryColorGroup
     readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
 
@@ -126,8 +125,8 @@ PlasmaCore.ColorScope {
             id: backgroundBox
             
             anchors.fill: parent
-            color: "black"
-            opacity: 0.7
+            color: "#d4d5d7"
+            opacity: 0.2
             radius: 15
             
         }
@@ -159,7 +158,7 @@ PlasmaCore.ColorScope {
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 bottom: phrasesModel.top
-                bottomMargin: units.largeSpacing * 2.2
+                bottomMargin: units.largeSpacing * 2
             }
         }
         

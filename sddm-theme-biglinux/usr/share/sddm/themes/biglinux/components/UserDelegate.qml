@@ -54,12 +54,12 @@ Item {
     // Draw a translucent background circle under the user picture
     Rectangle {
         id: userBorder
-        border.color: "#55ffffff"
+        border.color: "#000"
         anchors.centerIn: imageSource
         width: imageSource.width - 2 // Subtract to prevent fringing
         height: width
         radius: width / 2
-        border.width : 1
+        border.width : 0.5
         color: PlasmaCore.ColorScope.backgroundColor
         opacity: 0.6
     }
@@ -118,7 +118,7 @@ Item {
             live: true // otherwise the user in focus will show a blurred avatar
         }
 
-        property var colorBorder: PlasmaCore.ColorScope.textColor
+        property var colorBorder: "black"/*PlasmaCore.ColorScope.textColor*/
 
         //draw a circle with an antialiased border
         //innerRadius = size of the inner circle with contents

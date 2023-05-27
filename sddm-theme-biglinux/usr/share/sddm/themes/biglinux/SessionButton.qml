@@ -28,39 +28,33 @@ import QtQuick.Controls 1.3 as QQC
 PlasmaComponents.ToolButton {
     id: root
     property int currentIndex: -1
-
-    implicitWidth: textButton.width * 1.2
-    implicitHeight: textButton.height * 1.5
-    font.pointSize: 12
-
-    visible: menu.items.length > 1
-    Rectangle {
-            anchors.fill: parent
-            color: "black"
-            opacity: 0.5
-            radius: 15
-            
-        Text {
-            id: textButton
-            anchors {
-                verticalCenter: parent.verticalCenter
-                right: parent.right
-                rightMargin: 15
-            }
-            text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Selecione o desktop: %1", instantiator.objectAt(currentIndex).text || "")
-            color: "white"
-            
-        }
-        }
     
-
+    implicitHeight: units.gridUnit * 1.5
+    
+    visible: menu.items.length > 1
+    style: QQCS.ButtonStyle {
+        label: QQC.Label {
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                    color: "#000"
+                    font.pointSize: 12
+                    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Selecione o desktop: %1", instantiator.objectAt(currentIndex).text || "")
+                    padding: 10
+                }
+        background: Rectangle {
+            color: "#fff"
+            border.width: 1
+            border.color : "#000"
+            opacity: 0.3
+            radius: 15
+        }
+    }
     Component.onCompleted: {
         currentIndex = sessionModel.lastIndex
     }
 
     menu: QQC.Menu {
         id: menu
-        
         style: MenuStyle {
         }
         
