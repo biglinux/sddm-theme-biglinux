@@ -70,7 +70,7 @@ Item {
         visible: showUserList && y > 0
         anchors {
             horizontalCenter: parent.horizontalCenter
-            bottom: prompts.top 
+            bottom: parent.verticalCenter   
             bottomMargin: units.largeSpacing * 2
         }
         
@@ -89,7 +89,8 @@ Item {
         background: Rectangle {
         color: "#00000000"
     }
-        icon.name: "go-next"
+        icon.name: "/usr/share/sddm/themes/biglinux/components/artwork/go-next.svg"
+        
         
         visible: userListView.count > 3 ? true : false
     
@@ -108,8 +109,8 @@ Item {
         }
         background: Rectangle {
         color: "#00000000"
-    }
-        icon.name: "go-previous"
+    }   
+        icon.name: "/usr/share/sddm/themes/biglinux/components/artwork/go-previous.svg"
         
         visible: userListView.count > 3 ? true : false
         onClicked: userListView.decrementCurrentIndex()
@@ -120,7 +121,7 @@ Item {
     //ui is constrained to 16 grid units wide, or the screen
     ColumnLayout {
         id: prompts
-        anchors.top: parent.verticalCenter
+        anchors.top: userListView.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         PlasmaComponents3.Label {
@@ -130,6 +131,8 @@ Item {
             Layout.maximumWidth: units.gridUnit * 16
             Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true
+            Layout.topMargin: 20
+            Layout.bottomMargin: 20
             horizontalAlignment: Text.AlignHCenter
             wrapMode: Text.WordWrap
             font.italic: true
