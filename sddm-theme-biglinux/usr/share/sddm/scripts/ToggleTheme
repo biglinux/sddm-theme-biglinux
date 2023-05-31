@@ -36,7 +36,7 @@ else
     sed -i '/id: backgroundBox/,/opacity/s/color:.*/color: "#d4d5d7"/' /usr/share/sddm/themes/biglinux/Main.qml
 #     sed -i '/id: backgroundBox/,/opacity/s/opacity:.*/opacity: 0.7/' /usr/share/sddm/themes/biglinux/Main.qml
     sed -i '/id: time/,/style:/s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
-    sed -i '/id: date/,/style:/s/color:.*/color: "#595959"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
+    sed -i '/id: date/,/style:/s/color:.*/color: "#444"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
     sed -i '/id: batteryLabel/,/text:/s/color:.*/color: "#444"/' /usr/share/sddm/themes/biglinux/components/Battery.qml
     sed -i '/id: userBorder/,/color/s/border.color:.*/border.color: "#000"/' /usr/share/sddm/themes/biglinux/components/UserDelegate.qml
     sed -i '/id: usernameDelegate/,/font.pointSize:/s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/components/UserDelegate.qml
@@ -50,7 +50,7 @@ else
     sed -i '/id: passwordBox/,/Layout/s/color :.*/color : "#000"/' /usr/share/sddm/themes/biglinux/Login.qml
     sed -i '/id: loginButtonStyle/,/anchors./s/border.color :.*/border.color : "#000"/' /usr/share/sddm/themes/biglinux/Login.qml
     sed -i '/id: loginButtonStyle/,/opacity/s/color:.*/color: "#d4d5d7"/' /usr/share/sddm/themes/biglinux/Login.qml
-    sed -i '/id: phrasesLabel/,/font.pointSize/s/color:.*/color: "#595959"/' /usr/share/sddm/themes/biglinux/components/PhrasesModel.qml
+    sed -i '/id: phrasesLabel/,/font.pointSize/s/color:.*/color: "#444"/' /usr/share/sddm/themes/biglinux/components/PhrasesModel.qml
     sed -i '/id: iconCircle/,/opacity:/s/color:.*/color: "#55000000"/' /usr/share/sddm/themes/biglinux/components/ActionButton.qml
     sed -i '/.ColorScheme-Text/,/.ColorScheme-PositiveText/s/color:.*/color:#444;/' /usr/share/sddm/themes/biglinux/components/artwork/input-keyboard-virtual.svg
     sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#444;/' /usr/share/sddm/themes/biglinux/components/artwork/logout_primary.svg
