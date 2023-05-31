@@ -5,7 +5,7 @@ getSystemcolor=$(su -c "kreadconfig5 --group 'Colors:Window' --key BackgroundNor
 if [ $getSystemcolor -lt "127" ]; then
 
     sed -i '/id: backgroundBox/,/opacity/s/color:.*/color: "#2a303a"/' /usr/share/sddm/themes/biglinux/Main.qml
-    sed -i '/id: backgroundBox/,/opacity/s/opacity:.*/opacity: 0.5/' /usr/share/sddm/themes/biglinux/Main.qml
+#     sed -i '/id: backgroundBox/,/opacity/s/opacity:.*/opacity: 0.5/' /usr/share/sddm/themes/biglinux/Main.qml
     sed -i '/id: time/,/style:/s/color:.*/color: "#fff"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
     sed -i '/id: date/,/style:/s/color:.*/color: "#ccc"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
     sed -i '/id: batteryLabel/,/text:/s/color:.*/color: "#fff"/' /usr/share/sddm/themes/biglinux/components/Battery.qml
@@ -32,13 +32,12 @@ if [ $getSystemcolor -lt "127" ]; then
     sed -i '/<path/,/id="path2"/s/fill=.*/fill="#fff"/' /usr/share/sddm/themes/biglinux/components/artwork/go-previous.svg
     
     echo 'Theme has been defined to dark mode!'
-    
 else
     sed -i '/id: backgroundBox/,/opacity/s/color:.*/color: "#d4d5d7"/' /usr/share/sddm/themes/biglinux/Main.qml
-    sed -i '/id: backgroundBox/,/opacity/s/opacity:.*/opacity: 0.2/' /usr/share/sddm/themes/biglinux/Main.qml
+#     sed -i '/id: backgroundBox/,/opacity/s/opacity:.*/opacity: 0.7/' /usr/share/sddm/themes/biglinux/Main.qml
     sed -i '/id: time/,/style:/s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
     sed -i '/id: date/,/style:/s/color:.*/color: "#595959"/' /usr/share/sddm/themes/biglinux/components/Clock.qml
-    sed -i '/id: batteryLabel/,/text:/s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/components/Battery.qml
+    sed -i '/id: batteryLabel/,/text:/s/color:.*/color: "#444"/' /usr/share/sddm/themes/biglinux/components/Battery.qml
     sed -i '/id: userBorder/,/color/s/border.color:.*/border.color: "#000"/' /usr/share/sddm/themes/biglinux/components/UserDelegate.qml
     sed -i '/id: usernameDelegate/,/font.pointSize:/s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/components/UserDelegate.qml
     sed -i '/id: notificationsLabel/,/font.pointSize:/s/color:.*/color: "#000"/' /usr/share/sddm/themes/biglinux/components/SessionManagementScreen.qml
@@ -53,11 +52,11 @@ else
     sed -i '/id: loginButtonStyle/,/opacity/s/color:.*/color: "#d4d5d7"/' /usr/share/sddm/themes/biglinux/Login.qml
     sed -i '/id: phrasesLabel/,/font.pointSize/s/color:.*/color: "#595959"/' /usr/share/sddm/themes/biglinux/components/PhrasesModel.qml
     sed -i '/id: iconCircle/,/opacity:/s/color:.*/color: "#55000000"/' /usr/share/sddm/themes/biglinux/components/ActionButton.qml
-    sed -i '/.ColorScheme-Text/,/.ColorScheme-PositiveText/s/color:.*/color:#000;/' /usr/share/sddm/themes/biglinux/components/artwork/input-keyboard-virtual.svg
-    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#000;/' /usr/share/sddm/themes/biglinux/components/artwork/logout_primary.svg
-    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#000;/' /usr/share/sddm/themes/biglinux/components/artwork/restart_primary.svg
-    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#000;/' /usr/share/sddm/themes/biglinux/components/artwork/shutdown_primary.svg
-    sed -i '/<path/,/id="path2"/s/fill=.*/fill="#000"/' /usr/share/sddm/themes/biglinux/components/artwork/go-next.svg
-    sed -i '/<path/,/id="path2"/s/fill=.*/fill="#000"/' /usr/share/sddm/themes/biglinux/components/artwork/go-previous.svg
+    sed -i '/.ColorScheme-Text/,/.ColorScheme-PositiveText/s/color:.*/color:#444;/' /usr/share/sddm/themes/biglinux/components/artwork/input-keyboard-virtual.svg
+    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#444;/' /usr/share/sddm/themes/biglinux/components/artwork/logout_primary.svg
+    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#444;/' /usr/share/sddm/themes/biglinux/components/artwork/restart_primary.svg
+    sed -i '/.ColorScheme-Background/,/.ColorScheme-ViewText/s/color:.*/color:#444;/' /usr/share/sddm/themes/biglinux/components/artwork/shutdown_primary.svg
+    sed -i '/<path/,/id="path2"/s/fill=.*/fill="#444"/' /usr/share/sddm/themes/biglinux/components/artwork/go-next.svg
+    sed -i '/<path/,/id="path2"/s/fill=.*/fill="#444"/' /usr/share/sddm/themes/biglinux/components/artwork/go-previous.svg
     echo 'Theme has been defined to light mode!'
 fi

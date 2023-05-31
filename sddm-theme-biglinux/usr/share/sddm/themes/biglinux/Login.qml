@@ -86,7 +86,7 @@ RowLayout {
         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
         focus: !showUsernamePrompt || lastUserName
         echoMode: TextInput.Password
-        revealPasswordButtonShown: true // Disabled whilst SDDM does not have the breeze icon set loaded
+        revealPasswordButtonShown: false // Disabled whilst SDDM does not have the breeze icon set loaded
 
         onAccepted: {
             if (root.loginScreenUiVisible) {
