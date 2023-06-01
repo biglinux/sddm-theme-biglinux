@@ -42,9 +42,10 @@ FocusScope {
         
         ShaderEffectSource {
             id: shader
-            
+            format: RGB
             live: false
             smooth: false 
+            
             anchors.centerIn: parent
             implicitWidth: parent.width / 2.4
             implicitHeight: parent.height / 1.2
@@ -55,10 +56,11 @@ FocusScope {
             
         }
         
-        FastBlur {
+        GaussianBlur {
+                smooth: false 
                 anchors.fill: shader
                 source: shader
-                radius: 64
+                radius: 16
                 transparentBorder: true
                 cached: true
             }
