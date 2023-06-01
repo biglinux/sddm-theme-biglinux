@@ -38,7 +38,7 @@ FocusScope {
         sourceSize.width: parent.width
         sourceSize.height: parent.height
         fillMode: Image.PreserveAspectCrop
-        smooth: true;
+        smooth: false
         
         ShaderEffectSource {
             id: shader
