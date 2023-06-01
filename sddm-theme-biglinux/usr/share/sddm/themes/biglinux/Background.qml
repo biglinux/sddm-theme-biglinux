@@ -43,6 +43,8 @@ FocusScope {
         ShaderEffectSource {
             id: shader
             
+            live: false
+            smooth: false 
             anchors.centerIn: parent
             implicitWidth: parent.width / 2.4
             implicitHeight: parent.height / 1.2
