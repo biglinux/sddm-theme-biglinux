@@ -126,7 +126,7 @@ Item {
         anchors.right: parent.right
         PlasmaComponents3.Label {
             id: notificationsLabel
-            color: "#000"
+            color: "#fff"
             font.pointSize: root.fontSize
             Layout.maximumWidth: units.gridUnit * 16
             Layout.alignment: Qt.AlignHCenter
