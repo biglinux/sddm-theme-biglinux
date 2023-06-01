@@ -125,7 +125,7 @@ PlasmaCore.ColorScope {
             id: backgroundBox
             
             anchors.fill: parent
-            color: "#d4d5d7"
+            color: "#000"
             opacity: 0.5
             radius: 15
             

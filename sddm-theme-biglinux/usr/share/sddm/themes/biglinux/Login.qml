@@ -69,18 +69,18 @@ RowLayout {
     PlasmaExtras.PasswordField {
             id: passwordBox
             
-            color : "#000"
+            color : "#fff"
             font.pointSize: fontSize + 4
             Layout.fillWidth: true
             Layout.leftMargin: 20
             background: Rectangle {
                             id: passwordBoxStyle
-                            border.color : "#000"
+                            border.color : "#fff"
                             anchors.centerIn: parent
                             width: parent.width + units.gridUnit
                             height: 40
                             radius: 50
-                            color: "#d4d5d7"
+                            color: "#000"
                             opacity: 0.5
                             border.width: 1
                         }
@@ -127,12 +127,12 @@ RowLayout {
         Layout.preferredWidth: loginButton.Layout.preferredHeight
         background: Rectangle {
                         id: loginButtonStyle
-                        border.color : "#000"
+                        border.color : "#fff"
                         anchors.centerIn: parent
                         width: parent.width + units.gridUnit 
                         height: passwordBoxStyle.height
                         radius: 50
-                        color: "#d4d5d7"
+                        color: "#000"
                         opacity: 0.3
                         border.width : 1
                    }

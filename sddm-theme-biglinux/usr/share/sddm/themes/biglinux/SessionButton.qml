@@ -36,15 +36,15 @@ PlasmaComponents.ToolButton {
         label: QQC.Label {
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
-                    color: "#000"
+                    color: "#fff"
                     font.pointSize: 12
                     text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Selecione o desktop: %1", instantiator.objectAt(currentIndex).text || "")
                     padding: 10
                 }
         background: Rectangle {
-            color: "#fff"
+            color: "#ccc"
             border.width: 1
-            border.color : "#000"
+            border.color : "#fff"
             opacity: 0.3
             radius: 15
         }

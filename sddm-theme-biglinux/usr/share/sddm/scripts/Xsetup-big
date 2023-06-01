@@ -26,7 +26,6 @@ if [ "$content" != "0" ]; then
     else
         username="$content"
     fi
-        export username #exporting username var for toggleTheme script
         
         # Verify the existence of the KDE Plasma user configuration directory
         kde_config_dir="/home/$username/.config"
@@ -84,10 +83,6 @@ fi
 
 if [ ! -e "/etc/disable_text_in_sddm" ]; then
     /usr/share/sddm/scripts/sortphrases &
-fi
-
-if [ ! -e "/etc/disable_adaptable_color_scheme_in_sddm" ]; then
-    /usr/share/sddm/scripts/ToggleTheme &
 fi
 
 #/usr/share/sddm/scripts/numlock

@@ -26,7 +26,7 @@ PlasmaComponents3.Label {
             id: phrasesLabel
             
             text: ""
-            color: "#999"
+            color: "#ccc"
             font.pointSize: root.fontSize
             Layout.maximumWidth: units.gridUnit * 16
             Layout.alignment: Qt.AlignHCenter
