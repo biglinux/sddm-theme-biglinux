@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.2
 
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 SessionManagementScreen {
     id: root
@@ -65,50 +66,49 @@ SessionManagementScreen {
 RowLayout {
     Layout.fillWidth: true
     spacing: 40
-    PlasmaComponents3.TextField {
-        id: passwordBox
-        color : "#000"
-        font.pointSize: fontSize + 4
-        Layout.fillWidth: true
-        Layout.leftMargin: 20
-        background: Rectangle {
-                        id: passwordBoxStyle
-                        border.color : "#000"
-                        anchors.centerIn: parent
-                        width: parent.width + units.gridUnit * 1.5
-                        height: 40
-                        radius: 50
-                        color: "#d4d5d7"
-                        opacity: 0.2
-                        border.width: 1
-                    }
+    PlasmaExtras.PasswordField {
+            id: passwordBox
+            
+            color : "#000"
+            font.pointSize: fontSize + 4
+            Layout.fillWidth: true
+            Layout.leftMargin: 20
+            background: Rectangle {
+                            id: passwordBoxStyle
+                            border.color : "#000"
+                            anchors.centerIn: parent
+                            width: parent.width + units.gridUnit
+                            height: 40
+                            radius: 50
+                            color: "#d4d5d7"
+                            opacity: 0.5
+                            border.width: 1
+                        }
 
-        placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
-        focus: !showUsernamePrompt || lastUserName
-        echoMode: TextInput.Password
-        revealPasswordButtonShown: false // Disabled whilst SDDM does not have the breeze icon set loaded
+            placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
+            focus: !showUsernamePrompt || lastUserName
 
-        onAccepted: {
-            if (root.loginScreenUiVisible) {
-                startLogin();
+            onAccepted: {
+                if (root.loginScreenUiVisible) {
+                    startLogin();
+                }
             }
-        }
 
-        Keys.onEscapePressed: {
-            mainStack.currentItem.forceActiveFocus();
-        }
+            Keys.onEscapePressed: {
+                mainStack.currentItem.forceActiveFocus();
+            }
 
-        //if empty and left or right is pressed change selection in user switch
-        //this cannot be in keys.onLeftPressed as then it doesn't reach the password box
-        Keys.onPressed: {
-            if (event.key === Qt.Key_Left && !text) {
-                userList.decrementCurrentIndex();
-                event.accepted = true
-            }
-            if (event.key === Qt.Key_Right && !text) {
-                userList.incrementCurrentIndex();
-                event.accepted = true
-            }
+            //if empty and left or right is pressed change selection in user switch
+            //this cannot be in keys.onLeftPressed as then it doesn't reach the password box
+            Keys.onPressed: {
+                if (event.key === Qt.Key_Left && !text) {
+                    userList.decrementCurrentIndex();
+                    event.accepted = true
+                }
+                if (event.key === Qt.Key_Right && !text) {
+                    userList.incrementCurrentIndex();
+                    event.accepted = true
+                }
         }
 
         Connections {
@@ -130,7 +130,7 @@ RowLayout {
                         border.color : "#000"
                         anchors.centerIn: parent
                         width: parent.width + units.gridUnit 
-                        height: 40
+                        height: passwordBoxStyle.height
                         radius: 50
                         color: "#d4d5d7"
                         opacity: 0.3
