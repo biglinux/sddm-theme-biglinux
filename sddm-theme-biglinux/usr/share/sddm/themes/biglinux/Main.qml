@@ -126,7 +126,7 @@ PlasmaCore.ColorScope {
             
             anchors.fill: parent
             color: "#000"
-            opacity: 0.5
+            opacity: 0.8
             radius: 15
             
         }
