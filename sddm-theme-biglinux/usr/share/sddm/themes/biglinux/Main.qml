@@ -37,6 +37,7 @@ PlasmaCore.ColorScope {
     // If we're using software rendering, draw outlines instead of shadows
     // See https://bugs.kde.org/show_bug.cgi?id=398317
     readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
+
     colorGroup: PlasmaCore.Theme.ComplementaryColorGroup
     readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
 
@@ -74,7 +75,7 @@ PlasmaCore.ColorScope {
         anchors.fill: parent
 
         property bool uiVisible: true
-        property bool blockUI: mainStack.depth > 1 || userListComponent.mainPasswordBox.text.length > 0 || inputPanel.keyboardActive || config.type !== "image"
+        property bool blockUI: mainStack.depth > 1 || userListComponent.mainPasswordBox.text.length > 2 || inputPanel.keyboardActive || config.type !== "image"
 
         hoverEnabled: true
         drag.filterChildren: true
@@ -116,8 +117,8 @@ PlasmaCore.ColorScope {
        
        Item {
         anchors.centerIn: parent
-        implicitWidth: parent.width / 2.4
-        implicitHeight: parent.height / 1.2
+        implicitWidth: parent.width / 3.1
+        implicitHeight: parent.height / 1.8
         width: Math.max(150, implicitWidth)
         height: Math.max(150, implicitHeight)
         
@@ -125,9 +126,9 @@ PlasmaCore.ColorScope {
             id: backgroundBox
             
             anchors.fill: parent
-            color: "#000"
-            opacity: 0.8
-            radius: 15
+            color: "black"
+            opacity: 0.7
+            radius: 32
             
         }
 
@@ -149,7 +150,7 @@ PlasmaCore.ColorScope {
             id: clock
             visible: y > 0
             anchors.horizontalCenter: parent.horizontalCenter
-            y: (userListComponent.userList.y + mainStack.y)/2.8 - height/2
+            y: (userListComponent.userList.y + mainStack.y)/2.0 - height/15
         }
         
         SessionButton{
@@ -158,7 +159,7 @@ PlasmaCore.ColorScope {
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 bottom: phrasesModel.top
-                bottomMargin: units.largeSpacing * 2
+                bottomMargin: units.largeSpacing * 2.2
             }
         }
         
