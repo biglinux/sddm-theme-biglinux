@@ -25,8 +25,8 @@ import QtQuick.Layouts 1.1
 PlasmaComponents3.Label {
             id: phrasesLabel
             
-            text: ""
-            color: "#ccc"
+            text: "Um gato possui 32 músculos em cada orelha"
+            color: "#999"
             font.pointSize: root.fontSize
             Layout.maximumWidth: units.gridUnit * 16
             Layout.alignment: Qt.AlignHCenter
