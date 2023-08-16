@@ -58,9 +58,9 @@ FocusScope {
         
         GaussianBlur {
                 smooth: false 
-                anchors.fill: shader
-                source: shader
-                radius: 16
+                anchors.fill: parent
+                source: parent
+                radius: 6
                 transparentBorder: true
                 cached: true
             }
