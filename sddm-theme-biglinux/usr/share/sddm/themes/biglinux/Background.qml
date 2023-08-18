@@ -47,8 +47,8 @@ FocusScope {
             smooth: false 
             
             anchors.centerIn: parent
-            implicitWidth: parent.width / 2.4
-            implicitHeight: parent.height / 1.2
+            implicitWidth: parent.width / 3.1
+            implicitHeight: parent.height / 1.8
             width: Math.max(150, implicitWidth)
             height: Math.max(150, implicitHeight)
             sourceItem: sceneImageBackground
@@ -58,9 +58,9 @@ FocusScope {
         
         GaussianBlur {
                 smooth: false 
-                anchors.fill: parent
-                source: parent
-                radius: 6
+                anchors.fill: shader
+                source: shader
+                radius: 16
                 transparentBorder: true
                 cached: true
             }
