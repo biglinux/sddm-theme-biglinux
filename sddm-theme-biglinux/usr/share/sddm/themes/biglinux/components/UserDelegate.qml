@@ -180,7 +180,7 @@ Item {
     }
 
     MouseArea {
-        anchors.fill: parent
+        anchors.fill: imageSource
         hoverEnabled: true
 
         onClicked: wrapper.clicked();
