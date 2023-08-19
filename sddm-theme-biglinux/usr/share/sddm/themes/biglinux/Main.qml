@@ -159,7 +159,7 @@ PlasmaCore.ColorScope {
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 bottom: phrasesModel.top
-                bottomMargin: units.largeSpacing * 2.2
+                bottomMargin: units.largeSpacing * 1.2
             }
         }
         
@@ -167,8 +167,8 @@ PlasmaCore.ColorScope {
             id: phrasesModel
             anchors{
                 horizontalCenter: parent.horizontalCenter
-                bottom: parent.bottom
-                bottomMargin: units.gridUnit * 4
+                bottom: clock.bottom
+                bottomMargin: units.gridUnit * -5.2
             }
         }
         

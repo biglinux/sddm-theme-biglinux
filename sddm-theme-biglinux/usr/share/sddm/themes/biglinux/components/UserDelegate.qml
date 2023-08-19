@@ -64,6 +64,8 @@ Item {
         opacity: 0.6
     }
 
+    
+    
     Item {
         id: imageSource
         anchors {
@@ -179,12 +181,17 @@ Item {
         font.underline: wrapper.activeFocus
     }
 
+   
+        
     MouseArea {
         anchors.fill: imageSource
         hoverEnabled: true
 
-        onClicked: wrapper.clicked();
+        onClicked: wrapper.clicked()
     }
+
+    
+    
 
     Accessible.name: name
     Accessible.role: Accessible.Button

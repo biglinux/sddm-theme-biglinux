@@ -51,8 +51,7 @@ SessionManagementScreen {
         id: userNameInput
         font.pointSize: fontSize + 2
         Layout.fillWidth: true
-           
-        
+                
         text: lastUserName        
         visible: showUsernamePrompt
         focus: showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
@@ -69,6 +68,11 @@ SessionManagementScreen {
             
          
 RowLayout {
+    anchors {
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+                bottomMargin: units.largeSpacing * -2.5
+            } 
     Layout.fillWidth: true
     spacing: 40
     PlasmaComponents3.TextField {
@@ -86,6 +90,8 @@ RowLayout {
                         color: "#000000"
                         opacity: enabled ? 0.3 : 0.3
                         border.width : 1
+                        
+                       
                     }
 
         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
