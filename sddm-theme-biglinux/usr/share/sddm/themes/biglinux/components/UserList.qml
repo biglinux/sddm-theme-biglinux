@@ -23,14 +23,14 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 ListView {
     id: view
     readonly property string selectedUser: currentItem ? currentItem.userName : ""
-    readonly property int userItemWidth: units.gridUnit * 7
+    readonly property int userItemWidth: units.gridUnit * 8
     readonly property int userItemHeight: units.gridUnit * 4
     property int fontSize:  PlasmaCore.Theme.defaultFont.pointSize
     
     implicitHeight: userItemHeight
     activeFocusOnTab : true
-    width: parent.width / 5
-    height: parent.height / 5
+    width: parent.width / 7
+    height: parent.height / 4
     
     
     /*

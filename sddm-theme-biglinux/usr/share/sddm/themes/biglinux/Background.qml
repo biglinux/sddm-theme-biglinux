@@ -47,8 +47,8 @@ FocusScope {
             smooth: false 
             
             anchors.centerIn: parent
-            implicitWidth: parent.width / 3.1
-            implicitHeight: parent.height / 1.8
+            implicitWidth: parent.width / 4.8
+            implicitHeight: parent.height / 3.4
             width: Math.max(150, implicitWidth)
             height: Math.max(150, implicitHeight)
             sourceItem: sceneImageBackground

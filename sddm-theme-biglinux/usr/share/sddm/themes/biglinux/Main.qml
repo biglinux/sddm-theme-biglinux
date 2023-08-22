@@ -117,8 +117,8 @@ PlasmaCore.ColorScope {
        
        Item {
         anchors.centerIn: parent
-        implicitWidth: parent.width / 3.1
-        implicitHeight: parent.height / 1.8
+        implicitWidth: parent.width / 2.5
+        implicitHeight: parent.height / 1.5
         width: Math.max(150, implicitWidth)
         height: Math.max(150, implicitHeight)
         
@@ -150,7 +150,7 @@ PlasmaCore.ColorScope {
             id: clock
             visible: y > 0
             anchors.horizontalCenter: parent.horizontalCenter
-            y: (userListComponent.userList.y + mainStack.y)/2.0 - height/15
+            y: (userListComponent.userList.y + mainStack.y)/1.4 - height/100
         }
         
         SessionButton{
@@ -158,8 +158,8 @@ PlasmaCore.ColorScope {
             
             anchors {
                 horizontalCenter: parent.horizontalCenter
-                bottom: phrasesModel.top
-                bottomMargin: units.largeSpacing * 1.2
+                bottom: phrasesModel.bottom
+                bottomMargin: units.largeSpacing * 2.0
             }
         }
         
@@ -168,7 +168,7 @@ PlasmaCore.ColorScope {
             anchors{
                 horizontalCenter: parent.horizontalCenter
                 bottom: clock.bottom
-                bottomMargin: units.gridUnit * -5.2
+                bottomMargin: units.gridUnit * -10.0
             }
         }
         
