@@ -71,7 +71,7 @@ RowLayout {
     anchors {
                 horizontalCenter: parent.horizontalCenter
                 bottom: parent.bottom
-                bottomMargin: units.largeSpacing * -2.5
+                bottomMargin: units.largeSpacing * -4.8
             } 
     Layout.fillWidth: true
     spacing: 40
