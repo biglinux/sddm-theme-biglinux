@@ -159,7 +159,7 @@ PlasmaCore.ColorScope {
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 bottom: phrasesModel.bottom
-                bottomMargin: units.largeSpacing * 2.0
+                bottomMargin: units.largeSpacing * 3.5
             }
         }
         
