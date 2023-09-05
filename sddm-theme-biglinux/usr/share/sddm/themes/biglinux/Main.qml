@@ -150,7 +150,7 @@ PlasmaCore.ColorScope {
             id: clock
             visible: y > 0
             anchors.horizontalCenter: parent.horizontalCenter
-            y: (userListComponent.userList.y + mainStack.y)/1.2 - height/100
+            y: (userListComponent.userList.y + mainStack.y)/0.7 - height/50
         }
         
         SessionButton{

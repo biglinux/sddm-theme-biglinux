@@ -25,7 +25,8 @@ import QtQuick.Layouts 1.1
 PlasmaComponents3.Label {
             id: phrasesLabel
             
-            text: "Um gato possui 32 músculos em cada orelha"
+            text: "Até 1954, os sinais de parada 
+dos semáforos eram amarelos"
             color: "#999"
             font.pointSize: root.fontSize
             Layout.maximumWidth: units.gridUnit * 16
