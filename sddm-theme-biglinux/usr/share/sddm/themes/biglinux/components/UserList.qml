@@ -24,14 +24,13 @@ ListView {
     id: view
     readonly property string selectedUser: currentItem ? currentItem.userName : ""
     readonly property int userItemWidth: units.gridUnit * 8
-    readonly property int userItemHeight: units.gridUnit * 4
+    readonly property int userItemHeight: units.gridUnit * 8
     property int fontSize:  PlasmaCore.Theme.defaultFont.pointSize
     
     implicitHeight: userItemHeight
     activeFocusOnTab : true
     width: parent.width / 7
-    height: parent.height / 4
-    
+    height: parent.height / 3
     
     /*
      * Signals that a user was explicitly selected
@@ -42,9 +41,8 @@ ListView {
     highlightRangeMode: ListView.StrictlyEnforceRange
 
     //centre align selected item (which implicitly centre aligns the rest
-    preferredHighlightBegin: width/2 - userItemWidth/2 
+    preferredHighlightBegin: width/2 - userItemWidth/2
     preferredHighlightEnd: preferredHighlightBegin
-    
 
     // Disable flicking if we only have on user (like on the lockscreen)
     interactive: count > 1
@@ -53,9 +51,6 @@ ListView {
         avatarPath: model.icon || ""
         iconSource: model.iconName || "user-identity"
         fontSize: view.fontsize
-        
-        
-        
         name: {
             var displayName = model.realName || model.name
 
@@ -81,12 +76,11 @@ ListView {
 
             return displayName
         }
-        
+
         userName: model.name
 
         width: userItemWidth
         height: userItemHeight
-        
 
         //if we only have one delegate, we don't need to clip the text as it won't be overlapping with anything
         constrainText: ListView.view.count > 1
