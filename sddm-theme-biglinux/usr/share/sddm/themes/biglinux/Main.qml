@@ -41,8 +41,8 @@ PlasmaCore.ColorScope {
     colorGroup: PlasmaCore.Theme.ComplementaryColorGroup
     readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
 
-    width: 1600
-    height: 900
+    width: 3440
+    height: 1440
 
     property string notificationMessage
 
@@ -159,7 +159,7 @@ PlasmaCore.ColorScope {
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 bottom: clock.bottom
-                bottomMargin: units.largeSpacing * -3.0
+                bottomMargin: units.largeSpacing * -5.0
             }
         }
         
