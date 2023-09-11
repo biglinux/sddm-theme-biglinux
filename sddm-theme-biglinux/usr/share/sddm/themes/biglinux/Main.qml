@@ -75,7 +75,7 @@ PlasmaCore.ColorScope {
         anchors.fill: parent
 
         property bool uiVisible: true
-        property bool blockUI: mainStack.depth > 1 || userListComponent.mainPasswordBox.text.length > 1 || inputPanel.keyboardActive || config.type !== "image"
+        property bool blockUI: mainStack.depth > 1 || userListComponent.mainPasswordBox.text.length > 0 || inputPanel.keyboardActive || config.type !== "image"
 
         hoverEnabled: true
         drag.filterChildren: true

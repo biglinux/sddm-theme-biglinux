@@ -36,7 +36,7 @@ SessionManagementScreen {
     function startLogin() {
         var username = userList.selectedUser
         var password = passwordBox.text
-        mainStack.enabled = false
+        mainStack.enabled = true
         userListComponent.userList.opacity = 0.5
         
 
@@ -49,12 +49,13 @@ SessionManagementScreen {
 
     PlasmaComponents3.TextField {
         id: userNameInput
-        font.pointSize: fontSize + 2
+        font.pointSize: fontSize + 1
         Layout.fillWidth: true
+    
                 
         text: lastUserName        
         visible: showUsernamePrompt
-        focus: showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
+        focus: passwordBox.forceActiveFocus ()//showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Username")
         
         onAccepted:
@@ -68,11 +69,11 @@ SessionManagementScreen {
             
          
 RowLayout {
-    anchors {
-                horizontalCenter: parent.horizontalCenter
-                bottom: parent.bottom
-                bottomMargin: units.largeSpacing * -5.0
-            } 
+     anchors {
+                 horizontalCenter: parent.horizontalCenter
+                 bottom: parent.bottom
+                 bottomMargin: units.largeSpacing * -5.0
+             } 
     Layout.fillWidth: true
     spacing: 40
     PlasmaComponents3.TextField {
@@ -88,7 +89,7 @@ RowLayout {
                         height: 40
                         radius: 50
                         color: "#000000"
-                        opacity: enabled ? 0.3 : 0.3
+                        opacity: 0.3
                         border.width : 1
                         
                        
@@ -96,8 +97,8 @@ RowLayout {
 
         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
         focus: !showUsernamePrompt || lastUserName
-        echoMode: TextInput.Password
-        revealPasswordButtonShown: true // Disabled whilst SDDM does not have the breeze icon set loaded
+        // echoMode: TextInput.Password
+        // revealPasswordButtonShown: true // Disabled whilst SDDM does not have the breeze icon set loaded
 
         onAccepted: {
             if (root.loginScreenUiVisible) {
@@ -145,13 +146,14 @@ RowLayout {
                         height: 40
                         radius: 50
                         color: "#000000"
-                        opacity: enabled ? 0.3 : 0.3
+                        opacity: 0.3
                         border.width : 1
                    }
         icon.name: "go-next"
         
     
         onClicked: startLogin();
+        
     }
 
 }
