@@ -6,6 +6,12 @@
 #     /usr/local/bin/autorandr common
 # fi
 
+# Fix to restore backlight value in some laptops
+if [ -f "/usr/bin/biglinux-backlight-restore" ]; then
+    biglinux-backlight-restore
+fi
+
+
 
 # Read the content of /etc/sddm-biglinux.conf
 if [ -f "/etc/sddm-biglinux.conf" ]; then
