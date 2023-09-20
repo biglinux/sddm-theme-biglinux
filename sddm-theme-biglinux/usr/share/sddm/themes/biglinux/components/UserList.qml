@@ -30,7 +30,7 @@ ListView {
     implicitHeight: userItemHeight
     activeFocusOnTab : true
     width: parent.width / 7
-    height: parent.height / 3
+    height: parent.height / 3.2
     
     /*
      * Signals that a user was explicitly selected
