@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.2
 
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 SessionManagementScreen {
     id: root
@@ -17,7 +18,7 @@ SessionManagementScreen {
 
     //the y position that should be ensured visible when the on screen keyboard is visible
     property int visibleBoundary: mapFromItem(loginButton, 0, 0).y
-    onHeightChanged: visibleBoundary = mapFromItem(loginButton, 0, 0).y + loginButton.height + units.smallSpacing 
+    onHeightChanged: visibleBoundary = mapFromItem(loginButton, 0, 0).y + loginButton.height + units.smallSpacing
 
     property int fontSize: parseInt(config.fontSize)
 
@@ -36,9 +37,8 @@ SessionManagementScreen {
     function startLogin() {
         var username = userList.selectedUser
         var password = passwordBox.text
-        mainStack.enabled = true
+        mainStack.enabled = false
         userListComponent.userList.opacity = 0.5
-        
 
         //this is partly because it looks nicer
         //but more importantly it works round a Qt bug that can trigger if the app is closed with a TextField focused
@@ -51,76 +51,67 @@ SessionManagementScreen {
         id: userNameInput
         font.pointSize: fontSize + 1
         Layout.fillWidth: true
-    
-                
-        text: lastUserName        
+
+        text: lastUserName
         visible: showUsernamePrompt
-        focus: passwordBox.forceActiveFocus ()//showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
+        focus: showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Username")
-        
+
         onAccepted:
             if (root.loginScreenUiVisible) {
                 passwordBox.forceActiveFocus()
             }
-    
     }
-         
-          
             
-         
 RowLayout {
-     anchors {
-                 horizontalCenter: parent.horizontalCenter
-                 bottom: parent.bottom
-                 bottomMargin: units.largeSpacing * -5.0
-             } 
+
+        
+        
     Layout.fillWidth: true
     spacing: 40
-    PlasmaComponents3.TextField {
-        id: passwordBox
-        font.pointSize: fontSize + 4
-        Layout.fillWidth: true
-        Layout.leftMargin: 20
-        background: Rectangle {
-                        id: passwordBoxStyle
-                        border.color: "#fff"
-                        anchors.centerIn: parent
-                        width: parent.width + units.gridUnit * 2.0
-                        height: 40
-                        radius: 50
-                        color: "#000000"
-                        opacity: 0.3
-                        border.width : 1
-                        
-                       
-                    }
+    PlasmaExtras.PasswordField {
+            id: passwordBox
+            
+            color : "#fff"
+            font.pointSize: fontSize + 4
+            Layout.fillWidth: true
+            Layout.leftMargin: 20
+            background: Rectangle {
+                            id: passwordBoxStyle
+                            border.color : "#fff"
+                            anchors.centerIn: parent
+                            width: parent.width + units.gridUnit
+                            height: 40
+                            radius: 50
+                            color: "#000"
+                            opacity: 0.5
+                            border.width: 1
+                        }
 
-        placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
-        focus: !showUsernamePrompt || lastUserName
-         echoMode: TextInput.Password
-         revealPasswordButtonShown: true // Disabled whilst SDDM does not have the breeze icon set loaded
+            placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
+            focus: !showUsernamePrompt || lastUserName
 
-        onAccepted: {
-            if (root.loginScreenUiVisible) {
-                startLogin();
+            onAccepted: {
+                if (root.loginScreenUiVisible) {
+                    startLogin();
+                }
             }
-        }
 
-        Keys.onEscapePressed: {
-            mainStack.currentItem.forceActiveFocus();
-        }
+            Keys.onEscapePressed: {
+                mainStack.currentItem.forceActiveFocus();
+            }
 
-        //if empty and left or right is pressed change selection in user switch
-        //this cannot be in keys.onLeftPressed as then it doesn't reach the password box
-        Keys.onPressed: {
-            if (event.key === Qt.Key_Left && !text) {
-                userList.decrementCurrentIndex();
-                event.accepted = true
-            }
-            if (event.key === Qt.Key_Right && !text) {
-                userList.incrementCurrentIndex();
-                event.accepted = true
-            }
+            //if empty and left or right is pressed change selection in user switch
+            //this cannot be in keys.onLeftPressed as then it doesn't reach the password box
+            Keys.onPressed: {
+                if (event.key === Qt.Key_Left && !text) {
+                    userList.decrementCurrentIndex();
+                    event.accepted = true
+                }
+                if (event.key === Qt.Key_Right && !text) {
+                    userList.incrementCurrentIndex();
+                    event.accepted = true
+                }
         }
 
         Connections {
@@ -137,23 +128,20 @@ RowLayout {
         Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
         Layout.preferredHeight: passwordBox.implicitHeight
         Layout.preferredWidth: loginButton.Layout.preferredHeight
-        
         background: Rectangle {
                         id: loginButtonStyle
-                        border.color: "#fff"
+                        border.color : "#fff"
                         anchors.centerIn: parent
                         width: parent.width + units.gridUnit 
-                        height: 40
+                        height: passwordBoxStyle.height
                         radius: 50
-                        color: "#000000"
+                        color: "#000"
                         opacity: 0.3
                         border.width : 1
                    }
-        icon.name: "go-next"
-        
+        icon.name: "/usr/share/sddm/themes/biglinux/components/artwork/go-next.svg"
     
         onClicked: startLogin();
-        
     }
 
 }

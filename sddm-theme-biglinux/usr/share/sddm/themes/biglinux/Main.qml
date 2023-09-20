@@ -37,12 +37,11 @@ PlasmaCore.ColorScope {
     // If we're using software rendering, draw outlines instead of shadows
     // See https://bugs.kde.org/show_bug.cgi?id=398317
     readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
-
     colorGroup: PlasmaCore.Theme.ComplementaryColorGroup
     readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
 
-    width: 3440
-    height: 1440
+    width: 1600
+    height: 900
 
     property string notificationMessage
 
@@ -126,9 +125,9 @@ PlasmaCore.ColorScope {
             id: backgroundBox
             
             anchors.fill: parent
-            color: "black"
+            color: "#000"
             opacity: 0.7
-            radius: 32
+            radius: 15
             
         }
 
@@ -150,7 +149,7 @@ PlasmaCore.ColorScope {
             id: clock
             visible: y > 0
             anchors.horizontalCenter: parent.horizontalCenter
-            y: (userListComponent.userList.y + mainStack.y)/0.6 - height/2
+            y: (userListComponent.userList.y + mainStack.y)/0.7 - height/2
         }
         
         SessionButton{
@@ -158,23 +157,23 @@ PlasmaCore.ColorScope {
             
             anchors {
                 horizontalCenter: parent.horizontalCenter
-                bottom: clock.bottom
-                bottomMargin: units.largeSpacing * -5.0
+                bottom: phrasesModel.top
+                bottomMargin: units.largeSpacing * 2.0
             }
         }
         
-         PhrasesModel {
-             id: phrasesModel
-             anchors{
-                 horizontalCenter: parent.horizontalCenter
-                 bottom: sessionButton.bottom
-                 bottomMargin: units.gridUnit * -7.9
-             }
-         }
+        PhrasesModel {
+            id: phrasesModel
+            anchors{
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+                bottomMargin: units.gridUnit * 8
+            }
+        }
         
         Row { 
             id: actionItems
-            spacing: units.largeSpacing / 5
+            spacing: units.largeSpacing / 2
             
             anchors {
                 horizontalCenter: parent.horizontalCenter
@@ -216,7 +215,7 @@ PlasmaCore.ColorScope {
                 right: parent.right
             }
             
-            height: root.height + PlasmaCore.Units.gridUnit * -3
+            height: root.height + units.gridUnit * -3
              
             focus: true //StackView is an implicit focus scope, so we need to give this focus so the item inside will have it
 
@@ -250,16 +249,16 @@ PlasmaCore.ColorScope {
                     }
 
                     notificationMessage: {
-                    const parts = [];
-                    if (keystateSource.data["Caps Lock"]["Locked"]) {
-                        parts.push(i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Caps Lock is on"));
+                        var text = ""
+                        if (keystateSource.data["Caps Lock"]["Locked"]) {
+                            text += i18nd("plasma_lookandfeel_org.kde.lookandfeel","Caps Lock is on")
+                            if (root.notificationMessage) {
+                                text += " • "
+                            }
+                        }
+                        text += root.notificationMessage
+                        return text
                     }
-                    if (root.notificationMessage) {
-                        parts.push(root.notificationMessage);
-                    }
-                    return parts.join(" • ");
-                   
-                }
                     
                     onLoginRequest: {
                         root.notificationMessage = ""

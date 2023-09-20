@@ -1,19 +1,33 @@
 /*
-    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
+ *   Copyright 2016 David Edmundson <davidedmundson@kde.org>
+ *
+ *   This program is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU Library General Public License as
+ *   published by the Free Software Foundation; either version 2 or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details
+ *
+ *   You should have received a copy of the GNU Library General Public
+ *   License along with this program; if not, write to the
+ *   Free Software Foundation, Inc.,
+ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
 
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+import QtQuick 2.2
 
-import QtQuick 2.15
-
-import QtQuick.Layouts 1.15
+import QtQuick.Layouts 1.1
+import QtQuick.Controls 1.1
 
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 
-FocusScope {
+Item {
     id: root
-
+    
     /*
      * Any message to be displayed to the user, visible above the text fields
      */
@@ -22,30 +36,18 @@ FocusScope {
     /*
      * A list of Items (typically ActionButtons) to be shown in a Row beneath the prompts
      */
-    property alias actionItems: actionItemsLayout.children
 
     /*
-     * Whether to show or hide the list of action items as a whole.
-     */
-    property alias actionItemsVisible: actionItemsLayout.visible
-
-    /*
-     * A model with a list of users to show in the view.
-     * There are different implementations in sddm greeter (UserModel) and
-     * KScreenLocker (SessionsModel), so some roles will be missing.
+     * A model with a list of users to show in the view
+     * The following roles should exist:
+     *  - name
+     *  - iconSource
      *
-     * type: {
-     *  name: string,
-     *  realName: string,
-     *  homeDir: string,
-     *  icon: string,
-     *  iconName?: string,
-     *  needsPassword?: bool,
-     *  displayNumber?: string,
-     *  vtNumber?: int,
-     *  session?: string
-     *  isTty?: bool,
-     * }
+     * The following are also handled:
+     *  - vtNumber
+     *  - displayNumber
+     *  - session
+     *  - isTty
      */
     property alias userListModel: userListView.model
 
@@ -53,61 +55,92 @@ FocusScope {
      * Self explanatory
      */
     property alias userListCurrentIndex: userListView.currentIndex
-    property alias userListCurrentItem: userListView.currentItem
+    property var userListCurrentModelData: userListView.currentItem === null ? [] : userListView.currentItem.m
     property bool showUserList: true
 
     property alias userList: userListView
 
-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
+    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize
 
     default property alias _children: innerLayout.children
 
-    signal userSelected()
-
-    // FIXME: move this component into a layout, rather than abusing
-    // anchors and implicitly relying on other components' built-in
-    // whitespace to avoid items being overlapped.
     UserList {
         id: userListView
+
         visible: showUserList && y > 0
         anchors {
-            bottom: parent.verticalCenter
-            // We only need an extra bottom margin when text is constrained,
-            // since only in this case can the username label be a multi-line
-            // string that would otherwise overflow.
-            bottomMargin: constrainText ? PlasmaCore.Units.gridUnit * 3 : 0
-            left: parent.left
-            right: parent.right
+            horizontalCenter: parent.horizontalCenter
+            bottom: parent.verticalCenter   
+            bottomMargin: units.largeSpacing * 2
         }
-        fontSize: root.fontSize
-        // bubble up the signal
-        onUserSelected: root.userSelected()
+        
     }
+    
 
+    PlasmaComponents3.Button {
+
+        Layout.preferredHeight: 350
+        Layout.preferredWidth: 350
+        anchors{
+            top: userListView.verticalCenter
+            left: userListView.right
+            leftMargin: units.largeSpacing * 5
+        }
+        background: Rectangle {
+        color: "#00000000"
+    }
+        icon.name: "/usr/share/sddm/themes/biglinux/components/artwork/go-next.svg"
+        
+        
+        visible: userListView.count > 3 ? true : false
+    
+        onClicked: userListView.incrementCurrentIndex()
+    }
+    
+    
+    PlasmaComponents3.Button {
+
+        Layout.preferredHeight: 350
+        Layout.preferredWidth: 350
+        anchors{
+            top: userListView.verticalCenter
+            right: userListView.left
+            rightMargin: units.largeSpacing * 5
+        }
+        background: Rectangle {
+        color: "#00000000"
+    }   
+        icon.name: "/usr/share/sddm/themes/biglinux/components/artwork/go-previous.svg"
+        
+        visible: userListView.count > 3 ? true : false
+        onClicked: userListView.decrementCurrentIndex()
+    }
+    
     //goal is to show the prompts, in ~16 grid units high, then the action buttons
     //but collapse the space between the prompts and actions if there's no room
     //ui is constrained to 16 grid units wide, or the screen
     ColumnLayout {
         id: prompts
-        anchors.top: parent.verticalCenter
-        anchors.topMargin: PlasmaCore.Units.gridUnit * 0.5
+        anchors.top: userListView.bottom
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.bottom: parent.bottom
         PlasmaComponents3.Label {
             id: notificationsLabel
+            color: "#fff"
             font.pointSize: root.fontSize
-            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
+            Layout.maximumWidth: units.gridUnit * 16
             Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true
+            Layout.topMargin: 20
+            Layout.bottomMargin: 20
             horizontalAlignment: Text.AlignHCenter
             wrapMode: Text.WordWrap
             font.italic: true
         }
         ColumnLayout {
             Layout.minimumHeight: implicitHeight
-            Layout.maximumHeight: PlasmaCore.Units.gridUnit * 10
-            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
+            Layout.maximumHeight: units.gridUnit * 5
+            Layout.maximumWidth: units.gridUnit * 16
             Layout.alignment: Qt.AlignHCenter
             ColumnLayout {
                 id: innerLayout
@@ -118,18 +151,6 @@ FocusScope {
                 Layout.fillHeight: true
             }
         }
-        Item {
-            Layout.alignment: Qt.AlignHCenter
-            implicitHeight: actionItemsLayout.implicitHeight
-            implicitWidth: actionItemsLayout.implicitWidth
-            Row { //deliberately not rowlayout as I'm not trying to resize child items
-                id: actionItemsLayout
-                anchors.verticalCenter: parent.top
-                spacing: PlasmaCore.Units.largeSpacing / 2
-            }
-        }
-        Item {
-            Layout.fillHeight: true
-        }
+
     }
 }

@@ -28,7 +28,7 @@ ColumnLayout {
     Label {
         id: time
         text: Qt.formatTime(timeSource.data["Local"]["DateTime"])
-        color: "white"
+        color: "#fff"
         style: softwareRendering ? Text.Outline : Text.Normal
         styleColor: softwareRendering ? ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
         font.pointSize: 25
@@ -37,7 +37,7 @@ ColumnLayout {
     Label {
         id: date
         text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
-        color: "#999"
+        color: "#ccc"
         style: softwareRendering ? Text.Outline : Text.Normal
         styleColor: softwareRendering ? ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
         font.pointSize: 15

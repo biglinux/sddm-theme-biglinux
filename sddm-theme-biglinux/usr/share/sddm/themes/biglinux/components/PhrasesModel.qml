@@ -25,8 +25,8 @@ import QtQuick.Layouts 1.1
 PlasmaComponents3.Label {
             id: phrasesLabel
             
-            text: "Até 1954, os sinais de parada 
-dos semáforos eram amarelos"
+            text: "O nosso planeta é o único do sistema solar que
+não tem o nome de um deus da mitologia"
             color: "#999"
             font.pointSize: root.fontSize
             Layout.maximumWidth: units.gridUnit * 16
