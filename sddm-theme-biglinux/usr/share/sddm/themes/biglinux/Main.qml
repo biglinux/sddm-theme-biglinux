@@ -116,7 +116,7 @@ PlasmaCore.ColorScope {
        
        Item {
         anchors.centerIn: parent
-        implicitWidth: parent.width / 2.5
+        implicitWidth: parent.width / 2.0
         implicitHeight: parent.height / 1.5
         width: Math.max(150, implicitWidth)
         height: Math.max(150, implicitHeight)
