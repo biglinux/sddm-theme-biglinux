@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Ruscher
+Description=Ruscher-SddmGreeterTheme.
+Screenshot=preview.png
+License=CC-BY-SA
+Type=sddm-theme
+Version=1.0
+Screenshot=preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=Ruscher
+Theme-API=2.0
