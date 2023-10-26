@@ -25,8 +25,7 @@ import QtQuick.Layouts 1.1
 PlasmaComponents3.Label {
             id: phrasesLabel
             
-            text: "O nosso planeta é o único do sistema solar que
-não tem o nome de um deus da mitologia"
+            text: "Os cangurus não podem pular para trás"
             color: "#999"
             font.pointSize: root.fontSize
             Layout.maximumWidth: units.gridUnit * 16
