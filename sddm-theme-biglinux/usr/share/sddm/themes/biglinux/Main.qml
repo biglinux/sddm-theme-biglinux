@@ -20,12 +20,13 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick 2.8
+
+import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.1
-import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Controls 2.12 as QQC2
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 3.0 as PlasmaComponents
+import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 import "components"
@@ -115,10 +116,14 @@ PlasmaCore.ColorScope {
        
        Item {
         anchors.centerIn: parent
-        implicitWidth: parent.width / 2.0
+        implicitWidth: parent.width / 2.5
         implicitHeight: parent.height / 1.5
         width: Math.max(150, implicitWidth)
         height: Math.max(150, implicitHeight)
+        
+       
+        
+        
         
         Rectangle { 
             id: backgroundBox
@@ -127,6 +132,7 @@ PlasmaCore.ColorScope {
             color: "#000"
             opacity: 0.7
             radius: 15
+            
             
         }
 
@@ -148,7 +154,7 @@ PlasmaCore.ColorScope {
             id: clock
             visible: y > 0
             anchors.horizontalCenter: parent.horizontalCenter
-            y: (userListComponent.userList.y + mainStack.y)/0.7 - height/2
+            y: (userListComponent.userList.y + mainStack.y)*1.9 - height/2
         }
         
         SessionButton{
@@ -157,7 +163,7 @@ PlasmaCore.ColorScope {
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 bottom: phrasesModel.top
-                bottomMargin: units.largeSpacing * 2.0
+                bottomMargin: units.largeSpacing * 0.5
             }
         }
         
