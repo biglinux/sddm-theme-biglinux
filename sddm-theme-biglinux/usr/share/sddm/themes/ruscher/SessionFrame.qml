@@ -28,7 +28,7 @@ Item {
     }
 
     function isMultipleSessions() {
-        return sessionList.count > 1
+        return sessionList.count > 0
     }
 
     onOpacityChanged: {

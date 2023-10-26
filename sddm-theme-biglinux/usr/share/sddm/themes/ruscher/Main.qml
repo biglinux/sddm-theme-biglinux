@@ -1,7 +1,5 @@
 /***********************************************************************/
 
-
-
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 1.1
@@ -17,7 +15,8 @@ import SddmComponents 2.0
 
 import "components"
 
-PlasmaCore.ColorScope {
+
+Rectangle {
     id: root
     width: 640
     height: 480
@@ -27,11 +26,6 @@ PlasmaCore.ColorScope {
     readonly property int vMargin: 30
     readonly property int m_powerButtonSize: 30
     readonly property color textColor: "#ffffff"
-    
-    //ruscher
-    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
-    colorGroup: PlasmaCore.Theme.ComplementaryColorGroup
-    readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
 
     TextConstants { id: textConstants }
 
@@ -42,7 +36,7 @@ PlasmaCore.ColorScope {
             PropertyChanges { target: powerFrame; opacity: 1}
             PropertyChanges { target: sessionFrame; opacity: 0}
             PropertyChanges { target: userFrame; opacity: 0}
-            PropertyChanges { target: bgBlur; radius: 60}
+            PropertyChanges { target: bgBlur; radius: 30}
         },
         State {
             name: "stateSession"
@@ -50,7 +44,7 @@ PlasmaCore.ColorScope {
             PropertyChanges { target: powerFrame; opacity: 0}
             PropertyChanges { target: sessionFrame; opacity: 1}
             PropertyChanges { target: userFrame; opacity: 0}
-            PropertyChanges { target: bgBlur; radius: 60}
+            PropertyChanges { target: bgBlur; radius: 30}
         },
         State {
             name: "stateUser"
@@ -58,7 +52,7 @@ PlasmaCore.ColorScope {
             PropertyChanges { target: powerFrame; opacity: 0}
             PropertyChanges { target: sessionFrame; opacity: 0}
             PropertyChanges { target: userFrame; opacity: 1}
-            PropertyChanges { target: bgBlur; radius: 60}
+            PropertyChanges { target: bgBlur; radius: 30}
         },
         State {
             name: "stateLogin"
@@ -66,56 +60,34 @@ PlasmaCore.ColorScope {
             PropertyChanges { target: powerFrame; opacity: 0}
             PropertyChanges { target: sessionFrame; opacity: 0}
             PropertyChanges { target: userFrame; opacity: 0}
-            PropertyChanges { target: bgBlur; radius: 30}
+            PropertyChanges { target: bgBlur; radius: 0}
         }
 
     ]
     transitions: Transition {
-        PropertyAnimation { duration: 100; properties: "opacity";  }
-        PropertyAnimation { duration: 300; properties: "radius"; }
+        //PropertyAnimation { duration: 100; properties: "opacity";  }
+        //PropertyAnimation { duration: 300; properties: "radius"; }
     }
 
-    
-    
-    
-    
-
-    /*Item {
-        id: mainFrame
-        
-        
-        Repeater {
-            model: screenModel
-            Background {
-                x: geometry.x; y: geometry.y; width: geometry.width; height:geometry.height
-                source: config.background
-                fillMode: Image.Tile
-                onStatusChanged: {
-                    if (status == Image.Error && source !== config.defaultBackground) {
-                        source = config.defaultBackground
-                    }
+    Repeater {
+        model: screenModel
+        Background {
+            x: geometry.x; y: geometry.y; width: geometry.width; height:geometry.height
+            source: config.background
+            fillMode: Image.Tile
+            onStatusChanged: {
+                if (status == Image.Error && source !== config.defaultBackground) {
+                    source = config.defaultBackground
                 }
             }
-        }   */     
+        }
+    }
+
     Item {
         id: mainFrame
-        anchors.fill: parent
-        Repeater {
-            model: screenModel
-
-            Background {
-                x: geometry.x; y: geometry.y; width: geometry.width; height:geometry.height
-                source: config.background
-                fillMode: Image.Tile
-                // sceneBackgroundType: config.type
-                // sceneBackgroundColor: config.color
-                // sceneBackgroundImage: config.background
-            }
-        }    
-        
         property variant geometry: screenModel.geometry(screenModel.primary)
         x: geometry.x; y: geometry.y; width: geometry.width; height: geometry.height
-
+        
         DropShadow {
             id: clockShadow
             anchors.fill: clock
@@ -147,7 +119,6 @@ PlasmaCore.ColorScope {
 
             Layout.alignment: Qt.AlignBaseline
         }        
-        
 
         Image {
             id: mainFrameBackground
@@ -181,8 +152,6 @@ PlasmaCore.ColorScope {
                 onNeedRestart: sddm.reboot()
                 onNeedSuspend: sddm.suspend()
             }
-            
-            
 
             SessionFrame {
                 id: sessionFrame
@@ -224,15 +193,32 @@ PlasmaCore.ColorScope {
                 transformOrigin: Item.Top
             }
             
-            
+            DropShadow {
+                id: phrasesShadow
+                anchors.fill: phrasesModel
+                source: phrasesModel
+                visible: !softwareRendering
+                radius: 6
+                samples: 14
+                spread: 0.3
+                color : "black" // shadows should always be black
+                Behavior on opacity {
+                    OpacityAnimator {
+                        duration: PlasmaCore.Units.veryLongDuration * 2
+                        easing.type: Easing.InOutQuad
+                    }
+                }
+            }
             PhrasesModel {
                 id: phrasesModel
+                //ruscher
+                property Item shadow: phrasesShadow
                 anchors{
                     horizontalCenter: parent.horizontalCenter
                     bottom: sessionButton.bottom
                     bottomMargin: units.gridUnit * -7.9
                 }
-            }
+            }            
             
         }
 
@@ -256,7 +242,8 @@ PlasmaCore.ColorScope {
                     id: sessionButton
                     width: m_powerButtonSize
                     height: m_powerButtonSize
-                    visible: sessionFrame.isMultipleSessions()
+                    //ruscher
+                    visible: true//sessionFrame.isMultipleSessions()
                     normalImg: sessionFrame.getCurrentSessionIconIndicator()
                     onClicked: {
                         root.state = "stateSession"
