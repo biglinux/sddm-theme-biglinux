@@ -65,8 +65,8 @@ Rectangle {
 
     ]
     transitions: Transition {
-        //PropertyAnimation { duration: 100; properties: "opacity";  }
-        //PropertyAnimation { duration: 300; properties: "radius"; }
+        PropertyAnimation { duration: 100; properties: "opacity";  }
+        PropertyAnimation { duration: 500; properties: "radius"; }
     }
 
     Repeater {
@@ -88,6 +88,37 @@ Rectangle {
         property variant geometry: screenModel.geometry(screenModel.primary)
         x: geometry.x; y: geometry.y; width: geometry.width; height: geometry.height
         
+       
+
+        Image {
+            id: mainFrameBackground
+            anchors.fill: parent
+            source: "wallpaper"
+        }
+
+        FastBlur {
+            id: bgBlur
+            anchors.fill: mainFrameBackground
+            source: mainFrameBackground
+            radius: 0
+        }
+        
+        
+        
+        Battery {
+                anchors {
+                    top: parent.top
+                    topMargin: units.largeSpacing + 2.5
+                    right: parent.right
+                    rightMargin: units.largeSpacing
+                    
+                }
+        } 
+
+        KeyboardButton {
+            
+        }                
+
         DropShadow {
             id: clockShadow
             anchors.fill: clock
@@ -104,7 +135,7 @@ Rectangle {
                 }
             }
         }
-        
+
         Clock {
             id: clock
             property Item shadow: clockShadow
@@ -113,25 +144,13 @@ Rectangle {
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 bottom: parent.bottom
-                bottomMargin: 85  // Ajuste esta margem de acordo com sua preferência
+                bottomMargin: 0  // Ajuste esta margem de acordo com sua preferência
                 
             }
 
             Layout.alignment: Qt.AlignBaseline
-        }        
-
-        Image {
-            id: mainFrameBackground
-            anchors.fill: parent
-            source: "wallpaper"
-        }
-
-        FastBlur {
-            id: bgBlur
-            anchors.fill: mainFrameBackground
-            source: mainFrameBackground
-            radius: 0
-        }
+        }                     
+        
 
         Item {
             id: centerArea
@@ -192,6 +211,8 @@ Rectangle {
                 opacity: 0
                 transformOrigin: Item.Top
             }
+            
+
             
             DropShadow {
                 id: phrasesShadow
