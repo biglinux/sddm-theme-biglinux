@@ -53,16 +53,17 @@ if [ "$content" != "0" ]; then
                     if [[ "$wallpaper" != /usr/* ]]; then
                         # Copy the wallpaper to the SDDM theme folder and name it "wallpaper"
                         cp -f "$wallpaper" "/usr/share/sddm/themes/biglinux/wallpaper"
-                        sudo cp -f "$wallpaper" "/usr/share/sddm/themes/ruscher/wallpaper"
+                        cp -f "$wallpaper" "/usr/share/sddm/themes/ruscher/wallpaper"
                         wallpaper="/usr/share/sddm/themes/biglinux/wallpaper"
                     fi
+                    cp -f "$wallpaper" "/usr/share/sddm/themes/ruscher/wallpaper"
 
 
                     # Update the background in the SDDM theme configuration file
                     sudo sed -i "s|^background=.*|background=$wallpaper|" /usr/share/sddm/themes/biglinux/theme.conf.user
                     
                     #ruscher
-                    sudo sed -i "s|^background=.*|background=$wallpaper|" /usr/share/sddm/themes/ruscher/theme.conf
+                    sudo sed -i "s|^background=.*|background=wallpaper|" /usr/share/sddm/themes/ruscher/theme.conf
                     
                     echo "SDDM background updated successfully."
                 else
