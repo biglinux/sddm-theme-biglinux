@@ -20,7 +20,7 @@ Item {
             passwdInput.echoMode = TextInput.Normal
             passwdInput.text = textConstants.loginFailed
             passwdInput.focus = false
-            passwdInput.color = "#e7b222"
+            passwdInput.color = "#00ffff"
             glowAnimation.running = false
         }
     }
@@ -33,6 +33,7 @@ Item {
 
         UserAvatar {
             id: userIconRec
+
             anchors {
                 top: parent.top
                 topMargin: parent.height / 4
@@ -60,7 +61,7 @@ Item {
                 running: false
                 alwaysRunToEnd: true
                 loops: Animation.Infinite
-                PropertyAnimation { to: 20 ; duration: 1000}
+                PropertyAnimation { to: 35 ; duration: 1000}
                 PropertyAnimation { to: 0 ; duration: 1000}
             }
         }
@@ -89,7 +90,7 @@ Item {
             width: 260
             height: 35
             radius: 50
-            color: "#55000000"
+            color: "#99000000"
             
 
             TextInput {
