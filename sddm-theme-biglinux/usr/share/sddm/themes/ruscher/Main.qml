@@ -243,8 +243,13 @@ Rectangle {
                     width: m_powerButtonSize
                     height: m_powerButtonSize
                     //ruscher
-                    visible: true//sessionFrame.isMultipleSessions()
-                    normalImg: sessionFrame.getCurrentSessionIconIndicator()
+                    visible: sessionFrame.isMultipleSessions()
+
+                    normalImg: "icons/switchframe/unknow_indicator_normal.png"
+                    hoverImg: "icons/switchframe/unknow_indicator_hover.png"
+                    pressImg: "icons/switchframe/unknow_indicator_press.png"                    
+                    
+                    //normalImg: sessionFrame.getCurrentSessionIconIndicator()
                     onClicked: {
                         root.state = "stateSession"
                         sessionFrame.focus = true
@@ -294,7 +299,9 @@ Rectangle {
                     height: m_powerButtonSize
                     visible: true//sddm.canPowerOff
 
-                    normalImg: "icons/switchframe/powermenu.png"
+                    normalImg: "icons/switchframe/shutdown_normal.png"
+                    hoverImg: "icons/switchframe/shutdown_hover.png"
+                    pressImg: "icons/switchframe/shutdown_press.png"                    
                     onClicked: {
                         console.log("Show shutdown menu")
                         root.state = "statePower"
