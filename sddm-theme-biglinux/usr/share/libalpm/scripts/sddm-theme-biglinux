@@ -5,3 +5,8 @@ cp -f /usr/share/sddm/themes/biglinux/config/kdeglobals /var/lib/sddm/.config/kd
 cp -f /usr/share/sddm/themes/biglinux/config/plasmarc /var/lib/sddm/.config/plasmarc
 chown -R sddm:sddm /var/lib/sddm/
 cp -f /usr/share/sddm/scripts/Xsetup-big /usr/share/sddm/scripts/Xsetup
+
+# Solve problem in update 0.20.0-2, without fix keyboard and mouse not work in sddm
+if grep -q 'InputMethod=qtvirtualkeyboard *$' /etc/sddm.conf; then
+        sed -i 's|InputMethod=qtvirtualkeyboard|InputMethod=qtvirtualkeyboard,compose|g' /etc/sddm.conf
+fi
