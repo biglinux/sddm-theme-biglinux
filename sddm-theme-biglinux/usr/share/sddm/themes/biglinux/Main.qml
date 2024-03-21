@@ -205,16 +205,14 @@ Item {
                     }
                     return parts.join(" • ");
                 }
-                
-                
-                
+
                 SessionButton {
                     id: sessionButton
-                    
+
                     font.pointSize: config.fontSize
                     width: parent.width * 0.5 // Isso define a largura para ser metade da largura do pai, como exemplo
-                    height: Kirigami.Units.gridUnit * 8 // Altura definida explicitamente
-                    
+                    height: Kirigami.Units.gridUnit * 4  // Altura definida explicitamente
+
                     // Definindo a aparência do botão
                     background: Rectangle {
                         color: "#32373c" // Cor de fundo do botão
@@ -222,7 +220,7 @@ Item {
                         border.color: "white" // Cor da borda
                         border.width: 1 // Largura da borda
                     }
-                    
+
                     // Definindo o estilo do texto
                     contentItem: Text {
                         text: sessionButton.text
@@ -235,22 +233,20 @@ Item {
                         topPadding: 10 // Aumentando o padding superior
                         bottomPadding: 10 // Aumentando o padding inferior
                     }
-                    
+
                     anchors {
                         horizontalCenter: parent.horizontalCenter
                         bottom: parent.bottom
-                        bottomMargin: Kirigami.Units.largeSpacing * 2
+                        bottomMargin: Kirigami.Units.largeSpacing * 6
                     }
-                    
+
                     onSessionChanged: {
                         // Otherwise the password field loses focus and virtual keyboard
                         // keystrokes get eaten
                         userListComponent.mainPasswordBox.forceActiveFocus();
                     }
                 }
-                
-                
-                
+
                 PhrasesModel {
                     id: phrasesModel
                     anchors{
@@ -259,7 +255,7 @@ Item {
                         topMargin: Kirigami.Units.largeSpacing * 4
                     }
                 }
-                
+
                 Item {
                     Layout.fillWidth: true
                 }
@@ -269,9 +265,7 @@ Item {
                     sddm.login(username, password, sessionButton.currentIndex)
                 }
             }
-            
-            
-            
+
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
@@ -490,15 +484,16 @@ Item {
                     onClicked: sddm.powerOff()
                     enabled: sddm.canPowerOff
                 }
-                ActionButton {
-                    iconSource: "system-user-list"
-                    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "List Users")
-                    fontSize: parseInt(config.fontSize) + 1
-                    onClicked: mainStack.pop()
-                }
+                // ActionButton {
+                //         iconSource: "system-user-prompt"
+                //         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "For switching to a username and password prompt", "Other…")
+                //         fontSize: parseInt(config.fontSize) + 1
+                //         onClicked: mainStack.push(userPromptComponent)
+                //         enabled: true
+                //         visible: !userListComponent.showUsernamePrompt
+                // }
             }
-        
-        
+
             // Note: Containment masks stretch clickable area of their buttons to
             // the screen edges, essentially making them adhere to Fitts's law.
             // Due to virtual keyboard button having an icon, buttons may have
@@ -514,16 +509,16 @@ Item {
                     margins: Kirigami.Units.smallSpacing
                 }
                 spacing: Kirigami.Units.smallSpacing
-            
+
                 Behavior on opacity {
                     OpacityAnimator {
                         duration: Kirigami.Units.longDuration
                     }
                 }
-            
+
                 PlasmaComponents3.ToolButton {
                     id: virtualKeyboardButton
-            
+
                     text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
                     font.pointSize: config.fontSize
                     icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
@@ -534,7 +529,7 @@ Item {
                         inputPanel.showHide()
                     }
                     visible: inputPanel.status === Loader.Ready
-            
+
                     Layout.fillHeight: true
                     containmentMask: Item {
                         parent: virtualKeyboardButton
@@ -543,18 +538,18 @@ Item {
                         anchors.bottomMargin: -footer.anchors.margins
                     }
                 }
-            
+
                 KeyboardButton {
                     id: keyboardButton
-            
+
                     font.pointSize: config.fontSize
-            
+
                     onKeyboardLayoutChanged: {
                         // Otherwise the password field loses focus and virtual keyboard
                         // keystrokes get eaten
                         userListComponent.mainPasswordBox.forceActiveFocus();
                     }
-            
+
                     Layout.fillHeight: true
                     containmentMask: Item {
                         parent: keyboardButton
@@ -563,11 +558,11 @@ Item {
                         anchors.bottomMargin: -footer.anchors.margins
                     }
                 }
-            
+
                 Item {
                     Layout.fillWidth: true
                 }
-            
+
                 Battery {
                     fontSize: config.fontSize
                 }

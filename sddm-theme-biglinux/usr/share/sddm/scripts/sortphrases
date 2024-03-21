@@ -13,7 +13,7 @@ else
     fi
 fi
 
-cat << EOF > /usr/share/sddm/themes/biglinux/components/PhrasesModel.qml
+cat << EOF > /usr/share/sddm/themes/biglinux/PhrasesModel.qml
 
 /*
  *   Copyright 2023 Douglas Guimarães <dg2003gh@gmail.com>
