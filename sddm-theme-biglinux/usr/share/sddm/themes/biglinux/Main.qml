@@ -238,7 +238,7 @@ Item {
                         horizontalCenter: parent.horizontalCenter
                         bottom: parent.bottom
                         // bottomMargin: Kirigami.Units.largeSpacing * 6
-                        bottomMargin: Kirigami.Units.largeSpacing
+                        bottomMargin: Kirigami.Units.smallSpacing
                     }
 
                     onSessionChanged: {
