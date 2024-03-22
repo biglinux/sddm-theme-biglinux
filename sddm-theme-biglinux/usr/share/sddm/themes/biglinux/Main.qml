@@ -237,7 +237,8 @@ Item {
                     anchors {
                         horizontalCenter: parent.horizontalCenter
                         bottom: parent.bottom
-                        bottomMargin: Kirigami.Units.largeSpacing * 6
+                        // bottomMargin: Kirigami.Units.largeSpacing * 6
+                        bottomMargin: Kirigami.Units.largeSpacing
                     }
 
                     onSessionChanged: {
