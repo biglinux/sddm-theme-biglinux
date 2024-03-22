@@ -14,3 +14,4 @@ TranslationsDirectory=translations
 Email=bigbruno@gmail.com
 Theme-Id=breeze
 Theme-API=2.0
+QtVersion=6
