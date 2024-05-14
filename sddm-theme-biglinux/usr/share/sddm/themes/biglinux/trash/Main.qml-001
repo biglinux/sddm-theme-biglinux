@@ -206,57 +206,44 @@ Item {
                     return parts.join(" • ");
                 }
 
-                SessionButton {
+                                SessionButton {
                     id: sessionButton
-
+                    
                     font.pointSize: config.fontSize
-                    width: parent.width * 0.5 // Isso define a largura para ser metade da largura do pai, como exemplo
-                    height: Kirigami.Units.gridUnit * 4  // Altura definida explicitamente
-
-                    // Definindo a aparência do botão
-                    background: Rectangle {
-                        color: "#32373c" // Cor de fundo do botão
-                        radius: height / 2 // Isso cria bordas arredondadas
-                        border.color: "white" // Cor da borda
-                        border.width: 1 // Largura da borda
-                    }
-
-                    // Definindo o estilo do texto
-                    contentItem: Text {
-                        text: sessionButton.text
-                        color: "white" // Cor do texto
-                        font: sessionButton.font
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        leftPadding: 20 // Aumentando o padding esquerdo
-                        rightPadding: 20 // Aumentando o padding direito
-                        topPadding: 10 // Aumentando o padding superior
-                        bottomPadding: 10 // Aumentando o padding inferior
-                    }
-
+                    
                     anchors {
                         horizontalCenter: parent.horizontalCenter
-                        bottom: parent.bottom
-                        // bottomMargin: Kirigami.Units.largeSpacing * 6
-                        bottomMargin: Kirigami.Units.smallSpacing
+                        bottom: phrasesModel.top
+                        bottomMargin: units.largeSpacing * 2
                     }
-
+                    
                     onSessionChanged: {
                         // Otherwise the password field loses focus and virtual keyboard
                         // keystrokes get eaten
                         userListComponent.mainPasswordBox.forceActiveFocus();
                     }
+                    
+                    Layout.fillHeight: true
+                    containmentMask: Item {
+                        parent: sessionButton
+                        anchors.fill: parent
+                        anchors.leftMargin: virtualKeyboardButton.visible || keyboardButton.visible
+                        // ? 0 : -footer.anchors.margins
+                        // anchors.bottomMargin: -footer.anchors.margins
+                    }
                 }
-
+                
+                
+                
                 PhrasesModel {
                     id: phrasesModel
                     anchors{
                         horizontalCenter: parent.horizontalCenter
-                        top: sessionButton.bottom
-                        topMargin: Kirigami.Units.largeSpacing * 4
+                        bottom: parent.bottom
+                        bottomMargin: units.gridUnit * 4
                     }
                 }
-
+                
                 Item {
                     Layout.fillWidth: true
                 }
@@ -266,7 +253,9 @@ Item {
                     sddm.login(username, password, sessionButton.currentIndex)
                 }
             }
-
+            
+            
+            
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
@@ -448,125 +437,77 @@ Item {
             }
         }
 
-        ColumnLayout {
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
+        // Note: Containment masks stretch clickable area of their buttons to
+        // the screen edges, essentially making them adhere to Fitts's law.
+        // Due to virtual keyboard button having an icon, buttons may have
+        // different heights, so fillHeight is required.
+        //
+        // Note for contributors: Keep this in sync with LockScreenUi.qml footer.
+        RowLayout {
+            id: footer
+            anchors {
+                bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+                margins: Kirigami.Units.smallSpacing
+            }
             spacing: Kirigami.Units.smallSpacing
 
-            // Nova linha para botões de ação
-            RowLayout {
-                id: actionbutton
-                Layout.alignment: Qt.AlignCenter
-                // anchors {
-                //     left: parent.left
-                //     right: parent.right
-                //     margins: Kirigami.Units.smallSpacing
-                // }
-
-                ActionButton {
-                    iconSource: "system-suspend"
-                    text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Suspend to RAM", "Sleep")
-                    fontSize: parseInt(config.fontSize) + 1
-                    onClicked: sddm.suspend()
-                    enabled: sddm.canSuspend
+            Behavior on opacity {
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
                 }
-                ActionButton {
-                    iconSource: "system-reboot"
-                    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Restart")
-                    fontSize: parseInt(config.fontSize) + 1
-                    onClicked: sddm.reboot()
-                    enabled: sddm.canReboot
-                }
-                ActionButton {
-                    iconSource: "system-shutdown"
-                    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Shut Down")
-                    fontSize: parseInt(config.fontSize) + 1
-                    onClicked: sddm.powerOff()
-                    enabled: sddm.canPowerOff
-                }
-                // ActionButton {
-                //         iconSource: "system-user-prompt"
-                //         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "For switching to a username and password prompt", "Other…")
-                //         fontSize: parseInt(config.fontSize) + 1
-                //         onClicked: mainStack.push(userPromptComponent)
-                //         enabled: true
-                //         visible: !userListComponent.showUsernamePrompt
-                // }
             }
 
-            // Note: Containment masks stretch clickable area of their buttons to
-            // the screen edges, essentially making them adhere to Fitts's law.
-            // Due to virtual keyboard button having an icon, buttons may have
-            // different heights, so fillHeight is required.
-            //
-            // Note for contributors: Keep this in sync with LockScreenUi.qml footer.
-            RowLayout {
-                id: footer
-                anchors {
-                    bottom: parent.bottom
-                    left: parent.left
-                    right: parent.right
-                    margins: Kirigami.Units.smallSpacing
+            PlasmaComponents3.ToolButton {
+                id: virtualKeyboardButton
+
+                text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
+                font.pointSize: config.fontSize
+                icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
+                onClicked: {
+                    // Otherwise the password field loses focus and virtual keyboard
+                    // keystrokes get eaten
+                    userListComponent.mainPasswordBox.forceActiveFocus();
+                    inputPanel.showHide()
                 }
-                spacing: Kirigami.Units.smallSpacing
+                visible: inputPanel.status === Loader.Ready
 
-                Behavior on opacity {
-                    OpacityAnimator {
-                        duration: Kirigami.Units.longDuration
-                    }
+                Layout.fillHeight: true
+                containmentMask: Item {
+                    parent: virtualKeyboardButton
+                    anchors.fill: parent
+                    anchors.leftMargin: -footer.anchors.margins
+                    anchors.bottomMargin: -footer.anchors.margins
                 }
+            }
 
-                PlasmaComponents3.ToolButton {
-                    id: virtualKeyboardButton
+            KeyboardButton {
+                id: keyboardButton
 
-                    text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
-                    font.pointSize: config.fontSize
-                    icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
-                    onClicked: {
-                        // Otherwise the password field loses focus and virtual keyboard
-                        // keystrokes get eaten
-                        userListComponent.mainPasswordBox.forceActiveFocus();
-                        inputPanel.showHide()
-                    }
-                    visible: inputPanel.status === Loader.Ready
+                font.pointSize: config.fontSize
 
-                    Layout.fillHeight: true
-                    containmentMask: Item {
-                        parent: virtualKeyboardButton
-                        anchors.fill: parent
-                        anchors.leftMargin: -footer.anchors.margins
-                        anchors.bottomMargin: -footer.anchors.margins
-                    }
+                onKeyboardLayoutChanged: {
+                    // Otherwise the password field loses focus and virtual keyboard
+                    // keystrokes get eaten
+                    userListComponent.mainPasswordBox.forceActiveFocus();
                 }
 
-                KeyboardButton {
-                    id: keyboardButton
-
-                    font.pointSize: config.fontSize
-
-                    onKeyboardLayoutChanged: {
-                        // Otherwise the password field loses focus and virtual keyboard
-                        // keystrokes get eaten
-                        userListComponent.mainPasswordBox.forceActiveFocus();
-                    }
-
-                    Layout.fillHeight: true
-                    containmentMask: Item {
-                        parent: keyboardButton
-                        anchors.fill: parent
-                        anchors.leftMargin: virtualKeyboardButton.visible ? 0 : -footer.anchors.margins
-                        anchors.bottomMargin: -footer.anchors.margins
-                    }
+                Layout.fillHeight: true
+                containmentMask: Item {
+                    parent: keyboardButton
+                    anchors.fill: parent
+                    anchors.leftMargin: virtualKeyboardButton.visible ? 0 : -footer.anchors.margins
+                    anchors.bottomMargin: -footer.anchors.margins
                 }
+            }
 
-                Item {
-                    Layout.fillWidth: true
-                }
+            Item {
+                Layout.fillWidth: true
+            }
 
-                Battery {
-                    fontSize: config.fontSize
-                }
+            Battery {
+                fontSize: config.fontSize
             }
         }
     }

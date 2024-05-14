@@ -51,7 +51,11 @@ if [ "$content" != "0" ]; then
                     fi
 
                     # Update the background in the SDDM theme configuration file
-                    sudo sed -i "s|^background=.*|background=$wallpaper|" /usr/share/sddm/themes/biglinux/theme.conf.user
+                    if [ -n "$(grep background= /usr/share/sddm/themes/biglinux/theme.conf.user)" ];then
+                        sudo sed -i "s|^background=.*|background=$wallpaper|" /usr/share/sddm/themes/biglinux/theme.conf.user
+                    else
+                        echo "background=$wallpaper" | sudo tee -a  /usr/share/sddm/themes/biglinux/theme.conf.user
+                    fi
                     echo "SDDM background updated successfully."
                 else
                     echo "KDE Plasma wallpaper not found for user $username."
