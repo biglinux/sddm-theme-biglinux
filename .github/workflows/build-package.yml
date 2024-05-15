@@ -11,6 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Fortune
+        shell: bash
+        run: |
+          cd sddm-theme-biglinux/usr/share/fortune/
+          strfile biglinux-en
+          strfile biglinux-es
+          strfile biglinux-ptbr
+
       - name: Send Hooks BigLinux Build Package
         shell: bash
         run: |
