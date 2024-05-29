@@ -11,13 +11,11 @@ import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.kirigami 2.20 as Kirigami
 
 PlasmaComponents.ToolButton {
-    id: root
 
     property int currentIndex: -1
-
-    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Desktop Session: %1", instantiator.objectAt(currentIndex).text || "")
+    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "%1", instantiator.objectAt(currentIndex).text || "")
     visible: menu.count > 1
-
+    font.pointSize: config.fontSize
     Component.onCompleted: {
         currentIndex = sessionModel.lastIndex
     }
@@ -25,8 +23,7 @@ PlasmaComponents.ToolButton {
     checked: menu.opened
     onToggled: {
         if (checked) {
-            // menu.popup(root, 0, 0)
-            menu.popup(root, (root.width - menu.width) / 2, root.height)
+            menu.popup()
         } else {
             menu.dismiss()
         }

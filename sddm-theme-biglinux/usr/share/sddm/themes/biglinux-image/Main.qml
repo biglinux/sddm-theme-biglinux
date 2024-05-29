@@ -17,13 +17,14 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Effects
+import QtQuick.Layouts
+import QtQuick.Controls
 import Qt5Compat.GraphicalEffects
-import org.kde.plasma.plasma5support 2.0 as PlasmaCore
-import org.kde.plasma.components 3.0 as PlasmaComponents
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.plasma.plasma5support as PlasmaCore
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.kirigami as Kirigami
 import org.kde.breeze.components
 import "components"
 
@@ -47,77 +48,15 @@ Item {
         connectedSources: "Caps Lock"
     }
 
-    Rectangle {
+    Image {
         id: wallpaper
-        width: root.width
-        height: root.height
-        // Gradient background
-        gradient: Gradient {
-            GradientStop { position: 0.0; color: "#020024" }  // Dark blue at the top
-            GradientStop { position: 1.0; color: "#1e1e1e" }  // Lighter blue at the bottom
-        }
-
-        Canvas {
-            id: canvas
-            anchors.fill: parent
-            property var stars: []
-
-            onPaint: {
-                var ctx = canvas.getContext("2d");
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                // Draw stars
-                for (var i = 0; i < stars.length; i++) {
-                    var star = stars[i];
-                    ctx.beginPath();
-                    ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI, false);
-                    ctx.fillStyle = "rgba(" + star.color.r + ", " + star.color.g + ", " + star.color.b + ", " + star.opacity + ")";
-                    ctx.fill();
-                }
-            }
-
-            function createStar() {
-                var colors = [
-                    {r: 255, g: 255, b: 255}, // White
-                    {r: 255, g: 255, b: 200}, // Yellowish
-                    {r: 255, g: 200, b: 200}, // Reddish
-                    {r: 200, g: 255, b: 200}, // Greenish
-                    {r: 200, g: 200, b: 255}  // Bluish
-                ];
-                var color = colors[Math.floor(Math.random() * colors.length)];
-                return {
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    size: Math.random() * 2 + 1, // Small stars
-                    opacity: Math.random(),
-                    twinkleSpeed: Math.random() * 0.02 + 0.01, // Speed of twinkling
-                    color: color
-                };
-            }
-
-            Component.onCompleted: {
-                for (var i = 0; i < 150; i++) { // Adjust the number of stars to balance performance
-                    stars.push(createStar());
-                }
-                canvas.requestPaint();
-            }
-
-            Timer {
-                interval: 70 // Increase interval to reduce CPU usage
-                running: true
-                repeat: true
-                onTriggered: {
-                    for (var i = 0; i < canvas.stars.length; i++) {
-                        var star = canvas.stars[i];
-                        star.opacity += star.twinkleSpeed;
-                        if (star.opacity <= 0 || star.opacity >= 1) {
-                            star.twinkleSpeed = -star.twinkleSpeed; // Reverse direction for twinkling
-                        }
-                    }
-                    canvas.requestPaint();
-                }
-            }
-        }
+        height: parent.height
+        width: parent.width
+        source: config.background || config.Background
+        asynchronous: true
+        cache: true
+        clip: true
+        visible: true
     }
 
     MouseArea {
@@ -167,6 +106,7 @@ Item {
         PlasmaComponents.ToolButton {
             text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
             font.pointSize: config.fontSize
+            opacity: 0.5
             icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
             onClicked: {
                 // Otherwise the password field loses focus and virtual keyboard
@@ -188,6 +128,7 @@ Item {
             visible: true
             anchors.horizontalCenter: mainStack.horizontalCenter
             anchors.top: mainStack.top
+            anchors.topMargin: 20
             opacity: 0.8
         }
 
@@ -199,13 +140,6 @@ Item {
 
             focus: true //StackView is an implicit focus scope, so we need to give this focus so the item inside will have it
 
-            Timer {
-                running: true
-                repeat: false
-                interval: 200
-                onTriggered: mainStack.forceActiveFocus()
-            }
-            
             initialItem: Login {
                 id: userListComponent
                 userListModel: userModel
@@ -255,15 +189,12 @@ Item {
                         Rectangle {
                             anchors.fill: parent
                             color: "#ffffff"
-                            opacity: 0.15
+                            opacity: 0.1
                             radius: 20
+                            anchors.leftMargin: -15
+                            anchors.rightMargin: -15
                         }
-                        opacity: 0.7
-                                    anchors.fill: parent
-            anchors.leftMargin: -20
-            anchors.rightMargin: -20
-            anchors.topMargin: -2
-            anchors.bottomMargin: -2
+                        opacity: 0.5
                     }
 
                     Battery { }
@@ -272,7 +203,7 @@ Item {
                 actionItems: [
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/suspend.svg")
-                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")                        
+                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                         visible: !inputPanel.keyboardActive
@@ -323,8 +254,29 @@ Item {
             y: root.height / 2 - height / 2
             radius: 16
             color: "#1e1e1e"
-            opacity: 0.85
+            opacity: 0.7
             z:-1
+            visible: true
+        }
+
+        ShaderEffectSource {
+            id: blurSource
+            sourceItem: wallpaper
+                anchors.fill: formBg
+            sourceRect: Qt.rect(formBg.x, formBg.y, formBg.width, formBg.height)
+            visible: false
+            
+        }
+        
+            MultiEffect {
+            source: blurSource
+            anchors.fill: formBg
+            
+            autoPaddingEnabled: true
+            blurEnabled: true
+            blurMax: 64
+            blur: 1.0
+            z:-2
         }
     }
 

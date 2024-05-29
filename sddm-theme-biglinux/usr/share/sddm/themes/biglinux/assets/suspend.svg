@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="svg2" width="32" height="32" version="1.1">
+<style id="current-color-scheme" type="text/css">
+.ColorScheme-Text{color:#fcfcfc}
+</style>
+<g id="system-suspend" transform="translate(-22)">
+<path id="path74" fill="none" d="M22 0v32h32V0Z"/>
+<g id="g64" fill="currentColor" class="ColorScheme-Text">
+<path id="path1336" stroke-width=".923" d="m31.762 101.762-.004.008A12 12 0 0 0 26 112a12 12 0 0 0 12 12 12 12 0 0 0 10.238-5.762l-.732-.732A11 11 0 0 1 42 119a11 11 0 0 1-11-11 11 11 0 0 1 1.486-5.502l.008-.004zm-.961 1.94A12 12 0 0 0 30 108a12 12 0 0 0 12 12 12 12 0 0 0 4.326-.82A11 11 0 0 1 38 123a11 11 0 0 1-11-11 11 11 0 0 1 3.8-8.299" transform="translate(0 -96)"/>
+<path id="rect887-75" d="M44 6v1h2.293l-2 2-.293.293V10h4V9h-2.293l2-2L48 6.707V6h-.707z"/>
+<path id="rect887-35" d="M42 13v1h2.293l-2 2-.293.293V17h4v-1h-2.293l2-2 .293-.293V13h-.707z"/>
+<path id="rect887-35-2" d="M36 8v1h2.293l-2 2-.293.293V12h4v-1h-2.293l2-2L40 8.707V8h-.707z"/>
+</g>
+</g>
+</svg>

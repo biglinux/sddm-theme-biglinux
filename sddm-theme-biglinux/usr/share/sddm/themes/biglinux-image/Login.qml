@@ -49,6 +49,7 @@ SessionManagementScreen {
         Layout.fillWidth: true
         Layout.topMargin: 10
         Layout.bottomMargin: 10
+        anchors.leftMargin: -10
         text: lastUserName
         visible: showUsernamePrompt
         focus: showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
@@ -60,13 +61,20 @@ SessionManagementScreen {
             }
     }
 
+
     Input {
         id: passwordBox
         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
         focus: !showUsernamePrompt || lastUserName
         echoMode: TextInput.Password
-
         Layout.fillWidth: true
+        opacity: 0.7
+
+        background: Rectangle {
+            color: "#ffffff"  // White background
+            opacity: 0.1  // 90% transparency
+            radius: width / 2
+        }
 
         onAccepted: {
             if (root.loginScreenUiVisible) {
@@ -103,19 +111,17 @@ SessionManagementScreen {
         id: loginButton
         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
         enabled: passwordBox.text != ""
-
-        Layout.topMargin: 20
-        Layout.bottomMargin: 10
-        Layout.preferredWidth: 150
-        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                
+        anchors.verticalCenter: passwordBox.verticalCenter
+        anchors.left: passwordBox.right
+        anchors.leftMargin: 20
         font.pointSize: config.fontSize
         font.family: config.font
+        Layout.alignment: Qt.AlignVCenter
 
         contentItem: Text {
-            text: loginButton.text
+            text: '>'
             font: loginButton.font
-            opacity: 0.8
+            opacity: 0.5
             color: config.highlight_color
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -124,12 +130,12 @@ SessionManagementScreen {
 
         background: Rectangle {
             id: buttonBackground
-            width: parent.width
-            height: 30
+            width: passwordBox.height
+            height: passwordBox.height
             anchors.centerIn: parent
             radius: width / 2
-            color: "#00628f"
-            opacity: enabled ? 1.0 : 0.8
+            color: "#ffffff"
+            opacity: enabled ? 0.2 : 0.1
         }
 
         onClicked: startLogin();

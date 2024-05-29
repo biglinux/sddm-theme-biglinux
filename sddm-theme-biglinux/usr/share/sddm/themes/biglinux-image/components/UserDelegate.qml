@@ -47,7 +47,7 @@ Item {
         width: imageSource.width - 2 // Subtract to prevent fringing
         height: width
         radius: width / 2
-        color: "#222838"
+        color: "#767676"
     }
 
     Item {
@@ -97,7 +97,7 @@ Item {
             live: true // otherwise the user in focus will show a blurred avatar
         }
 
-        readonly property color colorBorder: "#b1b1b1"
+        readonly property color colorBorder: "#a5a5a5"
 
         fragmentShader: "qrc:/qt/qml/org/kde/breeze/components/shaders/UserDelegate.frag.qsb"
     }
@@ -124,6 +124,7 @@ Item {
         //make an indication that this has active focus, this only happens when reached with keyboard navigation
         font.underline: wrapper.activeFocus
         font.family: config.font
+        opacity: 0.7
     }
 
     MouseArea {

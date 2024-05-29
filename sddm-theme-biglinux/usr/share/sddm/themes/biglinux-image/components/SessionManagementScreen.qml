@@ -145,12 +145,11 @@ FocusScope {
         }
         Item {
             Layout.alignment: Qt.AlignHCenter
-            Layout.topMargin: 60
+            Layout.topMargin: 80
             implicitHeight: actionItemsLayout.implicitHeight
             implicitWidth: actionItemsLayout.implicitWidth
             Row { //deliberately not rowlayout as I'm not trying to resize child items
                 id: actionItemsLayout
-                anchors.verticalCenter: parent.top
                 spacing: Kirigami.Units.largeSpacing
             }
         }
