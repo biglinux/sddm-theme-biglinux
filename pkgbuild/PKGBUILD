@@ -10,6 +10,11 @@ pkgdesc="Another sddm theme based in breeze"
 depends=('sddm' 'fortune-mod')
 source=("git+https://github.com/biglinux/sddm-theme-biglinux.git")
 md5sums=(SKIP)
+if [ -e "${pkgname}.install" ];then
+    install=${pkgname}.install
+elif [ -e "pkgbuild.install" ];then
+    install=pkgbuild.install
+fi
 
 package() {
     # Verify default folder
