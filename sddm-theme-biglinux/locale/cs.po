@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "Stiskněte / pro filtrování souborů a složek v Dolphin"
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "Použijte ls k vypsání souborů a adresářů v aktuálním adresáři."
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "Využijte příkaz cd k navigaci mezi adresáři. Například, cd Documents"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "Použijte příkaz pwd k vytisknutí aktuálního adresáře."
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "Použijte příkaz mkdir k vytvoření nového adresáře. Příklad: mkdir novy_adresar"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr "Pro vytvoření nového souboru použijte příkaz touch. Příklad: touch novy_soubor.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr "Využijte příkaz cp k kopírování souborů a adresářů. Příklad: cp soubor.txt složka/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr ""
+"Použijte příkaz mv k přesunu nebo přejmenování souborů a adresářů. Příklad: mv soubor.txt "
+"novy_nazev.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "Pro odstranění souborů použijte příkaz rm. Příklad: rm soubor.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr "Použijte rm -r k odstranění adresářů a jejich obsahu. Buďte opatrní, protože je to nevratné."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr "Pro zobrazení obsahu textového souboru použijte příkaz cat. Příklad: cat soubor.txt"

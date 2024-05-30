@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "premere / per filtrare file e cartelle in Dolphin"
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "Utilizzare ls per elencare file e directory nella directory corrente"
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "Utilizza cd per navigare tra le cartelle. Ad esempio, cd Documents"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "Usa pwd per stampare la directory corrente"
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "Utilizzare mkdir per creare una nuova directory. Esempio: mkdir nuovo_directory"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr "Per creare un nuovo file, utilizzare touch. Esempio: touch nuovo_file.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr "Utilizza cp per copiare file e directory. Esempio: cp file.txt cartella/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr "Utilizzare mv per spostare o rinominare file e directory. Esempio: mv file.txt nuovo_nome.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "Per rimuovere i file, utilizzare rm. Esempio: rm file.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr "Utilizzare rm -r per rimuovere directory e il loro contenuto. Attenzione, poiché è irreversibile."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr "Per visualizzare il contenuto di un file di testo, utilizzare cat. Esempio: cat file.txt"

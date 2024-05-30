@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: sddm-theme-biglinux\n"
+        "Report-Msgid-Bugs-To: \n"
+        "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+        "Language-Team: LANGUAGE <LL@li.org>\n"
+        "Language: \n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+msgid   "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr  ""
+
+msgid   "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr  ""
+
+msgid   "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr  ""
+
+msgid   "Use pwd para imprimir o diretório atual"
+msgstr  ""
+
+msgid   "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr  ""
+
+msgid   "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo."
+        "txt"
+msgstr  ""
+
+msgid   "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo."
+        "txt pasta/"
+msgstr  ""
+
+msgid   "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv "
+        "arquivo.txt novo_nome.txt"
+msgstr  ""
+
+msgid   "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr  ""
+
+msgid   "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois "
+        "é irreversível"
+msgstr  ""
+
+msgid   "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: "
+        "cat arquivo.txt"
+msgstr  ""

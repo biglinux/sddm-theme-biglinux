@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "לחץ / כדי לסנן קבצים ותיקיות בדולפין"
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "השתמש ב־ls כדי לרשום קבצים ותיקיות בתיקייה הנוכחית"
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "השתמש ב־cd כדי לנווט בין תיקיות. לדוגמה, cd Documents"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "השתמש ב־pwd כדי להדפיס את התיקייה הנוכחית"
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "השתמש ב־mkdir כדי ליצור תיקייה חדשה. לדוגמה: mkdir תיקייה_חדשה"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr "כדי ליצור קובץ חדש, השתמש ב-touch. לדוגמה: touch קובץ_חדש.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr "השתמש ב־cp כדי להעתיק קבצים ותיקיות. לדוגמה: cp קובץ.txt תיקיית_מטרה/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr "השתמש ב־mv כדי להעביר או לשנות את שמות הקבצים והתיקיות. לדוגמה: mv file.txt new_name.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "כדי להסיר קבצים, השתמש ב־rm. לדוגמה: rm קובץ.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr "השתמש ב־rm -r כדי להסיר ספריות והתוכן שלהן. שים לב, זה לא ניתן לשחזור."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr "כדי להציג את תוכן קובץ טקסט, השתמש ב־cat. לדוגמה: cat קובץ.txt"

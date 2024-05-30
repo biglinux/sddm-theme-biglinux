@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "Trykk / for å filtrere filer og mapper i Dolphin"
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "Bruk ls til å liste filer og mapper i gjeldende mappe"
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "Bruk cd til å navigere mellom mapper. For eksempel, cd Documents"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "Bruk pwd for å skrive ut gjeldende mappe"
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "Bruk mkdir for å opprette en ny mappe. Eksempel: mkdir ny_mappe"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr "For å opprette en ny fil, bruk touch. Eksempel: touch ny_fil.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr "Bruk cp til å kopiere filer og mapper. Eksempel: cp fil.txt mappe/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr "Bruk mv for å flytte eller omdøpe filer og mapper. Eksempel: mv fil.txt nytt_navn.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "For å fjerne filer, bruk rm. Eksempel: rm fil.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr "Bruk rm -r for å fjerne mapper og innholdet i dem. Vær forsiktig, da dette er ugjenkallelig."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr "For å vise innholdet i en tekstfil, bruk cat. Eksempel: cat fil.txt"

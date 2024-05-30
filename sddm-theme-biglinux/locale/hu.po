@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "Nyomja meg az / billentyűt a fájlok és mappák szűréséhez a Dolphinban."
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "Használja az ls parancsot a fájlok és könyvtárak listázásához az aktuális könyvtárban."
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "Használja a cd parancsot a könyvtárak közötti navigáláshoz. Például: cd Dokumentumok"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "Használd a pwd parancsot az aktuális könyvtár megjelenítéséhez."
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "Használja a mkdir parancsot egy új könyvtár létrehozásához. Példa: mkdir új_könyvtár"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr "Új fájl létrehozásához használja a touch parancsot. Példa: touch uj_fajl.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr "Használja a cp parancsot fájlok és könyvtárak másolásához. Példa: cp fájl.txt mappa/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr ""
+"Használja az mv parancsot fájlok és könyvtárak áthelyezésére vagy átnevezésére. Példa: mv fájl.txt "
+"új_nev.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "A fájlok eltávolításához használja az rm parancsot. Példa: rm fájl.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr ""
+"Használja az rm -r parancsot a könyvtárak és tartalmuk eltávolításához. Vigyázat, mert ez "
+"visszafordíthatatlan."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr "A szöveges fájl tartalmának megjelenítéséhez használja a cat parancsot. Példa: cat fájl.txt"

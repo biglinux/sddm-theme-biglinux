@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "Tryk på / for at filtrere filer og mapper i Dolphin"
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "Brug ls til at liste filer og mapper i den aktuelle mappe"
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "Brug cd til at navigere mellem mapper. For eksempel, cd Dokumenter"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "Brug pwd til at udskrive den aktuelle mappe"
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "Brug mkdir til at oprette en ny mappe. Eksempel: mkdir ny_mappe"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr "For at oprette en ny fil, brug touch. Eksempel: touch ny_fil.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr "Brug cp til at kopiere filer og mapper. Eksempel: cp fil.txt mappe/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr "Brug mv til at flytte eller omdøbe filer og mapper. Eksempel: mv fil.txt nytt_navn.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "For at fjerne filer, brug rm. Eksempel: rm fil.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr "Brug rm -r til at fjerne mapper og deres indhold. Vær forsigtig, da det er uopretteligt."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr "For at se indholdet af en tekstfil, brug cat. Eksempel: cat fil.txt"

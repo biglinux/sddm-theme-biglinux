@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "Naciśnij / aby filtrować pliki i foldery w Dolphin"
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "Użyj ls do wyświetlenia plików i katalogów w bieżącym katalogu"
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "Wykorzystaj cd do nawigacji między katalogami. Na przykład, cd Documents"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "Użyj polecenia pwd, aby wyświetlić bieżący katalog."
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "Użyj mkdir, aby utworzyć nowy katalog. Przykład: mkdir nowy_katalog"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr "Aby utworzyć nowy plik, użyj touch. Przykład: touch nowy_plik.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr "Wykorzystaj polecenie cp do kopiowania plików i katalogów. Przykład: cp plik.txt folder/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr ""
+"Użyj polecenia mv do przenoszenia lub zmiany nazwy plików i katalogów. Przykład: mv plik.txt "
+"nowa_nazwa.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "Aby usunąć pliki, użyj polecenia rm. Przykład: rm plik.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr ""
+"Wykorzystaj polecenie rm -r do usuwania katalogów wraz z ich zawartością. Uważaj, ponieważ jest to "
+"operacja nieodwracalna."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr "Aby wyświetlić zawartość pliku tekstowego, użyj polecenia cat. Przykład: cat plik.txt"

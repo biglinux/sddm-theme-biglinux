@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "Натиснете / за филтриране на файлове и папки в Dolphin."
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "Използвайте ls, за да изброите файлове и директории в текущата директория"
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "Използвайте cd, за да навигирате между директории. Например, cd Documents"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "Използвайте pwd, за да отпечатате текущата директория"
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "Използвайте mkdir, за да създадете нова директория. Пример: mkdir нова_директория"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr "За създаване на нов файл използвайте touch. Пример: touch нов_файл.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr "Използвайте cp за копиране на файлове и директории. Пример: cp файл.txt папка/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr ""
+"Използвайте mv за преместване или преименуване на файлове и директории. Пример: mv файл.txt "
+"ново_име.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "За изтриване на файлове използвайте rm. Пример: rm файл.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr ""
+"Използвайте rm -r, за да премахнете директории и техните съдържание. Внимавайте, тъй като това е "
+"необратимо."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr "За да визуализирате съдържанието на текстов файл, използвайте cat. Пример: cat файл.txt"

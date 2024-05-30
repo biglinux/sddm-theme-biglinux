@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "Πατήστε / για να φιλτράρετε αρχεία και φακέλους στο Dolphin"
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "Χρησιμοποιήστε την εντολή ls για να εμφανίσετε τα αρχεία και τους φακέλους στον τρέχοντα φάκελο."
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "Χρησιμοποιήστε το cd για να πλοηγηθείτε μεταξύ καταλόγων. Για παράδειγμα, cd Documents"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "Χρησιμοποιήστε την εντολή pwd για να εκτυπώσετε τον τρέχοντα κατάλογο."
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "Χρησιμοποιήστε την εντολή mkdir για τη δημιουργία ενός νέου φακέλου. Παράδειγμα: mkdir νέος_φάκελος"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr ""
+"Για να δημιουργήσετε ένα νέο αρχείο, χρησιμοποιήστε την εντολή touch. Παράδειγμα: touch "
+"νέο_αρχείο.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr ""
+"Χρησιμοποιήστε την εντολή cp για την αντιγραφή αρχείων και φακέλων. Παράδειγμα: cp αρχείο.txt "
+"φάκελος/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr ""
+"Χρησιμοποιήστε την εντολή mv για τη μετακίνηση ή τη μετονομασία αρχείων και φακέλων. Παράδειγμα: mv "
+"αρχείο.txt νέο_όνομα.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "Για να αφαιρέσετε αρχεία, χρησιμοποιήστε την εντολή rm. Παράδειγμα: rm αρχείο.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr ""
+"Χρησιμοποιήστε την εντολή rm -r για τη διαγραφή καταλόγων και του περιεχομένου τους. Προσοχή, καθώς "
+"είναι μη αναστρέψιμο."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr ""
+"Για να προβάλετε το περιεχόμενο ενός αρχείου κειμένου, χρησιμοποιήστε την εντολή cat. Παράδειγμα: "
+"cat αρχείο.txt"

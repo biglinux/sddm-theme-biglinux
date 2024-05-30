@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "aperte / para filtrar arquivos e pastas no dolphin"
+msgstr "Druk op / om bestanden en mappen te filteren in Dolphin"
+
+msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgstr "Gebruik ls om bestanden en mappen in de huidige map weer te geven"
+
+msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgstr "Gebruik cd om tussen mappen te navigeren. Bijvoorbeeld, cd Documenten"
+
+msgid "Use pwd para imprimir o diretório atual"
+msgstr "Gebruik pwd om de huidige map weer te geven"
+
+msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgstr "Gebruik mkdir om een nieuwe map te maken. Voorbeeld: mkdir nieuwe_map"
+
+msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgstr "Om een nieuw bestand te maken, gebruik touch. Voorbeeld: touch nieuw_bestand.txt"
+
+msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgstr "Gebruik cp om bestanden en mappen te kopiëren. Voorbeeld: cp bestand.txt map/"
+
+msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgstr ""
+"Gebruik mv om bestanden en mappen te verplaatsen of hernoemen. Voorbeeld: mv bestand.txt "
+"nieuwe_naam.txt"
+
+msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgstr "Om bestanden te verwijderen, gebruik rm. Voorbeeld: rm bestand.txt"
+
+msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgstr "Gebruik rm -r om mappen en hun inhoud te verwijderen. Wees voorzichtig, want dit is onomkeerbaar."
+
+msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgstr "Om de inhoud van een tekstbestand te bekijken, gebruik cat. Voorbeeld: cat bestand.txt"
