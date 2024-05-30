@@ -2,74 +2,6 @@
 # Xsetup - run as root before the login dialog appears
 
 
-# if [ "$(xrandr | grep -c " connected")" -gt "1" ]; then
-#     /usr/local/bin/autorandr common
-# fi
-
-
-# Read the content of /etc/sddm-biglinux.conf
-if [ -f "/etc/sddm-biglinux.conf" ]; then
-    content=$(cat "/etc/sddm-biglinux.conf")
-else
-    content=""
-fi
-
-# Check if the content is not "0"
-if [ "$content" != "0" ]; then
-
-    # If the content is empty or there's only one non-system user, set the last logged-in user as the single user
-    num_users=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print}' /etc/passwd | wc -l)
-    if [ -z "$content" ] && [ $num_users -eq 1 ]; then
-        username=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd)
-    elif [ -z "$content" ] && [ $num_users -gt 1 ]; then
-        username=$(grep -E "^User" /var/lib/sddm/state.conf | cut -d= -f2 | tr -d '[:blank:]')
-    else
-        username="$content"
-    fi
-        
-        # Verify the existence of the KDE Plasma user configuration directory
-        kde_config_dir="/home/$username/.config"
-        if [ -d "$kde_config_dir" ]; then
-            # Get the wallpaper file path configured in KDE Plasma
-            wallpaper_config_file="$kde_config_dir/plasma-org.kde.plasma.desktop-appletsrc"
-
-            # Check if the wallpaper configuration file exists
-            if [ -f "$wallpaper_config_file" ]; then
-                # Get the wallpaper image path
-                wallpaper=$(grep -m1 -Po "(?<=^Image=).*" "$wallpaper_config_file" | tr -d '"' | tr -d ';')
-                
-                # Remove file://
-                wallpaper=${wallpaper#file://}
-
-                # Check if the wallpaper was found
-                if [ -n "$wallpaper" ]; then
-                    # Check if the wallpaper path starts with /usr/
-                    if [[ "$wallpaper" != /usr/* ]]; then
-                        # Copy the wallpaper to the SDDM theme folder and name it "wallpaper"
-                        cp -f "$wallpaper" "/usr/share/sddm/themes/biglinux/wallpaper"
-                        wallpaper="/usr/share/sddm/themes/biglinux/wallpaper"
-                    fi
-
-                    # Update the background in the SDDM theme configuration file
-                    if [ -n "$(grep background= /usr/share/sddm/themes/biglinux/theme.conf.user)" ];then
-                        sudo sed -i "s|^background=.*|background=$wallpaper|" /usr/share/sddm/themes/biglinux/theme.conf.user
-                    else
-                        echo "background=$wallpaper" | sudo tee -a  /usr/share/sddm/themes/biglinux/theme.conf.user
-                    fi
-                    echo "SDDM background updated successfully."
-                else
-                    echo "KDE Plasma wallpaper not found for user $username."
-                fi
-            else
-                echo "KDE Plasma wallpaper configuration file not found for user $username."
-            fi
-        else
-            echo "KDE Plasma configuration directory not found for user $username."
-        fi
-fi
-
-
-
 # Show background before greeter
 sddmTheme="$(grep -oP '(\bCurrent=)\K.*' /etc/sddm.conf.d/kde_settings.conf)"
 if [ "$sddmTheme" = "" ]; then
@@ -83,10 +15,6 @@ if [ ! -e "/livefs-pkgs.txt" ]; then
     else
         feh --bg-fill "$sddmWallpaper" &
     fi
-fi
-
-if [ ! -e "/etc/disable_text_in_sddm" ]; then
-    /usr/share/sddm/scripts/sortphrases &
 fi
 
 #/usr/share/sddm/scripts/numlock
