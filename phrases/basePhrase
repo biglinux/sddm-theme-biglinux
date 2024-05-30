@@ -4,6 +4,11 @@
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=sddm-theme-biglinux
 
+######################################################################################
+### edit the phrases/basePhrase file in the project root on github.                 ##
+### do not edit, I repeat DO NOT edit the /usr/share/sddm/scripts/sortphrases file. ##
+######################################################################################
+
 phrases=(
 $"press / to filter files and folders in dolphin"
 
