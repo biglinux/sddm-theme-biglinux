@@ -5,7 +5,10 @@
 
 ## arg 1:  the new package version
 post_install() {
-	ln -s /usr/lib/systemd/user/sddm-wallpaper.path /etc/systemd/user/default.target.wants/sddm-wallpaper.path
+	if [ ! -e "/etc/systemd/user/default.target.wants/sddm-wallpaper.path" ];then
+		ln -s /usr/lib/systemd/user/sddm-wallpaper.path /etc/systemd/user/default.target.wants/sddm-wallpaper.path
+	fi
+	chmod 666 /usr/share/sddm/wallpaper/image.png
 }
 
 ## arg 2:  the old package version
