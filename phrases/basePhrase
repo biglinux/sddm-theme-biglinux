@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=sddm-theme-biglinux
+
+phrases=(
+$"aperte / para filtrar arquivos e pastas no dolphin"
+
+$"Use ls para listar arquivos e diretórios no diretório atual"
+
+$"Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+
+$"Use pwd para imprimir o diretório atual"
+
+$"Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+
+$"Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+
+$"Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+
+$"Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+
+$"Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+
+$"Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+
+$"Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+)
+
+
+echo "$(shuf -n 1 -e "${phrases[@]}")"

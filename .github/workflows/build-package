@@ -18,9 +18,9 @@ jobs:
           sudo apt update
           sudo apt install -y fortune-mod
           cd sddm-theme-biglinux/usr/share/fortune/
-          strfile biglinux-en
-          strfile biglinux-es
-          strfile biglinux-ptbr
+          for i in $(ls);do
+            strfile $i
+          done
 
       - name: Update github
         run: |
