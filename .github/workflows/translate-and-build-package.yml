@@ -53,6 +53,7 @@ jobs:
           AZURE_KEY: ${{ secrets.AZURE_KEY }}
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
+          cp -f phrases/basePhrase sddm-theme-biglinux/usr/share/sddm/scripts/sortphrases
           cd ..
           git clone https://github.com/biglinux/big-auto-translator.git
           mv big-auto-translator/gettext_po_generator_github.sh .

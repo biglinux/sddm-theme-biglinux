@@ -4,7 +4,7 @@ ConditionUser=!root
 
 [Service]
 Type=oneshot
-ExecStart=/usr/share/sddm/wallpaper/chage-wallpaper.sh
+ExecStart=/usr/share/sddm/wallpaper/change-wallpaper.sh
 
 [Install]
 WantedBy=default.target
