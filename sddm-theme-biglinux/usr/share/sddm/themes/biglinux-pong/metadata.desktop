@@ -1,0 +1,17 @@
+[SddmGreeterTheme]
+Name=BigLinux-Pong
+Description=Relax-SDDM-6 mod to BigLinux
+Author=BigLinux
+Copyright=BigLinux
+License=GPLv3
+Type=sddm-theme
+Version=1.1
+Website=https://github.com/biglinux/sddm-theme-biglinux
+Screenshot=preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Email=bigbruno@gmail.com
+Theme-Id=biglinux
+Theme-API=2.0
+QtVersion=6
