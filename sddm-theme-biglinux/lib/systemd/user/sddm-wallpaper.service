@@ -1,0 +1,10 @@
+[Unit]
+Description=SDDM change WallPaper
+ConditionUser=!root
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/sddm/wallpaper/chage-wallpaper.sh
+
+[Install]
+WantedBy=default.target
