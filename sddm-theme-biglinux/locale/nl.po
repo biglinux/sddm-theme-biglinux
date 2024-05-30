@@ -16,37 +16,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "aperte / para filtrar arquivos e pastas no dolphin"
-msgstr "Druk op / om bestanden en mappen te filteren in Dolphin"
+msgid "press / to filter files and folders in dolphin"
+msgstr "druk op / om bestanden en mappen te filteren in Dolphin"
 
-msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgid "Use ls to list files and directories in the current directory"
 msgstr "Gebruik ls om bestanden en mappen in de huidige map weer te geven"
 
-msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgid "Use cd to navigate between directories. For example, cd Documents"
 msgstr "Gebruik cd om tussen mappen te navigeren. Bijvoorbeeld, cd Documenten"
 
-msgid "Use pwd para imprimir o diretório atual"
-msgstr "Gebruik pwd om de huidige map weer te geven"
+msgid "Use pwd to print the current directory"
+msgstr "Gebruik pwd om de huidige map af te drukken"
 
-msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgid "Use mkdir to create a new directory. Example: mkdir new_directory"
 msgstr "Gebruik mkdir om een nieuwe map te maken. Voorbeeld: mkdir nieuwe_map"
 
-msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgid "To create a new file, use touch. Example: touch new_file.txt"
 msgstr "Om een nieuw bestand te maken, gebruik touch. Voorbeeld: touch nieuw_bestand.txt"
 
-msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgid "Use cp to copy files and directories. Example: cp file.txt folder/"
 msgstr "Gebruik cp om bestanden en mappen te kopiëren. Voorbeeld: cp bestand.txt map/"
 
-msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgid "Use mv to move or rename files and directories. Example: mv file.txt new_name.txt"
 msgstr ""
 "Gebruik mv om bestanden en mappen te verplaatsen of hernoemen. Voorbeeld: mv bestand.txt "
 "nieuwe_naam.txt"
 
-msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgid "To remove files, use rm. Example: rm file.txt"
 msgstr "Om bestanden te verwijderen, gebruik rm. Voorbeeld: rm bestand.txt"
 
-msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
+msgid "Use rm -r to remove directories and their contents. Be careful, as it is irreversible"
 msgstr "Gebruik rm -r om mappen en hun inhoud te verwijderen. Wees voorzichtig, want dit is onomkeerbaar."
 
-msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
+msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "Om de inhoud van een tekstbestand te bekijken, gebruik cat. Voorbeeld: cat bestand.txt"

@@ -16,37 +16,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "aperte / para filtrar arquivos e pastas no dolphin"
-msgstr "Press / to filter files and folders in Dolphin"
+msgid "press / to filter files and folders in dolphin"
+msgstr "bas / dosyaları ve klasörleri filtrelemek için dolphin'da"
 
-msgid "Use ls para listar arquivos e diretórios no diretório atual"
-msgstr "Kullanım: ls [SEÇENEK]... [DOSYA]..."
+msgid "Use ls to list files and directories in the current directory"
+msgstr "Geçerli dizindeki dosya ve dizinleri listelemek için ls komutunu kullanın."
 
-msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
-msgstr "Klasörler arasında gezinmek için cd komutunu kullanın. Örneğin, cd Documents"
+msgid "Use cd to navigate between directories. For example, cd Documents"
+msgstr "Klasörler arasında gezinmek için cd komutunu kullanın. Örneğin, cd Belgeler"
 
-msgid "Use pwd para imprimir o diretório atual"
-msgstr "Kullanım: pwd - geçerli dizini yazdırır."
+msgid "Use pwd to print the current directory"
+msgstr "Kullanımı: pwd mevcut dizini yazdırmak için"
 
-msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
-msgstr "Kullanarak yeni bir dizin oluşturun. Örnek: mkdir yeni_dizin"
+msgid "Use mkdir to create a new directory. Example: mkdir new_directory"
+msgstr "Yeni bir dizin oluşturmak için mkdir komutunu kullanın. Örnek: mkdir yeni_dizin"
 
-msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgid "To create a new file, use touch. Example: touch new_file.txt"
 msgstr "Yeni bir dosya oluşturmak için touch komutunu kullanın. Örnek: touch yeni_dosya.txt"
 
-msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
-msgstr "Kullanarak dosya ve dizinleri kopyalayın. Örnek: cp dosya.txt klasör/"
+msgid "Use cp to copy files and directories. Example: cp file.txt folder/"
+msgstr "Kopyalamak için cp komutunu kullanın. Örnek: cp dosya.txt klasör/"
 
-msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgid "Use mv to move or rename files and directories. Example: mv file.txt new_name.txt"
 msgstr ""
-"Kullanarak dosya ve dizinleri taşımak veya yeniden adlandırmak için mv komutunu kullanın. Örnek: mv "
-"dosya.txt yeni_isim.txt"
+"Kullanım mv dosyaları ve dizinleri taşımak veya yeniden adlandırmak için kullanılır. Örnek: mv "
+"dosya.txt yeni_ad.txt"
 
-msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
+msgid "To remove files, use rm. Example: rm file.txt"
 msgstr "Dosyaları kaldırmak için rm komutunu kullanın. Örnek: rm dosya.txt"
 
-msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
-msgstr "Kullanın rm -r dizinleri ve içeriğini kaldırmak için. Dikkatli olun, çünkü geri alınamaz."
+msgid "Use rm -r to remove directories and their contents. Be careful, as it is irreversible"
+msgstr "Klasörleri ve içeriklerini kaldırmak için rm -r kullanın. Dikkatli olun, çünkü geri alınamaz."
 
-msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
-msgstr "Dosya içeriğini görüntülemek için cat komutunu kullanın. Örnek: cat dosya.txt"
+msgid "To view the contents of a text file, use cat. Example: cat file.txt"
+msgstr "Bir metin dosyasının içeriğini görüntülemek için cat komutunu kullanın. Örnek: cat dosya.txt"

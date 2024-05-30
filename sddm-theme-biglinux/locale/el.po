@@ -16,45 +16,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "aperte / para filtrar arquivos e pastas no dolphin"
-msgstr "Πατήστε / για να φιλτράρετε αρχεία και φακέλους στο Dolphin"
+msgid "press / to filter files and folders in dolphin"
+msgstr "πατήστε / για να φιλτράρετε αρχεία και φακέλους στο Dolphin"
 
-msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgid "Use ls to list files and directories in the current directory"
 msgstr "Χρησιμοποιήστε την εντολή ls για να εμφανίσετε τα αρχεία και τους φακέλους στον τρέχοντα φάκελο."
 
-msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
-msgstr "Χρησιμοποιήστε το cd για να πλοηγηθείτε μεταξύ καταλόγων. Για παράδειγμα, cd Documents"
+msgid "Use cd to navigate between directories. For example, cd Documents"
+msgstr "Χρησιμοποιήστε την εντολή cd για να πλοηγηθείτε μεταξύ καταλόγων. Για παράδειγμα, cd Documents"
 
-msgid "Use pwd para imprimir o diretório atual"
+msgid "Use pwd to print the current directory"
 msgstr "Χρησιμοποιήστε την εντολή pwd για να εκτυπώσετε τον τρέχοντα κατάλογο."
 
-msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
-msgstr "Χρησιμοποιήστε την εντολή mkdir για τη δημιουργία ενός νέου φακέλου. Παράδειγμα: mkdir νέος_φάκελος"
+msgid "Use mkdir to create a new directory. Example: mkdir new_directory"
+msgstr "Χρησιμοποιήστε την εντολή mkdir για τη δημιουργία ενός νέου φακέλου. Παράδειγμα: mkdir new_directory"
 
-msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgid "To create a new file, use touch. Example: touch new_file.txt"
+msgstr "Για να δημιουργήσετε ένα νέο αρχείο, χρησιμοποιήστε την εντολή touch. Παράδειγμα: touch new_file.txt"
+
+msgid "Use cp to copy files and directories. Example: cp file.txt folder/"
+msgstr "Χρησιμοποιήστε την εντολή cp για την αντιγραφή αρχείων και φακέλων. Παράδειγμα: cp file.txt folder/"
+
+msgid "Use mv to move or rename files and directories. Example: mv file.txt new_name.txt"
 msgstr ""
-"Για να δημιουργήσετε ένα νέο αρχείο, χρησιμοποιήστε την εντολή touch. Παράδειγμα: touch "
-"νέο_αρχείο.txt"
+"Χρησιμοποιήστε την εντολή mv για να μετακινήσετε ή να μετονομάσετε αρχεία και φακέλους. Παράδειγμα: "
+"mv file.txt new_name.txt"
 
-msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
+msgid "To remove files, use rm. Example: rm file.txt"
+msgstr "Για να αφαιρέσετε αρχεία, χρησιμοποιήστε την εντολή rm. Παράδειγμα: rm file.txt"
+
+msgid "Use rm -r to remove directories and their contents. Be careful, as it is irreversible"
 msgstr ""
-"Χρησιμοποιήστε την εντολή cp για την αντιγραφή αρχείων και φακέλων. Παράδειγμα: cp αρχείο.txt "
-"φάκελος/"
+"Χρησιμοποιήστε την εντολή rm -r για να διαγράψετε καταλόγους και το περιεχόμενό τους. Να είστε "
+"προσεκτικοί, καθώς είναι αναστρέψιμο."
 
-msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
+msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr ""
-"Χρησιμοποιήστε την εντολή mv για τη μετακίνηση ή τη μετονομασία αρχείων και φακέλων. Παράδειγμα: mv "
-"αρχείο.txt νέο_όνομα.txt"
-
-msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
-msgstr "Για να αφαιρέσετε αρχεία, χρησιμοποιήστε την εντολή rm. Παράδειγμα: rm αρχείο.txt"
-
-msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
-msgstr ""
-"Χρησιμοποιήστε την εντολή rm -r για τη διαγραφή καταλόγων και του περιεχομένου τους. Προσοχή, καθώς "
-"είναι μη αναστρέψιμο."
-
-msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
-msgstr ""
-"Για να προβάλετε το περιεχόμενο ενός αρχείου κειμένου, χρησιμοποιήστε την εντολή cat. Παράδειγμα: "
-"cat αρχείο.txt"
+"Για να δείτε το περιεχόμενο ενός αρχείου κειμένου, χρησιμοποιήστε την εντολή cat. Παράδειγμα: cat "
+"file.txt"

@@ -16,37 +16,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "aperte / para filtrar arquivos e pastas no dolphin"
-msgstr "Stiskněte / pro filtrování souborů a složek v Dolphin"
+msgid "press / to filter files and folders in dolphin"
+msgstr "stiskněte / pro filtrování souborů a složek v Dolphin"
 
-msgid "Use ls para listar arquivos e diretórios no diretório atual"
+msgid "Use ls to list files and directories in the current directory"
 msgstr "Použijte ls k vypsání souborů a adresářů v aktuálním adresáři."
 
-msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
-msgstr "Využijte příkaz cd k navigaci mezi adresáři. Například, cd Documents"
+msgid "Use cd to navigate between directories. For example, cd Documents"
+msgstr "Použijte příkaz cd k navigaci mezi adresáři. Například, cd Documents"
 
-msgid "Use pwd para imprimir o diretório atual"
-msgstr "Použijte příkaz pwd k vytisknutí aktuálního adresáře."
+msgid "Use pwd to print the current directory"
+msgstr "Použijte příkaz pwd k vytisknutí aktuálního adresáře"
 
-msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
+msgid "Use mkdir to create a new directory. Example: mkdir new_directory"
 msgstr "Použijte příkaz mkdir k vytvoření nového adresáře. Příklad: mkdir novy_adresar"
 
-msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgid "To create a new file, use touch. Example: touch new_file.txt"
 msgstr "Pro vytvoření nového souboru použijte příkaz touch. Příklad: touch novy_soubor.txt"
 
-msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
-msgstr "Využijte příkaz cp k kopírování souborů a adresářů. Příklad: cp soubor.txt složka/"
+msgid "Use cp to copy files and directories. Example: cp file.txt folder/"
+msgstr "Použijte cp k kopírování souborů a adresářů. Příklad: cp file.txt folder/"
 
-msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
-msgstr ""
-"Použijte příkaz mv k přesunu nebo přejmenování souborů a adresářů. Příklad: mv soubor.txt "
-"novy_nazev.txt"
+msgid "Use mv to move or rename files and directories. Example: mv file.txt new_name.txt"
+msgstr "Použijte příkaz mv k přesunu nebo přejmenování souborů a adresářů. Příklad: mv file.txt new_name.txt"
 
-msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
-msgstr "Pro odstranění souborů použijte příkaz rm. Příklad: rm soubor.txt"
+msgid "To remove files, use rm. Example: rm file.txt"
+msgstr "Pro odstranění souborů použijte příkaz rm. Příklad: rm file.txt"
 
-msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
-msgstr "Použijte rm -r k odstranění adresářů a jejich obsahu. Buďte opatrní, protože je to nevratné."
+msgid "Use rm -r to remove directories and their contents. Be careful, as it is irreversible"
+msgstr "Použijte příkaz rm -r k odstranění adresářů a jejich obsahu. Buďte opatrní, protože je to nevratné."
 
-msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
-msgstr "Pro zobrazení obsahu textového souboru použijte příkaz cat. Příklad: cat soubor.txt"
+msgid "To view the contents of a text file, use cat. Example: cat file.txt"
+msgstr "Pro zobrazení obsahu textového souboru použijte příkaz cat. Příklad: cat file.txt"

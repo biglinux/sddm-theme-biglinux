@@ -16,35 +16,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "aperte / para filtrar arquivos e pastas no dolphin"
-msgstr "按/以在Dolphin中筛选文件和文件夹"
+msgid "press / to filter files and folders in dolphin"
+msgstr "按 / 键过滤 Dolphin 中的文件和文件夹"
 
-msgid "Use ls para listar arquivos e diretórios no diretório atual"
-msgstr "使用ls命令来列出当前目录中的文件和目录"
+msgid "Use ls to list files and directories in the current directory"
+msgstr "使用ls命令列出当前目录中的文件和目录"
 
-msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
+msgid "Use cd to navigate between directories. For example, cd Documents"
 msgstr "使用cd命令在目录之间导航。例如，cd Documents"
 
-msgid "Use pwd para imprimir o diretório atual"
-msgstr "使用 pwd 命令来打印当前目录"
+msgid "Use pwd to print the current directory"
+msgstr "使用 pwd 命令打印当前目录"
 
-msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
-msgstr "使用mkdir命令创建新目录。示例：mkdir新目录"
+msgid "Use mkdir to create a new directory. Example: mkdir new_directory"
+msgstr "使用mkdir命令创建一个新目录。示例：mkdir new_directory"
 
-msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
-msgstr "要创建新文件，请使用touch命令。示例：touch new_file.txt"
+msgid "To create a new file, use touch. Example: touch new_file.txt"
+msgstr "要创建一个新文件，请使用touch命令。示例：touch new_file.txt"
 
-msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
-msgstr "使用cp命令复制文件和目录。示例：cp 文件.txt 目录/"
+msgid "Use cp to copy files and directories. Example: cp file.txt folder/"
+msgstr "使用cp命令复制文件和目录。示例：cp file.txt folder/"
 
-msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
-msgstr "使用mv命令来移动或重命名文件和目录。示例：mv arquivo.txt novo_nome.txt"
+msgid "Use mv to move or rename files and directories. Example: mv file.txt new_name.txt"
+msgstr "使用mv命令移动或重命名文件和目录。示例：mv file.txt new_name.txt"
 
-msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
-msgstr "使用 rm 命令来删除文件。示例：rm 文件名.txt"
+msgid "To remove files, use rm. Example: rm file.txt"
+msgstr "要删除文件，请使用 rm。示例：rm file.txt"
 
-msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
-msgstr "使用rm -r命令删除目录及其内容。请注意，此操作是不可逆的。"
+msgid "Use rm -r to remove directories and their contents. Be careful, as it is irreversible"
+msgstr "使用rm -r命令删除目录及其内容。请小心操作，因为此操作是不可逆的。"
 
-msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
-msgstr "使用cat命令查看文本文件的内容。示例：cat 文件名.txt"
+msgid "To view the contents of a text file, use cat. Example: cat file.txt"
+msgstr "要查看文本文件的内容，请使用cat。示例：cat file.txt"

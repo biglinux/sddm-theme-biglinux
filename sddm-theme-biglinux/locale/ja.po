@@ -16,35 +16,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "aperte / para filtrar arquivos e pastas no dolphin"
-msgstr "押してファイルやフォルダをDolphinでフィルタリング"
+msgid "press / to filter files and folders in dolphin"
+msgstr "Dolphin でファイルやフォルダをフィルタリングするには / キーを押してください"
 
-msgid "Use ls para listar arquivos e diretórios no diretório atual"
-msgstr "Use ls to list files and directories in the current directory"
+msgid "Use ls to list files and directories in the current directory"
+msgstr "現在のディレクトリ内のファイルやディレクトリをリストするには、lsを使用します"
 
-msgid "Utilize cd para navegar entre diretórios. Por exemplo, cd Documents"
-msgstr "cdを使用してディレクトリ間を移動します。例えば、cd Documents"
+msgid "Use cd to navigate between directories. For example, cd Documents"
+msgstr "cd を使用してディレクトリ間を移動します。例えば、cd Documents"
 
-msgid "Use pwd para imprimir o diretório atual"
-msgstr "使用 pwd 命令来打印当前目录"
+msgid "Use pwd to print the current directory"
+msgstr "現在のディレクトリを表示するには、pwdを使用します。"
 
-msgid "Use mkdir para criar um novo diretório. Exemplo: mkdir novo_diretorio"
-msgstr "mkdirを使用して新しいディレクトリを作成します。例：mkdir新しいディレクトリ"
+msgid "Use mkdir to create a new directory. Example: mkdir new_directory"
+msgstr "新しいディレクトリを作成するには、mkdirを使用します。例：mkdir new_directory"
 
-msgid "Para criar um novo arquivo, use touch. Exemplo: touch novo_arquivo.txt"
+msgid "To create a new file, use touch. Example: touch new_file.txt"
 msgstr "新しいファイルを作成するには、touchを使用します。例：touch new_file.txt"
 
-msgid "Utilize cp para copiar arquivos e diretórios. Exemplo: cp arquivo.txt pasta/"
-msgstr "cpを使用してファイルやディレクトリをコピーします。例: cp ファイル.txt フォルダ/"
+msgid "Use cp to copy files and directories. Example: cp file.txt folder/"
+msgstr "cpを使用してファイルやディレクトリをコピーします。例：cp file.txt folder/"
 
-msgid "Use mv para mover ou renomear arquivos e diretórios. Exemplo: mv arquivo.txt novo_nome.txt"
-msgstr "mvコマンドを使用してファイルやディレクトリを移動または名前を変更します。例: mv ファイル.txt 新しい名前.txt"
+msgid "Use mv to move or rename files and directories. Example: mv file.txt new_name.txt"
+msgstr "mvを使用してファイルやディレクトリを移動または名前を変更します。例：mv file.txt new_name.txt"
 
-msgid "Para remover arquivos, use rm. Exemplo: rm arquivo.txt"
-msgstr "ファイルを削除するには、rmを使用します。例：rm ファイル.txt"
+msgid "To remove files, use rm. Example: rm file.txt"
+msgstr "ファイルを削除するには、rmを使用します。例: rm file.txt"
 
-msgid "Utilize rm -r para remover diretórios e seu conteúdo. Cuidado, pois é irreversível"
-msgstr "rm -rを使用してディレクトリとその内容を削除します。注意してください、これは取り消せません。"
+msgid "Use rm -r to remove directories and their contents. Be careful, as it is irreversible"
+msgstr "ディレクトリとその内容を削除するには、rm -rを使用します。取り消しできないので注意してください。"
 
-msgid "Para visualizar o conteúdo de um arquivo de texto, use cat. Exemplo: cat arquivo.txt"
-msgstr "catコマンドを使用してテキストファイルの内容を表示します。例：catファイル.txt"
+msgid "To view the contents of a text file, use cat. Example: cat file.txt"
+msgstr "catコマンドを使用してテキストファイルの内容を表示します。例: cat file.txt"
