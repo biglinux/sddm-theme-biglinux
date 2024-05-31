@@ -48,29 +48,20 @@ Item {
         connectedSources: "Caps Lock"
     }
 
-    Rectangle {
-        width: parent.width
+    Image {
+        id: wallpaper
         height: parent.height
-        color: "#000000"
-        Image {
-            id: wallpaper
-            source: if (config.type == "color") {
-                        config.default_background;
-                    } else {
-                        config.background;
-                    }
-            asynchronous: true
-            cache: true
-            clip: false
-            smooth: true
-            visible: true
-            height: parent.height
-            width: parent.width
-
-            anchors.centerIn: parent
-        }
+        width: parent.width
+        source: if (config.type == "color") {
+                    config.default_background;
+                } else {
+                    config.background;
+                }
+        asynchronous: false
+        cache: true
+        clip: true
+        visible: true
     }
-    
 
     MouseArea {
         id: loginScreenRoot
@@ -112,6 +103,10 @@ Item {
             blur: 1.0
             blurMultiplier: 1.0
             z: -2
+            anchors.leftMargin: -30
+            anchors.rightMargin: -30
+            anchors.topMargin: -30
+            anchors.bottomMargin: -30
         }
 
         Rectangle {
