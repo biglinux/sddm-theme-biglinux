@@ -9,6 +9,8 @@ post_install() {
 		ln -s /usr/lib/systemd/user/sddm-wallpaper.path /etc/systemd/user/default.target.wants/sddm-wallpaper.path
 	fi
 	chmod 666 /usr/share/sddm/wallpaper/image.png
+	user=$(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd | head -n1)
+	sudo -u $user XDG_RUNTIME_DIR=/run/user/$(id -u $user) systemctl -q --user start sddm-wallpaper.service
 }
 
 ## arg 2:  the old package version
