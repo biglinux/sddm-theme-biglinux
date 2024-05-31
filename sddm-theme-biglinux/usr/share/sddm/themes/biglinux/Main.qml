@@ -62,11 +62,15 @@ Item {
             asynchronous: true
             cache: true
             clip: false
-            smooth: false
+            smooth: true
             visible: true
+            height: parent.height
+            width: parent.width
+
             anchors.centerIn: parent
         }
     }
+    
 
     MouseArea {
         id: loginScreenRoot
