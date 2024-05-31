@@ -18,12 +18,13 @@
  */
 
 import QtQuick 2.15
-import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
-import Qt5Compat.GraphicalEffects
+import QtQuick.Layouts 1.15
+import QtQuick.Effects
+import Qt5Compat.GraphicalEffects 1.0
 import org.kde.plasma.plasma5support 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigami 2.15 as Kirigami
 import org.kde.breeze.components
 import "components"
 
@@ -89,6 +90,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             color: "white"
             font.pixelSize: 24
+            opacity: 0.6
         }
 
         // Button pause
@@ -108,6 +110,7 @@ Item {
                 width: 8
                 height: 20
                 color: "white"
+                opacity: 0.6
                 anchors.centerIn: parent
                 anchors.horizontalCenterOffset: -6
             }
@@ -119,6 +122,7 @@ Item {
                 color: "white"
                 anchors.centerIn: parent
                 anchors.horizontalCenterOffset: 6
+                opacity: 0.6
             }
         }
 
@@ -131,6 +135,7 @@ Item {
             color: "white"
             x: 10
             y: gameArea.height / 2 - height / 2
+            opacity: 0.6
         }
 
         // Computer paddle
@@ -142,6 +147,7 @@ Item {
             color: "white"
             x: gameArea.width - width - 10
             y: gameArea.height / 2 - height / 2
+            opacity: 0.6
         }
 
         // Ball
@@ -255,33 +261,17 @@ Item {
             }
         }
 
-        PlasmaComponents.ToolButton {
-            text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
-            font.pointSize: config.fontSize
-            opacity: 0.5
-            icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
-            onClicked: {
-                // Otherwise the password field loses focus and virtual keyboard
-                // keystrokes get eaten
-                userListComponent.mainPasswordBox.forceActiveFocus();
-                inputPanel.showHide()
-            }
-            visible: inputPanel.status == Loader.Ready
-            anchors.left: mainStack.left
-            anchors.top: mainStack.top
-            anchors.topMargin: 10
-            anchors.leftMargin: 10
-        }
-
-        KeyboardButton { }
-
-        Clock {
-            id: clock
+        Rectangle {
+            id: formBg
+            width: mainStack.width
+            height: mainStack.height
+            x: root.width / 2 - width / 2
+            y: root.height / 2 - height / 2
+            radius: 16
+            color: "#1e1e1e"
+            opacity: 0.6
+            z: -1
             visible: true
-            anchors.horizontalCenter: mainStack.horizontalCenter
-            anchors.top: mainStack.top
-            anchors.topMargin: 20
-            opacity: 0.8
         }
 
         StackView {
@@ -290,7 +280,7 @@ Item {
             height: root.height / 1.3
             width: parent.width / 2
 
-            focus: true //StackView is an implicit focus scope, so we need to give this focus so the item inside will have it
+            focus: true // StackView is an implicit focus scope, so we need to give this focus so the item inside will have it
 
             MouseArea {
                 anchors.fill: parent
@@ -342,11 +332,11 @@ Item {
                 lastUserName: userModel.lastUser
 
                 showUserList: {
-                    if ( !userListModel.hasOwnProperty("count")
-                    || !userListModel.hasOwnProperty("disableAvatarsThreshold"))
+                    if (!userListModel.hasOwnProperty("count")
+                        || !userListModel.hasOwnProperty("disableAvatarsThreshold"))
                         return (userList.y + mainStack.y) > 0
 
-                    if ( userListModel.count == 0 ) return false
+                    if (userListModel.count == 0) return false
 
                     return userListModel.count <= userListModel.disableAvatarsThreshold && (userList.y + mainStack.y) > 0
                 }
@@ -354,7 +344,7 @@ Item {
                 notificationMessage: {
                     var text = ""
                     if (keystateSource.data["Caps Lock"]["Locked"]) {
-                        text += i18nd("plasma_lookandfeel_org.kde.lookandfeel","Caps Lock is on")
+                        text += i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Caps Lock is on")
                         if (root.notificationMessage) {
                             text += " • "
                         }
@@ -390,28 +380,26 @@ Item {
                         }
                         opacity: 0.5
                     }
-
-                    Battery { }
                 }
 
                 actionItems: [
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/suspend.svg")
-                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
+                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Suspend to RAM", "Sleep")
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/restart.svg")
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
+                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Restart")
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/shutdown.svg")
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
+                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Shut Down")
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                         visible: !inputPanel.keyboardActive
@@ -429,6 +417,75 @@ Item {
                     }
                 }
             }
+
+PlasmaComponents.ToolButton {
+    id: virtualKeyboardButton
+    // Não define o texto diretamente aqui para evitar duplicação
+    font.pointSize: config.fontSize
+    opacity: 0.6
+    width: virtualKeyboardButtonLabel.width + 50
+    height: 30
+    
+    icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
+                onClicked: {
+                    // Otherwise the password field loses focus and virtual keyboard
+                    // keystrokes get eaten
+                    userListComponent.mainPasswordBox.forceActiveFocus();
+                    inputPanel.showHide()
+                }
+    visible: inputPanel.status == Loader.Ready
+    anchors.left: mainStack.left
+    anchors.top: mainStack.top
+    anchors.topMargin: 10
+    anchors.leftMargin: 20
+
+    contentItem: Row {
+        spacing: 5
+        id: iconVirtualKeyboard
+        anchors.centerIn: parent
+        z: -2
+        Kirigami.Icon {
+            source: virtualKeyboardButton.icon.name
+            width: 24
+            height: 24
+        }
+
+        Text {
+            id: virtualKeyboardButtonLabel
+            text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
+            color: "transparent" // Inicialmente transparente
+            font.pointSize: config.fontSize
+            anchors.right: iconVirtualKeyboard.right
+            anchors.rightMargin: 10
+        }
+
+        MouseArea {
+            id: hoverAreaKeyboard
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: virtualKeyboardButtonLabel.color = "white"  // Cor visível
+            onExited: virtualKeyboardButtonLabel.color = "transparent" // Cor transparente
+        }
+    }
+}
+
+KeyboardButton { }
+            Battery {
+                anchors.right: mainStack.right
+                anchors.top: mainStack.top
+                anchors.topMargin: 10
+                anchors.rightMargin: 25
+            }
+
+            Clock {
+                id: clock
+                visible: true
+                anchors.horizontalCenter: mainStack.horizontalCenter
+                anchors.top: mainStack.top
+                anchors.topMargin: 20
+                opacity: 0.8
+            }
         }
 
         VirtualKeyboardLoader {
@@ -440,25 +497,34 @@ Item {
             passwordField: userListComponent.mainPasswordBox
         }
 
-        Rectangle {
-            id: formBg
-            width: mainStack.width
-            height: mainStack.height
-            x: root.width / 2 - width / 2
-            y: root.height / 2 - height / 2
-            radius: 16
-            color: "#1c1c1c"
-            opacity: 0.7
-            z:-1
+
+        ShaderEffectSource {
+            id: blurSource
+            sourceItem: wallpaper
+            anchors.fill: formBg
+            sourceRect: Qt.rect(formBg.x, formBg.y, formBg.width, formBg.height)
+            visible: false
+        }
+
+        MultiEffect {
+            source: blurSource
+            anchors.fill: formBg
+
+            autoPaddingEnabled: true
+            blurEnabled: true
+            blurMax: 64
+            blur: 1.0
+            z: -2
         }
     }
 
-    Connections {
-        target: sddm
-        onLoginFailed: {
-            notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed")
-        }
+Connections {
+    target: sddm
+    function onLoginFailed() {
+        notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed");
     }
+}
+
 
     onNotificationMessageChanged: {
         if (notificationMessage) {

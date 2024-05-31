@@ -5,7 +5,6 @@
 */
 
 import QtQuick 2.15
-
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.kirigami 2.20 as Kirigami
 
@@ -31,7 +30,7 @@ Item {
 
     opacity: activeFocus || containsMouse ? 1 : 0.85
     Behavior on opacity {
-        PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
+        PropertyAnimation {
             duration: Kirigami.Units.longDuration
             easing.type: Easing.InOutQuad
         }
@@ -46,7 +45,7 @@ Item {
         color: softwareRendering ?  Kirigami.Theme.backgroundColor : Kirigami.Theme.textColor
         opacity: root.activeFocus || containsMouse ? (softwareRendering ? 0.8 : 0.15) : (softwareRendering ? 0.6 : 0)
         Behavior on opacity {
-            PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
+            PropertyAnimation {
                 duration: Kirigami.Units.longDuration
                 easing.type: Easing.InOutQuad
             }
@@ -90,14 +89,14 @@ Item {
             right: parent.right
         }
         style: softwareRendering ? Text.Outline : Text.Normal
-        styleColor: softwareRendering ? Kirigami.Theme.backgroundColor : "transparent" //no outline, doesn't matter
+        styleColor: softwareRendering ? Kirigami.Theme.backgroundColor : "transparent"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignTop
         wrapMode: Text.WordWrap
         font.underline: root.activeFocus
-        font.pointSize: config.fontSize
-        font.family: config.font
-        color:activeFocus || containsMouse ? config.highlight_color : config.color
+        font.pointSize: root.fontSize
+        visible: root.containsMouse || root.activeFocus // Mostrar apenas quando o mouse estiver sobre o botão ou quando o botão estiver em foco
+        color: activeFocus || containsMouse ? config.highlight_color : config.color
     }
 
     MouseArea {

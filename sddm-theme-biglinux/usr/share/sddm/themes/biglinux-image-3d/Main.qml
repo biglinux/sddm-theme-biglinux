@@ -52,7 +52,11 @@ Item {
         id: wallpaper
         height: parent.height
         width: parent.width
-        source: config.background || config.Background
+        source: if (config.type == "color") {
+                    config.default_background;
+                } else {
+                    config.background;
+                }
         asynchronous: true
         cache: true
         clip: true
@@ -69,12 +73,6 @@ Item {
         hoverEnabled: true
         drag.filterChildren: true
         onPressed: uiVisible = true;
-            onPositionChanged: {
-                if (!gameArea.isPaused) {
-                    leftPaddle.y = Math.max(0, Math.min(mouse.y - leftPaddle.height / 2, gameArea.height - leftPaddle.height));
-                }
-                uiVisible = true;
-            }
         onUiVisibleChanged: {
             if (blockUI) {
                 fadeoutTimer.running = false;
@@ -158,10 +156,10 @@ Item {
                 var centerY = height / 2;
                 var offsetX = (mouse.x - centerX) / centerX;
                 var offsetY = (mouse.y - centerY) / centerY;
-                rotationX.angle = -offsetY * 30;
-                rotationY.angle = offsetX * 30;
-                rotationXStack.angle = -offsetY * 30;
-                rotationYStack.angle = offsetX * 30;
+                rotationX.angle = -offsetY * 10;
+                rotationY.angle = offsetX * 10;
+                rotationXStack.angle = -offsetY * 10;
+                rotationYStack.angle = offsetX * 10;
             }
         }
 
@@ -240,8 +238,6 @@ Item {
                         }
                         opacity: 0.5
                     }
-
-                    Battery { }
                 }
 
                 actionItems: [
@@ -280,25 +276,65 @@ Item {
                 }
             }
 
-            PlasmaComponents.ToolButton {
-                text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
-                font.pointSize: config.fontSize
-                opacity: 0.5
-                icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
+PlasmaComponents.ToolButton {
+    id: virtualKeyboardButton
+    // Não define o texto diretamente aqui para evitar duplicação
+    font.pointSize: config.fontSize
+    opacity: 0.6
+    width: virtualKeyboardButtonLabel.width + 50
+    height: 30
+    
+    icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
                 onClicked: {
                     // Otherwise the password field loses focus and virtual keyboard
                     // keystrokes get eaten
                     userListComponent.mainPasswordBox.forceActiveFocus();
                     inputPanel.showHide()
                 }
-                visible: inputPanel.status == Loader.Ready
-                anchors.left: mainStack.left
+    visible: inputPanel.status == Loader.Ready
+    anchors.left: mainStack.left
+    anchors.top: mainStack.top
+    anchors.topMargin: 10
+    anchors.leftMargin: 20
+
+    contentItem: Row {
+        spacing: 5
+        id: iconVirtualKeyboard
+        anchors.centerIn: parent
+        z: -2
+        Kirigami.Icon {
+            source: virtualKeyboardButton.icon.name
+            width: 24
+            height: 24
+        }
+
+        Text {
+            id: virtualKeyboardButtonLabel
+            text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
+            color: "transparent" // Inicialmente transparente
+            font.pointSize: config.fontSize
+            anchors.right: iconVirtualKeyboard.right
+            anchors.rightMargin: 10
+        }
+
+        MouseArea {
+            id: hoverAreaKeyboard
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: virtualKeyboardButtonLabel.color = "white"  // Cor visível
+            onExited: virtualKeyboardButtonLabel.color = "transparent" // Cor transparente
+        }
+    }
+}
+
+KeyboardButton { }
+            Battery {
+                anchors.right: mainStack.right
                 anchors.top: mainStack.top
                 anchors.topMargin: 10
-                anchors.leftMargin: 10
+                anchors.rightMargin: 25
             }
-
-            KeyboardButton { }
 
             Clock {
                 id: clock
@@ -340,12 +376,13 @@ Item {
         }
     }
 
-    Connections {
-        target: sddm
-        onLoginFailed: {
-            notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed")
-        }
+Connections {
+    target: sddm
+    function onLoginFailed() {
+        notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed");
     }
+}
+
 
     onNotificationMessageChanged: {
         if (notificationMessage) {

@@ -11,8 +11,10 @@ import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.kirigami 2.20 as Kirigami
 
 PlasmaComponents.ToolButton {
+    id: root
 
     property int currentIndex: -1
+
     text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "%1", instantiator.objectAt(currentIndex).text || "")
     visible: menu.count > 1
     font.pointSize: config.fontSize
@@ -23,7 +25,7 @@ PlasmaComponents.ToolButton {
     checked: menu.opened
     onToggled: {
         if (checked) {
-            menu.popup()
+            menu.popup(root, 0, 0)
         } else {
             menu.dismiss()
         }

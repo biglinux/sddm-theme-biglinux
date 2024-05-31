@@ -1,17 +1,17 @@
 [SddmGreeterTheme]
 Name=BigLinux
-Description=Breeze mod to BigLinux
+Description=Relax-SDDM-6 mod to BigLinux with mouse smoke
 Author=BigLinux
 Copyright=BigLinux
-License=CC-BY-SA
+License=GPLv3
 Type=sddm-theme
-Version=0.1
+Version=1.1
 Website=https://github.com/biglinux/sddm-theme-biglinux
 Screenshot=preview.png
 MainScript=Main.qml
 ConfigFile=theme.conf
 TranslationsDirectory=translations
 Email=bigbruno@gmail.com
-Theme-Id=breeze
+Theme-Id=biglinux
 Theme-API=2.0
 QtVersion=6

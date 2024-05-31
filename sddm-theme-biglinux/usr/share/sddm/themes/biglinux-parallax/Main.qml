@@ -1,22 +1,3 @@
-/*
- *   Copyright 2016 David Edmundson <davidedmundson@kde.org>
- *
- *   This program is free software; you can redistribute it and/or modify
- *   it under the terms of the GNU Library General Public License as
- *   published by the Free Software Foundation; either version 2 or
- *   (at your option) any later version.
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details
- *
- *   You should have received a copy of the GNU Library General Public
- *   License along with this program; if not, write to the
- *   Free Software Foundation, Inc.,
- *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- */
-
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
@@ -48,19 +29,137 @@ Item {
         connectedSources: "Caps Lock"
     }
 
-    Image {
-        id: wallpaper
-        height: parent.height
+    Rectangle {
         width: parent.width
-        source: if (config.type == "color") {
-                    config.default_background;
-                } else {
-                    config.background;
+        height: parent.height
+        Image {
+            id: wallpaper
+            source: if (config.type == "color") {
+                        config.default_background;
+                    } else {
+                        config.background;
+                    }
+            asynchronous: true
+            cache: true
+            clip: true
+            visible: true
+            scale: 1.2 // Zoom de 20%
+            anchors.centerIn: parent // Centraliza a imagem
+            transform: Translate {
+                id: translateTransform
+                x: 0
+                y: 0
+            }
+        }
+
+        Canvas {
+            id: canvas
+            anchors.fill: parent
+            property var meteors: []
+            property var particles: []
+
+            function createMeteor() {
+                return {
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1,
+                    opacity: Math.random() * 0.5 + 0.5,
+                    speed: Math.random() * 5 + 5,
+                    length: Math.random() * 20 + 10,
+                    color: "rgba(255, 255, 255, 0.8)"
+                };
+            }
+
+            function createParticle() {
+                return {
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 3 + 1,
+                    opacity: Math.random() * 0.5 + 0.5,
+                    speedX: Math.random() * 2 - 1,
+                    speedY: Math.random() * 2 - 1,
+                    color: "rgba(255, 255, 255, 0.5)"
+                };
+            }
+
+            onPaint: {
+                var ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Draw meteors
+                for (var i = 0; i < meteors.length; i++) {
+                    var meteor = meteors[i];
+                    ctx.beginPath();
+                    ctx.moveTo(meteor.x, meteor.y);
+                    ctx.lineTo(meteor.x + meteor.length, meteor.y + meteor.length);
+                    ctx.strokeStyle = meteor.color;
+                    ctx.lineWidth = meteor.size;
+                    ctx.stroke();
                 }
-        asynchronous: true
-        cache: true
-        clip: true
-        visible: true
+
+                // Draw particles
+                for (var i = 0; i < particles.length; i++) {
+                    var particle = particles[i];
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.size, 0, 2 * Math.PI, false);
+                    ctx.fillStyle = particle.color;
+                    ctx.globalAlpha = particle.opacity;
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            Component.onCompleted: {
+                for (var i = 0; i < 20; i++) { // Increase the number of meteors
+                    meteors.push(createMeteor());
+                }
+
+                for (var i = 0; i < 50; i++) { // Increase the number of particles
+                    particles.push(createParticle());
+                }
+
+                canvas.requestPaint();
+            }
+
+            Timer {
+                interval: 70 // Increase interval to reduce CPU usage
+                running: true
+                repeat: true
+                onTriggered: {
+                    // Occasionally create a meteor
+                    if (Math.random() < 0.1) {
+                        canvas.meteors.push(canvas.createMeteor());
+                    }
+
+                    // Update meteors
+                    for (var i = 0; i < canvas.meteors.length; i++) {
+                        var meteor = canvas.meteors[i];
+                        meteor.x += meteor.speed;
+                        meteor.y += meteor.speed;
+                        meteor.opacity -= 0.02;
+                        if (meteor.opacity <= 0) {
+                            canvas.meteors.splice(i, 1); // Remove the meteor
+                            i--;
+                        }
+                    }
+
+                    // Update particles
+                    for (var i = 0; i < canvas.particles.length; i++) {
+                        var particle = canvas.particles[i];
+                        particle.x += particle.speedX;
+                        particle.y += particle.speedY;
+                        particle.opacity -= 0.01;
+                        if (particle.opacity <= 0) {
+                            canvas.particles.splice(i, 1); // Remove the particle
+                            canvas.particles.push(canvas.createParticle()); // Add new particle
+                        }
+                    }
+
+                    canvas.requestPaint();
+                }
+            }
+        }
     }
 
     MouseArea {
@@ -114,7 +213,7 @@ Item {
             y: root.height / 2 - height / 2
             radius: 16
             color: "#1e1e1e"
-            opacity: 0.6
+            opacity: 0.8
             z: -1
             visible: true
         }
@@ -126,6 +225,21 @@ Item {
             width: parent.width / 2
 
             focus: true // StackView is an implicit focus scope, so we need to give this focus so the item inside will have it
+
+            MouseArea {
+                anchors.fill: parent
+                anchors.margins: -root.width
+                hoverEnabled: true
+                onPositionChanged: {
+                    var backgroundParallaxFactor = 0.02; // Adjust background parallax effect
+
+                    // Move the background
+                    translateTransform.x = mouse.x * backgroundParallaxFactor;
+                    translateTransform.y = mouse.y * backgroundParallaxFactor;
+
+                    canvas.requestPaint();
+                }
+            }
 
             initialItem: Login {
                 id: userListComponent
@@ -221,59 +335,59 @@ Item {
                 }
             }
 
-PlasmaComponents.ToolButton {
-    id: virtualKeyboardButton
-    // Não define o texto diretamente aqui para evitar duplicação
-    font.pointSize: config.fontSize
-    opacity: 0.6
-    width: virtualKeyboardButtonLabel.width + 50
-    height: 30
-    
-    icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
+            PlasmaComponents.ToolButton {
+                id: virtualKeyboardButton
+                // Não define o texto diretamente aqui para evitar duplicação
+                font.pointSize: config.fontSize
+                opacity: 0.6
+                width: virtualKeyboardButtonLabel.width + 50
+                height: 30
+
+                icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
                 onClicked: {
                     // Otherwise the password field loses focus and virtual keyboard
                     // keystrokes get eaten
                     userListComponent.mainPasswordBox.forceActiveFocus();
                     inputPanel.showHide()
                 }
-    visible: inputPanel.status == Loader.Ready
-    anchors.left: mainStack.left
-    anchors.top: mainStack.top
-    anchors.topMargin: 10
-    anchors.leftMargin: 20
+                visible: inputPanel.status == Loader.Ready
+                anchors.left: mainStack.left
+                anchors.top: mainStack.top
+                anchors.topMargin: 10
+                anchors.leftMargin: 20
 
-    contentItem: Row {
-        spacing: 5
-        id: iconVirtualKeyboard
-        anchors.centerIn: parent
-        z: -2
-        Kirigami.Icon {
-            source: virtualKeyboardButton.icon.name
-            width: 24
-            height: 24
-        }
+                contentItem: Row {
+                    spacing: 5
+                    id: iconVirtualKeyboard
+                    anchors.centerIn: parent
+                    z: -2
+                    Kirigami.Icon {
+                        source: virtualKeyboardButton.icon.name
+                        width: 24
+                        height: 24
+                    }
 
-        Text {
-            id: virtualKeyboardButtonLabel
-            text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
-            color: "transparent" // Inicialmente transparente
-            font.pointSize: config.fontSize
-            anchors.right: iconVirtualKeyboard.right
-            anchors.rightMargin: 10
-        }
+                    Text {
+                        id: virtualKeyboardButtonLabel
+                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
+                        color: "transparent" // Inicialmente transparente
+                        font.pointSize: config.fontSize
+                        anchors.right: iconVirtualKeyboard.right
+                        anchors.rightMargin: 10
+                    }
 
-        MouseArea {
-            id: hoverAreaKeyboard
-            anchors.fill: parent
-            hoverEnabled: true
+                    MouseArea {
+                        id: hoverAreaKeyboard
+                        anchors.fill: parent
+                        hoverEnabled: true
 
-            onEntered: virtualKeyboardButtonLabel.color = "white"  // Cor visível
-            onExited: virtualKeyboardButtonLabel.color = "transparent" // Cor transparente
-        }
-    }
-}
+                        onEntered: virtualKeyboardButtonLabel.color = "white"  // Cor visível
+                        onExited: virtualKeyboardButtonLabel.color = "transparent" // Cor transparente
+                    }
+                }
+            }
 
-KeyboardButton { }
+            KeyboardButton { }
             Battery {
                 anchors.right: mainStack.right
                 anchors.top: mainStack.top
@@ -299,35 +413,14 @@ KeyboardButton { }
             mainBlock: userListComponent
             passwordField: userListComponent.mainPasswordBox
         }
-
-
-        ShaderEffectSource {
-            id: blurSource
-            sourceItem: wallpaper
-            anchors.fill: formBg
-            sourceRect: Qt.rect(formBg.x, formBg.y, formBg.width, formBg.height)
-            visible: false
-        }
-
-        MultiEffect {
-            source: blurSource
-            anchors.fill: formBg
-
-            autoPaddingEnabled: true
-            blurEnabled: true
-            blurMax: 64
-            blur: 1.0
-            z: -2
-        }
     }
 
-Connections {
-    target: sddm
-    function onLoginFailed() {
-        notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed");
+    Connections {
+        target: sddm
+        function onLoginFailed() {
+            notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed");
+        }
     }
-}
-
 
     onNotificationMessageChanged: {
         if (notificationMessage) {
