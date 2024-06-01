@@ -52,3 +52,10 @@ msgstr ""
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "Untuk melihat isi dari sebuah file teks, gunakan cat. Contoh: cat file.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr ""
+"Testing a long sentence to see if the line break is working correctly, will it break the line? It "
+"would be great if it automatically breaks the line, right? Will it work?"

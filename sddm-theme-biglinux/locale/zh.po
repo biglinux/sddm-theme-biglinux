@@ -48,3 +48,8 @@ msgstr "使用rm -r命令删除目录及其内容。请小心操作，因为此�
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "要查看文本文件的内容，请使用cat。示例：cat file.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr "测试一个长句子，看看换行是否正常工作，会自动换行吗？自动换行会很好，对吧？会成功吗？"

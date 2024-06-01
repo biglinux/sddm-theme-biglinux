@@ -48,3 +48,10 @@ msgstr "השתמש ב־rm -r כדי להסיר ספריות ותוכן שלהן.
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "להציג את תוכן קובץ טקסט, השתמש ב־cat. לדוגמה: cat file.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr ""
+"מבחן משפט ארוך כדי לבדוק אם השורה מתפצלת כראוי, האם זה יפצל את השורה? זה יהיה נהדר אם השורה תתפצל "
+"אוטומטית, נראה אם זה יקרה?"

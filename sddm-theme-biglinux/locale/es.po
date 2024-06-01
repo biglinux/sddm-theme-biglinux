@@ -48,3 +48,10 @@ msgstr "Utilice rm -r para eliminar directorios y su contenido. Ten cuidado, ya 
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "Para ver el contenido de un archivo de texto, usa cat. Ejemplo: cat archivo.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr ""
+"Prueba de una oración larga para ver si el salto de línea funciona correctamente, ¿se romperá la "
+"línea? Sería genial si se rompiera la línea automáticamente, ¿verdad? ¿Se podrá hacer?"

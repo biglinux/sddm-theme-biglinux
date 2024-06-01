@@ -52,3 +52,10 @@ msgstr ""
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "Tarkastele tekstitiedoston sisältöä käyttämällä cat-komentoa. Esimerkki: cat tiedosto.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr ""
+"testando pitkä lause nähdäksesi, toimiiko rivinvaihto oikein, rikkooko se rivin? olisi hienoa, jos "
+"se rikkoisi rivin automaattisesti, eikö niin? tuleeko se toimimaan?"

@@ -11,7 +11,7 @@ msgstr  "Project-Id-Version: sddm-theme-biglinux\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
         "Language: \n"
         "MIME-Version: 1.0\n"
-        "Content-Type: text/plain; charset=CHARSET\n"
+        "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 msgid   "press / to filter files and folders in dolphin"
@@ -47,4 +47,9 @@ msgid   "Use rm -r to remove directories and their contents. Be careful, as "
 msgstr  ""
 
 msgid   "To view the contents of a text file, use cat. Example: cat file.txt"
+msgstr  ""
+
+msgid   "testando uma frase longa para ver se a quebra de linha está "
+        "funcionando corretamente, sera que vai quebrar a linha? seria otimo "
+        "se quebra-se a linha automaticamente né? sera que vai rolar?"
 msgstr  ""

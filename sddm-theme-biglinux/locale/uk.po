@@ -50,3 +50,10 @@ msgstr "Використовуйте rm -r для видалення катал�
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "Для перегляду вмісту текстового файлу використовуйте cat. Приклад: cat file.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr ""
+"тестування довгого речення, щоб переконатися, що розрив рядка працює правильно, чи розірветься "
+"рядок? було б чудово, якщо рядок автоматично розривався, чи не так? чи вийде?"

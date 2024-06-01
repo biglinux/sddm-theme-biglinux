@@ -50,3 +50,10 @@ msgstr ""
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "Pentru a vizualiza conținutul unui fișier text, folosiți comanda cat. Exemplu: cat file.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr ""
+"testând o propoziție lungă pentru a vedea dacă funcționează corect tăierea în linie, va tăia linia? "
+"ar fi minunat dacă ar tăia linia automat, nu-i așa? va funcționa oare?"

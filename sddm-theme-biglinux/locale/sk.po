@@ -50,3 +50,10 @@ msgstr "Použite príkaz rm -r na odstránenie adresárov a ich obsahu. Buďte o
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "Na zobrazenie obsahu textového súboru použite príkaz cat. Príklad: cat file.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr ""
+"testovanie dlhej vety na overenie, či funguje správne zalamovanie riadkov, či sa riadok zlomí? bolo "
+"by skvelé, keby sa riadok zlomil automaticky, však? či to bude fungovať?"

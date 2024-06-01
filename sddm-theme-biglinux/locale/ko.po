@@ -48,3 +48,8 @@ msgstr "rm -r를 사용하여 디렉토리와 해당 내용을 제거합니다. 
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "텍스트 파일의 내용을 보려면 cat을 사용하십시오. 예시: cat file.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr "테스트를 위해 긴 문장을 작성하여 줄 바꿈이 올바르게 작동하는지 확인합니다. 자동으로 줄 바꿈되면 좋겠죠? 가능할까요?"

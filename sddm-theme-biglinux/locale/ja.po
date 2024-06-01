@@ -48,3 +48,8 @@ msgstr "ディレクトリとその内容を削除するには、rm -rを使用�
 
 msgid "To view the contents of a text file, use cat. Example: cat file.txt"
 msgstr "catコマンドを使用してテキストファイルの内容を表示します。例: cat file.txt"
+
+msgid ""
+"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
+"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+msgstr "テスト中に改行が正しく機能しているかを確認するために長いフレーズを入力しています。自動的に改行されると素晴らしいですね。うまくいくでしょうか？"

@@ -31,6 +31,8 @@ $"To remove files, use rm. Example: rm file.txt"
 $"Use rm -r to remove directories and their contents. Be careful, as it is irreversible"
 
 $"To view the contents of a text file, use cat. Example: cat file.txt"
+
+$"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
 )
 
 
