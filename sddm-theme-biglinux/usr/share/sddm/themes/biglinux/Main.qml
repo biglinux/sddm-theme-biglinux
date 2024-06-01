@@ -344,7 +344,6 @@ Item {
                     anchors.top: footer.bottom
                     anchors.topMargin: 50
                     anchors.horizontalCenter: parent.horizontalCenter  // Centraliza horizontalmente
-                    width: parent.width
 
                     visible: true
                     Text {
@@ -354,7 +353,11 @@ Item {
                         anchors.horizontalCenter: parent.horizontalCenter  // Centraliza horizontalmente
                         wrapMode: Text.Wrap // Adiciona quebra de linha se necessário
                         textFormat: Text.PlainText
-                    }
+                        width: mainStack.width - 200
+                        horizontalAlignment: Text.AlignHCenter // Centraliza o texto horizontalmente
+                        font.pointSize: config.fontSize
+                        font.family: config.font
+                     }
 
                     Plasma5Support.DataSource {
                         id: executable
