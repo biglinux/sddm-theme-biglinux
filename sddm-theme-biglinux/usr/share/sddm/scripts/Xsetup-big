@@ -2,30 +2,15 @@
 # Xsetup - run as root before the login dialog appears
 
 
-# Show background before greeter
-sddmTheme="$(grep -oP '(\bCurrent=)\K.*' /etc/sddm.conf.d/kde_settings.conf)"
-if [ "$sddmTheme" = "" ]; then
-    sddmTheme=biglinux
-fi
-sddmWallpaper="$(grep -ioP '(\bbackground=)\K.*' /usr/share/sddm/themes/$sddmTheme/theme.conf.user)"
-
-if [ ! -e "/livefs-pkgs.txt" ]; then
-    if [ -e "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" ]; then
-        feh --bg-fill "/usr/share/sddm/themes/$sddmTheme/$sddmWallpaper" &
-    else
-        feh --bg-fill "$sddmWallpaper" &
-    fi
-fi
-
 #/usr/share/sddm/scripts/numlock
 
-if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]; then
-    sed -i 's|Name=.*|Name=Central de Controle|g' /usr/share/xsessions/bigcontrolcenter.desktop
-    sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Selecione o desktop: %1"|' /usr/share/sddm/themes/biglinux/SessionButton.qml
-else
-    sed -i 's|Name=.*|Name=Control Center|g' /usr/share/xsessions/bigcontrolcenter.desktop
-    sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Change desktop: %1"|' /usr/share/sddm/themes/biglinux/SessionButton.qml
-fi
+# if [ "$(grep LANG= /etc/locale.conf | grep pt)" != "" ]; then
+#     sed -i 's|Name=.*|Name=Central de Controle|g' /usr/share/xsessions/bigcontrolcenter.desktop
+#     sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Selecione o desktop: %1"|' /usr/share/sddm/themes/biglinux/SessionButton.qml
+# else
+#     sed -i 's|Name=.*|Name=Control Center|g' /usr/share/xsessions/bigcontrolcenter.desktop
+#     sed -i 's|lookandfeel", ".*%1"|lookandfeel", "Change desktop: %1"|' /usr/share/sddm/themes/biglinux/SessionButton.qml
+# fi
 
 
 # nvidia prime support

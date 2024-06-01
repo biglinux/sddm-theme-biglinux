@@ -9,10 +9,10 @@ if [ ! -e "/usr/share/sddm/wallpaper/image.png" ];then
 fi
 
 # if color, change to image
-currentTheme=$(awk -F'=' '/Current=/ {print $2; exit}' /etc/sddm.conf.d/kde_settings.conf)
-themeConfUser="/usr/share/sddm/themes/$currentTheme/theme.conf.user"
-if [ -e "$themeConfUser" ];then
-    if [ "$(awk -F'=' '/type=/ {print $2; exit}' $themeConfUser)" = "color" ];then
-        sed -i '/s/background=.*/background=/usr/share/sddm/wallpaper/image.png/;s/type=.*/type=image/' $themeConfUser
-    fi
-fi
+# currentTheme=$(awk -F'=' '/Current=/ {print $2; exit}' /etc/sddm.conf.d/kde_settings.conf)
+# themeConfUser="/usr/share/sddm/themes/$currentTheme/theme.conf.user"
+# if [ -e "$themeConfUser" ];then
+#     if [ "$(awk -F'=' '/type=/ {print $2; exit}' $themeConfUser)" = "color" ];then
+#         sed -i '/s/background=.*/background=/usr/share/sddm/wallpaper/image.png/;s/type=.*/type=image/' $themeConfUser
+#     fi
+# fi

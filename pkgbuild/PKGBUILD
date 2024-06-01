@@ -7,7 +7,7 @@ arch=('any')
 license=('GPL')
 url="https://github.com/biglinux/sddm-theme-biglinux"
 pkgdesc="Another sddm theme based in breeze"
-depends=('sddm' 'fortune-mod')
+depends=('sddm' 'maliit-keyboard')
 source=("git+https://github.com/biglinux/sddm-theme-biglinux.git")
 md5sums=(SKIP)
 if [ -e "${pkgname}.install" ];then
