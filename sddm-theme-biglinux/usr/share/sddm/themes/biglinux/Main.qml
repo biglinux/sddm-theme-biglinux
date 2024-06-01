@@ -22,11 +22,12 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Effects
 import Qt5Compat.GraphicalEffects 1.0
-import org.kde.plasma.plasma5support 2.0 as PlasmaCore
+import org.kde.plasma.plasma5support 2.0 as Plasma5Support
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.breeze.components
 import "components"
+
 
 Item {
     id: root
@@ -42,7 +43,7 @@ Item {
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
-    PlasmaCore.DataSource {
+    Plasma5Support.DataSource {
         id: keystateSource
         engine: "keystate"
         connectedSources: "Caps Lock"
@@ -337,6 +338,48 @@ Item {
                         opacity: 0.6
                     }
                 }
+
+                Item {
+                    id: phrase
+                    anchors.top: footer.bottom
+                    anchors.topMargin: 50
+                    anchors.centerIn: root.center
+
+                    visible: true
+                        Text {
+                            id: commandStdout
+                            color: "#fff"
+                            opacity: 0.7
+                        }
+                    Plasma5Support.DataSource {
+                        id: executable
+                        engine: "executable"
+                        connectedSources: []
+                        onNewData: (sourceName, data) => {
+                            var exitCode = data["exit code"]
+                            var exitStatus = data["exit status"]
+                            var stdout = data["stdout"]
+                            var stderr = data["stderr"]
+                            if (exitCode === 0 && exitStatus === 0) {
+                                commandStdout.text = stdout.trim()
+                            // } else {
+                            //     commandStdout.text = "Error: " + stderr
+                            }
+                            disconnectSource(sourceName)
+                        }
+
+                        function exec(cmd) {
+                            if (cmd) {
+                                connectSource(cmd)
+                            }
+                        }
+                    }
+
+                    Component.onCompleted: {
+                        executable.exec("/usr/share/sddm/scripts/sortphrases")
+                    }
+                }
+
 
                 actionItems: [
                     ActionButton {
