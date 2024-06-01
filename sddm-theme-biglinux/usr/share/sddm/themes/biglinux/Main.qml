@@ -343,14 +343,19 @@ Item {
                     id: phrase
                     anchors.top: footer.bottom
                     anchors.topMargin: 50
-                    anchors.centerIn: root.center
+                    anchors.horizontalCenter: parent.horizontalCenter  // Centraliza horizontalmente
+                    width: parent.width
 
                     visible: true
-                        Text {
-                            id: commandStdout
-                            color: "#fff"
-                            opacity: 0.7
-                        }
+                    Text {
+                        id: commandStdout
+                        color: "#fff"
+                        opacity: 0.7
+                        anchors.horizontalCenter: parent.horizontalCenter  // Centraliza horizontalmente
+                        wrapMode: Text.Wrap // Adiciona quebra de linha se necessário
+                        textFormat: Text.PlainText
+                    }
+
                     Plasma5Support.DataSource {
                         id: executable
                         engine: "executable"
@@ -362,8 +367,8 @@ Item {
                             var stderr = data["stderr"]
                             if (exitCode === 0 && exitStatus === 0) {
                                 commandStdout.text = stdout.trim()
-                            // } else {
-                            //     commandStdout.text = "Error: " + stderr
+                                // } else {
+                                //     commandStdout.text = "Error: " + stderr
                             }
                             disconnectSource(sourceName)
                         }
