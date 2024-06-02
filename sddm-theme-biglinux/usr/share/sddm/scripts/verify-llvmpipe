@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if glxinfo -B 2> /dev/null | grep -q llvmpipe; then
+    echo true
+else
+    echo false
+fi

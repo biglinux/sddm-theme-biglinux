@@ -31,7 +31,25 @@ import "components"
 
 Item {
     id: root
+    
+    property string llvmpipe: "false"  // Default value, assuming the initial state
 
+    Plasma5Support.DataSource {
+        id: verifyLlvmPipe
+        engine: "executable"
+        connectedSources: "/usr/share/sddm/scripts/verify-llvmpipe"
+        onNewData: (sourceName, data) => {
+            var exitCode = data["exit code"]
+            var exitStatus = data["exit status"]
+            var stdout = data["stdout"]
+            var stderr = data["stderr"]
+            if (exitCode === 0 && exitStatus === 0) {
+                llvmpipe = stdout.trim()
+            }
+            disconnectSource(sourceName)
+        }
+    }
+                    
     Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
     Kirigami.Theme.inherit: false
 
@@ -80,8 +98,8 @@ Item {
         }
 
         onPositionChanged: {
-            // Add mouse interaction particles
-            canvas.mouseParticles.push(canvas.createMouseParticle(mouse.x, mouse.y));
+                // Add mouse interaction particles
+                canvas.mouseParticles.push(canvas.createMouseParticle(mouse.x, mouse.y));
         }
 
         ShaderEffectSource {
@@ -130,6 +148,7 @@ Item {
             property var meteors: []
             property var particles: []
             property var mouseParticles: []
+            visible: llvmpipe === "false"
 
             function createMeteor() {
                 return {
@@ -211,64 +230,63 @@ Item {
             }
 
             Component.onCompleted: {
-                for (var i = 0; i < 20; i++) { // Increase the number of meteors
-                    meteors.push(createMeteor());
-                }
+                    for (var i = 0; i < 20; i++) { // Increase the number of meteors
+                        meteors.push(createMeteor());
+                    }
 
-                for (var i = 0; i < 50; i++) { // Increase the number of particles
-                    particles.push(createParticle());
-                }
-
-                canvas.requestPaint();
+                    for (var i = 0; i < 50; i++) { // Increase the number of particles
+                        particles.push(createParticle());
+                    }
             }
 
             Timer {
                 interval: 70
-                running: true
+                running: llvmpipe === "false"
                 repeat: true
                 onTriggered: {
-                    // Occasionally create a meteor
-                    if (Math.random() < 0.1) {
-                        canvas.meteors.push(canvas.createMeteor());
-                    }
-
-                    // Update meteors
-                    for (var i = 0; i < canvas.meteors.length; i++) {
-                        var meteor = canvas.meteors[i];
-                        meteor.x += meteor.speed;
-                        meteor.y += meteor.speed;
-                        meteor.opacity -= 0.02;
-                        if (meteor.opacity <= 0) {
-                            canvas.meteors.splice(i, 1); // Remove the meteor
-                            i--;
+                        // Occasionally create a meteor
+                        if (Math.random() < 0.1) {
+                            canvas.meteors.push(canvas.createMeteor());
                         }
-                    }
 
-                    // Update particles
-                    for (var i = 0; i < canvas.particles.length; i++) {
-                        var particle = canvas.particles[i];
-                        particle.x += particle.speedX;
-                        particle.y += particle.speedY;
-                        particle.opacity -= 0.01;
-                        if (particle.opacity <= 0) {
-                            canvas.particles.splice(i, 1); // Remove the particle
-                            canvas.particles.push(canvas.createParticle()); // Add new particle
+                        // Update meteors
+                        for (var i = 0; i < canvas.meteors.length; i++) {
+                            var meteor = canvas.meteors[i];
+                            meteor.x += meteor.speed;
+                            meteor.y += meteor.speed;
+                            meteor.opacity -= 0.02;
+                            if (meteor.opacity <= 0) {
+                                canvas.meteors.splice(i, 1); // Remove the meteor
+                                i--;
+                            }
                         }
-                    }
 
-                    // Update mouse particles
-                    for (var i = 0; i < canvas.mouseParticles.length; i++) {
-                        var mouseParticle = canvas.mouseParticles[i];
-                        mouseParticle.x += mouseParticle.speedX;
-                        mouseParticle.y += mouseParticle.speedY;
-                        mouseParticle.opacity -= 0.05;
-                        if (mouseParticle.opacity <= 0) {
-                            canvas.mouseParticles.splice(i, 1); // Remove the mouse particle
-                            i--;
+                        // Update particles
+                        for (var i = 0; i < canvas.particles.length; i++) {
+                            var particle = canvas.particles[i];
+                            particle.x += particle.speedX;
+                            particle.y += particle.speedY;
+                            particle.opacity -= 0.01;
+                            if (particle.opacity <= 0) {
+                                canvas.particles.splice(i, 1); // Remove the particle
+                                canvas.particles.push(canvas.createParticle()); // Add new particle
+                            }
                         }
-                    }
 
-                    canvas.requestPaint();
+                        // Update mouse particles
+                        for (var i = 0; i < canvas.mouseParticles.length; i++) {
+                            var mouseParticle = canvas.mouseParticles[i];
+                            mouseParticle.x += mouseParticle.speedX;
+                            mouseParticle.y += mouseParticle.speedY;
+                            mouseParticle.opacity -= 0.05;
+                            if (mouseParticle.opacity <= 0) {
+                                canvas.mouseParticles.splice(i, 1); // Remove the mouse particle
+                                i--;
+                            }
+                        }
+
+                        canvas.requestPaint();
+
                 }
             }
         }
@@ -360,9 +378,9 @@ Item {
                      }
 
                     Plasma5Support.DataSource {
-                        id: executable
+                        id: phrases
                         engine: "executable"
-                        connectedSources: []
+                        connectedSources: "/usr/share/sddm/scripts/sortphrases"
                         onNewData: (sourceName, data) => {
                             var exitCode = data["exit code"]
                             var exitStatus = data["exit status"]
@@ -375,16 +393,6 @@ Item {
                             }
                             disconnectSource(sourceName)
                         }
-
-                        function exec(cmd) {
-                            if (cmd) {
-                                connectSource(cmd)
-                            }
-                        }
-                    }
-
-                    Component.onCompleted: {
-                        executable.exec("/usr/share/sddm/scripts/sortphrases")
                     }
                 }
 
@@ -523,4 +531,3 @@ Item {
         onTriggered: notificationMessage = ""
     }
 }
-
