@@ -32,14 +32,15 @@ Item {
     Rectangle {
         width: parent.width
         height: parent.height
+
         Image {
             id: wallpaper
             source: if (config.type == "color") {
-                        config.default_background;
+                        config.auto_background;
                     } else {
                         config.background;
                     }
-            asynchronous: true
+            asynchronous: false
             cache: true
             clip: true
             visible: true

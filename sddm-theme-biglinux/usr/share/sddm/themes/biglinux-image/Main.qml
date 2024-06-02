@@ -53,7 +53,7 @@ Item {
         height: parent.height
         width: parent.width
         source: if (config.type == "color") {
-                    config.default_background;
+                    config.auto_background;
                 } else {
                     config.background;
                 }
