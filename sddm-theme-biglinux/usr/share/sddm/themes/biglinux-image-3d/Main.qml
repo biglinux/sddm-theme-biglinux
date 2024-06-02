@@ -22,7 +22,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Effects
 import Qt5Compat.GraphicalEffects 1.0
-import org.kde.plasma.plasma5support 2.0 as PlasmaCore
+import org.kde.plasma.plasma5support 2.0 as Plasma5Support
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.breeze.components
@@ -42,7 +42,7 @@ Item {
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
-    PlasmaCore.DataSource {
+    Plasma5Support.DataSource {
         id: keystateSource
         engine: "keystate"
         connectedSources: "Caps Lock"
@@ -57,7 +57,7 @@ Item {
                 } else {
                     config.background;
                 }
-        asynchronous: true
+        asynchronous: false
         cache: true
         clip: true
         visible: true
@@ -237,6 +237,45 @@ Item {
                             anchors.rightMargin: -15
                         }
                         opacity: 0.5
+                    }
+                }
+
+                Item {
+                    id: phrase
+                    anchors.top: footer.bottom
+                    anchors.topMargin: 50
+                    anchors.horizontalCenter: parent.horizontalCenter  // Centraliza horizontalmente
+
+                    visible: true
+                    Text {
+                        id: commandStdout
+                        color: "#fff"
+                        opacity: 0.7
+                        anchors.horizontalCenter: parent.horizontalCenter  // Centraliza horizontalmente
+                        wrapMode: Text.Wrap // Adiciona quebra de linha se necessário
+                        textFormat: Text.PlainText
+                        width: mainStack.width - 200
+                        horizontalAlignment: Text.AlignHCenter // Centraliza o texto horizontalmente
+                        font.pointSize: config.fontSize
+                        font.family: config.font
+                     }
+
+                    Plasma5Support.DataSource {
+                        id: phrases
+                        engine: "executable"
+                        connectedSources: "/usr/share/sddm/scripts/sortphrases"
+                        onNewData: (sourceName, data) => {
+                            var exitCode = data["exit code"]
+                            var exitStatus = data["exit status"]
+                            var stdout = data["stdout"]
+                            var stderr = data["stderr"]
+                            if (exitCode === 0 && exitStatus === 0) {
+                                commandStdout.text = stdout.trim()
+                                // } else {
+                                //     commandStdout.text = "Error: " + stderr
+                            }
+                            disconnectSource(sourceName)
+                        }
                     }
                 }
 
