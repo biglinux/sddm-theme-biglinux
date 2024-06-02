@@ -52,11 +52,7 @@ Item {
         id: wallpaper
         height: parent.height
         width: parent.width
-        source: if (config.type == "color") {
-                    config.auto_background;
-                } else {
-                    config.background;
-                }
+        source: config.type == "color" || !config.background ? config.auto_background : config.background
         asynchronous: false
         cache: true
         clip: true
