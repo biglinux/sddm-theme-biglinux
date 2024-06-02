@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+rm /usr/share/plasma/avatars/*Konqi*
+rm /usr/share/plasma/avatars/*Katie*
+rm -r /usr/share/plasma/avatars/photos

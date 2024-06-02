@@ -8,11 +8,11 @@ if [ ! -e "/usr/share/sddm/wallpaper/image.png" ];then
     cp "$(grep -m1 -Po "(?<=^Image=).*" "/home/$user/.config/plasma-org.kde.plasma.desktop-appletsrc" | tr -d '"' | tr -d ';')" /usr/share/sddm/wallpaper/image.png
 fi
 
-# if color, change to image
-# currentTheme=$(awk -F'=' '/Current=/ {print $2; exit}' /etc/sddm.conf.d/kde_settings.conf)
-# themeConfUser="/usr/share/sddm/themes/$currentTheme/theme.conf.user"
-# if [ -e "$themeConfUser" ];then
-#     if [ "$(awk -F'=' '/type=/ {print $2; exit}' $themeConfUser)" = "color" ];then
-#         sed -i '/s/background=.*/background=/usr/share/sddm/wallpaper/image.png/;s/type=.*/type=image/' $themeConfUser
-#     fi
-# fi
+OLD_IFS=$IFS
+IFS=$'\n'
+for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/passwd); do
+  if [ ! -e "/var/lib/AccountsService/icons/$user" ];then
+    cp "$(shuf -n 1 -e $(ls /usr/share/plasma/avatars/*.png))" /var/lib/AccountsService/icons/$user
+  fi
+done
+IFS=$OLD_IFS

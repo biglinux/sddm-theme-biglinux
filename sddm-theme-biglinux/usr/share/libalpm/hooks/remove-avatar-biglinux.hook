@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = plasma-workspace
+
+[Action]
+Description = Remove Avatar from plasma-workspace
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/remove-avatar-biglinux
