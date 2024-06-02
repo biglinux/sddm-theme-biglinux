@@ -79,7 +79,7 @@ msgid ""
 "attach."
 msgstr ""
 "Ao usar a tecla 'Print Screen', repare no botão 'Editar', onde pode fazer edições rápidas na "
-"imagem. Também pode copiar a imagem e colr diretamente em programas sem a necessidade de salvar "
+"imagem. Também pode copiar a imagem e colar diretamente em programas sem a necessidade de salvar "
 "e anexar."
 
 msgid ""
