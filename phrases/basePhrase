@@ -10,29 +10,33 @@ export TEXTDOMAIN=sddm-theme-biglinux
 ######################################################################################
 
 phrases=(
-$"press / to filter files and folders in dolphin"
+$"In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items in the current folder, or use 'Ctrl + F' to search within subfolders as well."
 
-$"Use ls to list files and directories in the current directory"
+$"With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as remote controls, and much more."
 
-$"Use cd to navigate between directories. For example, cd Documents"
+$"In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote files with much greater ease."
 
-$"Use pwd to print the current directory"
+$"In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded terminal. The best of graphical mode and terminal in the same place."
 
-$"Use mkdir to create a new directory. Example: mkdir new_directory"
+$"Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, type what you want to filter the results."
 
-$"To create a new file, use touch. Example: touch new_file.txt"
+$"In the system menu, besides finding programs, it is also easy to do calculations and conversions, for example, '5 + 7' or '5m'."
 
-$"Use cp to copy files and directories. Example: cp file.txt folder/"
+$"To split the screen with more programs, move each window to one of the sides or corners of the screen."
 
-$"Use mv to move or rename files and directories. Example: mv file.txt new_name.txt"
+$"Most laptops perform better when plugged into a power outlet."
 
-$"To remove files, use rm. Example: rm file.txt"
+$"Every day, humans depend more on computing. Take advantage of using Linux and free software; here you can truly learn how things work."
 
-$"Use rm -r to remove directories and their contents. Be careful, as it is irreversible"
+$"When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the image. You can also copy the image and paste it directly into programs without the need to save and attach."
 
-$"To view the contents of a text file, use cat. Example: cat file.txt"
+$"In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add digital signatures."
 
-$"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
+$"By right-clicking on an image file, you can make various edits, including resizing and converting, directly from the file manager."
+
+$"To convert Office documents to other formats, including PDF, just right-click and choose the format, directly from the file manager."
+
+$"Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve mathematical calculations."
 )
 
 
