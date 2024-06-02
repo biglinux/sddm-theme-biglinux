@@ -16,40 +16,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 
-msgid "press / to filter files and folders in dolphin"
-msgstr "Dolphin でファイルやフォルダをフィルタリングするには / キーを押してください"
-
-msgid "Use ls to list files and directories in the current directory"
-msgstr "現在のディレクトリ内のファイルやディレクトリをリストするには、lsを使用します"
-
-msgid "Use cd to navigate between directories. For example, cd Documents"
-msgstr "cd を使用してディレクトリ間を移動します。例えば、cd Documents"
-
-msgid "Use pwd to print the current directory"
-msgstr "現在のディレクトリを表示するには、pwdを使用します。"
-
-msgid "Use mkdir to create a new directory. Example: mkdir new_directory"
-msgstr "新しいディレクトリを作成するには、mkdirを使用します。例：mkdir new_directory"
-
-msgid "To create a new file, use touch. Example: touch new_file.txt"
-msgstr "新しいファイルを作成するには、touchを使用します。例：touch new_file.txt"
-
-msgid "Use cp to copy files and directories. Example: cp file.txt folder/"
-msgstr "cpを使用してファイルやディレクトリをコピーします。例：cp file.txt folder/"
-
-msgid "Use mv to move or rename files and directories. Example: mv file.txt new_name.txt"
-msgstr "mvを使用してファイルやディレクトリを移動または名前を変更します。例：mv file.txt new_name.txt"
-
-msgid "To remove files, use rm. Example: rm file.txt"
-msgstr "ファイルを削除するには、rmを使用します。例: rm file.txt"
-
-msgid "Use rm -r to remove directories and their contents. Be careful, as it is irreversible"
-msgstr "ディレクトリとその内容を削除するには、rm -rを使用します。取り消しできないので注意してください。"
-
-msgid "To view the contents of a text file, use cat. Example: cat file.txt"
-msgstr "catコマンドを使用してテキストファイルの内容を表示します。例: cat file.txt"
+msgid ""
+"In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items "
+"in the current folder, or use 'Ctrl + F' to search within subfolders as well."
+msgstr "'Dolphin'ファイルマネージャーで、'/'キーを押して検索したい内容を入力して、現在のフォルダー内のアイテムをフィルタリングするか、'Ctrl + F'を使用してサブフォルダー内も検索できます。"
 
 msgid ""
-"testando uma frase longa para ver se a quebra de linha está funcionando corretamente, sera que vai "
-"quebrar a linha? seria otimo se quebra-se a linha automaticamente né? sera que vai rolar?"
-msgstr "テスト中に改行が正しく機能しているかを確認するために長いフレーズを入力しています。自動的に改行されると素晴らしいですね。うまくいくでしょうか？"
+"With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as "
+"remote controls, and much more."
+msgstr "KDEConnectを使用すると、コンピュータ、タブレット、スマートフォン同士が通信し、ファイルを交換したり、リモートコントロールとして使用したりすることができます。"
+
+msgid ""
+"In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote "
+"files with much greater ease."
+msgstr "ファイルマネージャーでは、SSH、SFTP、Sambaサーバーなどのファイルにアクセスできます。はるかに簡単にリモートファイルにアクセスできます。"
+
+msgid ""
+"In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded "
+"terminal. The best of graphical mode and terminal in the same place."
+msgstr "'Dolphin'ファイルマネージャと'Kate'テキストエディタで、埋め込みターミナルにアクセスするには、'F4'キーを押します。グラフィカルモードとターミナルを同じ場所で利用できます。"
+
+msgid ""
+"Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, "
+"type what you want to filter the results."
+msgstr "'WinKey + V'ショートカットキーを使用して、コピーしたコンテンツの履歴にアクセスします。ショートカットキーを使用した後、結果をフィルタリングするために入力してください。"
+
+msgid ""
+"In the system menu, besides finding programs, it is also easy to do calculations and conversions, "
+"for example, '5 + 7' or '5m'."
+msgstr "システムメニューでは、プログラムを見つけるだけでなく、計算や変換も簡単に行うことができます。例えば、'5 + 7'や'5m'などがあります。"
+
+msgid ""
+"To split the screen with more programs, move each window to one of the sides or corners of the "
+"screen."
+msgstr "画面を複数のプログラムで分割するには、各ウィンドウを画面の一方の側または角に移動します。"
+
+msgid "Most laptops perform better when plugged into a power outlet."
+msgstr "ほとんどのノートパソコンは、電源コンセントに接続されていると性能が向上します。"
+
+msgid ""
+"Every day, humans depend more on computing. Take advantage of using Linux and free software; here "
+"you can truly learn how things work."
+msgstr "毎日、人間はコンピューティングにますます依存しています。Linuxや無料のソフトウェアを利用して、ここで本当に物事がどのように動作するかを学ぶことができます。"
+
+msgid ""
+"When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the "
+"image. You can also copy the image and paste it directly into programs without the need to save and "
+"attach."
+msgstr "'Print Screen' キーを使用すると、画像を簡単に編集できる「編集」ボタンに注目してください。画像をコピーして保存して添付する必要なく、直接プログラムに貼り付けることもできます。"
+
+msgid ""
+"In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add "
+"digital signatures."
+msgstr "'Okular' ドキュメントビューアーでは、PDF ファイルに注釈やメモを追加したり、デジタル署名を追加したりすることができます。"
+
+msgid ""
+"By right-clicking on an image file, you can make various edits, including resizing and converting, "
+"directly from the file manager."
+msgstr "画像ファイルを右クリックすると、ファイルマネージャーから直接リサイズや変換などさまざまな編集ができます。"
+
+msgid ""
+"To convert Office documents to other formats, including PDF, just right-click and choose the "
+"format, directly from the file manager."
+msgstr "Officeドキュメントを他の形式に変換するには、ファイルマネージャから右クリックして形式を選択するだけです。"
+
+msgid ""
+"Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve "
+"mathematical calculations."
+msgstr "'Alt + Space' キーを押して 'KRunner' を使用して、素早い検索、コマンドの実行、数学的な計算を行います。"
