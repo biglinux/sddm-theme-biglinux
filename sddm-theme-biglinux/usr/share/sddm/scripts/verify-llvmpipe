@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if glxinfo -B 2> /dev/null | grep -q llvmpipe; then
+if vulkaninfo --summary 2> /dev/null | grep -q llvmpipe; then
     echo true
 else
     echo false
