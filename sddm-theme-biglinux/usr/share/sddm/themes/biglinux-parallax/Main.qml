@@ -244,8 +244,20 @@ Item {
         StackView {
             id: mainStack
             anchors.centerIn: parent
-            height: root.height / 1.3
-            width: parent.width / 2
+            width: {
+                if (Screen.width >= 1700) {
+                    return parent.width / 1.8;
+                } else {
+                    return parent.width / 1.4;
+                }
+            }
+            height: {
+                if (Screen.height >= 950) {
+                    return root.height / 1.3;
+                } else {
+                    return root.height / 1.05;
+                }
+            }
 
             focus: true // StackView is an implicit focus scope, so we need to give this focus so the item inside will have it
 
@@ -325,7 +337,7 @@ Item {
                 Item {
                     id: phrase
                     anchors.top: footer.bottom
-                    anchors.topMargin: 50
+                    anchors.topMargin: Screen.height / 22
                     anchors.horizontalCenter: parent.horizontalCenter  // Centraliza horizontalmente
 
                     visible: true
