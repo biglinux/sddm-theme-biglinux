@@ -1,6 +1,6 @@
 [Unit]
 Description=Ensures that SDDM wallpaper is correct
-After=sddm.service
+Before=sddm.service
 Wants=sddm.service
 
 [Service]

@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-if vulkaninfo --summary 2> /dev/null | grep -q llvmpipe; then
-    echo true
-else
+sudo biglinux-backlight-restore 2>/dev/null > /dev/null &
+
+# Use Vulkaninfo to verify if only llvmpipe as vulkan render
+# Output true if using llvmpipe and false if using anotherr vulkan render
+if vulkaninfo --summary 2> /dev/null | grep 'deviceName' | grep -vq 'llvmpipe'; then
     echo false
+else
+    echo true
 fi
