@@ -16,3 +16,39 @@ for user in $(awk -F':' '{ if ($3 >= 1000 && $1 != "nobody") print $1 }' /etc/pa
   fi
 done
 IFS=$OLD_IFS
+
+
+##### Numlock #######
+# Verify if last login user select auto enable numlock in kwin
+if grep -qi "NumLock=0" "/home/$(grep User= /var/lib/sddm/state.conf | sed 's|User=||g;s| ||g')/.config/kcminputrc"; then
+  NumLockUser=true
+fi
+
+# Numlock WAYLAND
+# Auto enable numlock in sddm with wayland if last user configuration in keyboard enable numlock or sddm.conf
+if [[ "$NumLockUser" = "true" ]] || grep -qi ' *Numlock=on' sddm.conf; then
+
+  # Enable numlock
+  if grep -q 'NumLock=' /var/lib/sddm/.config/kcminputrc; then
+    sed -i 's|NumLock=1|NumLock=0|g' /var/lib/sddm/.config/kcminputrc
+  else
+    echo '[Keyboard]
+NumLock=0' >> /var/lib/sddm/.config/kcminputrc
+  fi
+
+else
+  # Not Change numlock
+  if grep -q 'NumLock=' /var/lib/sddm/.config/kcminputrc; then
+    sed -i 's|NumLock=1|NumLock=|g' /var/lib/sddm/.config/kcminputrc
+  fi
+
+fi
+
+# Numlock X11
+if [[ "$NumLockUser" = "true" ]]; then
+    echo '[General]
+Numlock=on' > /etc/sddm.conf.d/enable_numlock.conf
+numlockx on
+else
+    rm -f /etc/sddm.conf.d/enable_numlock.conf
+fi

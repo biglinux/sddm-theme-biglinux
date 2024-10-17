@@ -9,8 +9,3 @@ if vulkaninfo --summary 2> /dev/null | grep 'deviceName' | grep -vq 'llvmpipe'; 
 else
     echo true
 fi
-
-# Auto enable numlock in sddm with wayland if last user configure in keyboard config to enable numlock
-if [[ "$(grep "NumLock=1" /home/$(grep User= /var/lib/sddm/state.conf | cut -f2 -d=)/.config/kcminputrc)" != "" ]] || grep -q ' *Numlock=on' sddm.conf; then
-    numlockx on
-fi
