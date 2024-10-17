@@ -48,7 +48,6 @@ fi
 if [[ "$NumLockUser" = "true" ]]; then
     echo '[General]
 Numlock=on' > /etc/sddm.conf.d/enable_numlock.conf
-numlockx on
 else
     rm -f /etc/sddm.conf.d/enable_numlock.conf
 fi
