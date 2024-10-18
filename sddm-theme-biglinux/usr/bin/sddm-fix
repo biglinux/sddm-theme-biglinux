@@ -26,7 +26,7 @@ fi
 
 # Numlock WAYLAND
 # Auto enable numlock in sddm with wayland if last user configuration in keyboard enable numlock or sddm.conf
-if [[ "$NumLockUser" = "true" ]] || grep -qi ' *Numlock=on' sddm.conf; then
+if [[ "$NumLockUser" = "true" ]] || grep -qi ' *Numlock=on' /etc/sddm.conf; then
 
   # Enable numlock
   if grep -q 'NumLock=' /var/lib/sddm/.config/kcminputrc; then
