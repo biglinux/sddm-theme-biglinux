@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the sddm-theme-biglinux package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sddm-theme-biglinux\n"
@@ -15,60 +14,50 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid ""
 "In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items "
 "in the current folder, or use 'Ctrl + F' to search within subfolders as well."
 msgstr ""
 "במנהל הקבצים 'Dolphin', לחץ על המקש '/' והקלד את מה שאתה מחפש כדי לסנן פריטים בתיקייה הנוכחית, או "
 "השתמש ב 'Ctrl + F' כדי לחפש גם בתת-תיקיות."
-
 msgid ""
 "With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as "
 "remote controls, and much more."
 msgstr ""
 "עם KDEConnect, המחשבים, הטאבלטים והסמארטפונים שלך יכולים לתקשר, להחליף קבצים, לשמש כשלטים רחוקים "
 "ועוד."
-
 msgid ""
 "In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote "
 "files with much greater ease."
 msgstr "במנהל הקבצים, ניתן לגשת לקבצים בשרתי SSH, SFTP, Samba, ועוד. נגישות קבצים מרחוק בקלות רבה יותר."
-
 msgid ""
 "In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded "
 "terminal. The best of graphical mode and terminal in the same place."
 msgstr ""
 "במנהל הקבצים 'דולפין' ובעורך הטקסט 'קייט', לחץ על 'F4' כדי לגשת לטרמינל המוטמע. השילוב הטוב ביותר "
 "של מצב גרפי וטרמינל באותו מקום."
-
 msgid ""
 "Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, "
 "type what you want to filter the results."
 msgstr ""
 "השתמש בקיצור הדרך 'WinKey + V' כדי לגשת להיסטוריית התוכן שהועתק. לאחר השימוש בקיצור הדרך, הקלד את "
 "מה שתרצה לסנן את התוצאות."
-
 msgid ""
 "In the system menu, besides finding programs, it is also easy to do calculations and conversions, "
 "for example, '5 + 7' or '5m'."
 msgstr "בתפריט המערכת, בנוסף למציאת תוכניות, גם קל לבצע חישובים והמרות, לדוגמה, '5 + 7' או '5 מטר'."
-
 msgid ""
 "To split the screen with more programs, move each window to one of the sides or corners of the "
 "screen."
 msgstr "כדי לפצל את המסך עם יותר תוכניות, עברו כל חלון לאחת מהצדדים או הפינות של המסך."
-
 msgid "Most laptops perform better when plugged into a power outlet."
 msgstr "רוב המחשבים הניידים מבצעים טוב יותר כאשר מחוברים לשקע חשמל."
-
 msgid ""
 "Every day, humans depend more on computing. Take advantage of using Linux and free software; here "
 "you can truly learn how things work."
 msgstr ""
 "כל יום, האדם תלוי יותר בחישוב. תיהנה משימוש ב-Linux ובתוכנה חופשית; כאן באפשרותך ללמוד איך הדברים "
 "באמת עובדים."
-
 msgid ""
 "When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the "
 "image. You can also copy the image and paste it directly into programs without the need to save and "
@@ -76,26 +65,22 @@ msgid ""
 msgstr ""
 "כאשר אתה משתמש במקש 'הדפס מסך', שים לב לכפתור 'עריכה', בו תוכל לערוך במהירות את התמונה. תוכל גם "
 "להעתיק את התמונה ולהדביק אותה ישירות לתוכניות בלי צורך לשמור ולצרף."
-
 msgid ""
 "In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add "
 "digital signatures."
 msgstr ""
 "בתוכנת הצפייה במסמכים 'Okular', ניתן ליצור הערות ותגובות על קבצי PDF שלך, ואף להוסיף חתימות "
 "דיגיטליות."
-
 msgid ""
 "By right-clicking on an image file, you can make various edits, including resizing and converting, "
 "directly from the file manager."
 msgstr ""
 "על ידי לחיצה ימנית על קובץ תמונה, ניתן לבצע שינויים שונים, כולל שינוי גודל והמרה, ישירות מנהל "
 "הקבצים."
-
 msgid ""
 "To convert Office documents to other formats, including PDF, just right-click and choose the "
 "format, directly from the file manager."
 msgstr "להמיר מסמכי Office לפורמטים אחרים, כולל PDF, פשוט ללחוץ ימין ולבחור את הפורמט, ישירות ממנהל הקבצים."
-
 msgid ""
 "Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve "
 "mathematical calculations."

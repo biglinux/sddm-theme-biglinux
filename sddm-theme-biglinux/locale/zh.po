@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the sddm-theme-biglinux package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sddm-theme-biglinux\n"
@@ -15,71 +14,57 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid ""
 "In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items "
 "in the current folder, or use 'Ctrl + F' to search within subfolders as well."
 msgstr "在“Dolphin”文件管理器中，按“/”键并输入要查找的内容以过滤当前文件夹中的项目，或使用“Ctrl + F”在子文件夹中进行搜索。"
-
 msgid ""
 "With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as "
 "remote controls, and much more."
 msgstr "使用KDEConnect，您的计算机、平板电脑和智能手机可以进行通信、交换文件、充当遥控器等等。"
-
 msgid ""
 "In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote "
 "files with much greater ease."
 msgstr "在文件管理器中，您可以访问SSH、SFTP、Samba服务器等文件。更轻松地访问远程文件。"
-
 msgid ""
 "In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded "
 "terminal. The best of graphical mode and terminal in the same place."
 msgstr "在“Dolphin”文件管理器和“Kate”文本编辑器中，按下“F4”键即可访问嵌入式终端。图形模式和终端的最佳结合。"
-
 msgid ""
 "Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, "
 "type what you want to filter the results."
 msgstr "使用“WinKey + V”快捷键访问已复制内容的历史记录。使用快捷键后，键入要筛选结果的内容。"
-
 msgid ""
 "In the system menu, besides finding programs, it is also easy to do calculations and conversions, "
 "for example, '5 + 7' or '5m'."
 msgstr "在系统菜单中，除了查找程序外，还可以轻松进行计算和转换，例如，'5 + 7'或'5m'。"
-
 msgid ""
 "To split the screen with more programs, move each window to one of the sides or corners of the "
 "screen."
 msgstr "要将屏幕分割为更多程序，请将每个窗口移动到屏幕的一侧或角落。"
-
 msgid "Most laptops perform better when plugged into a power outlet."
 msgstr "大多数笔记本电脑在插入电源插座时性能更好。"
-
 msgid ""
 "Every day, humans depend more on computing. Take advantage of using Linux and free software; here "
 "you can truly learn how things work."
 msgstr "每天，人类对计算机的依赖越来越大。利用Linux和免费软件的优势；在这里，您可以真正学习事物是如何运作的。"
-
 msgid ""
 "When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the "
 "image. You can also copy the image and paste it directly into programs without the need to save and "
 "attach."
 msgstr "使用“打印屏幕”键时，请注意“编辑”按钮，您可以对图像进行快速编辑。您还可以复制图像并直接粘贴到程序中，无需保存和附加。"
-
 msgid ""
 "In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add "
 "digital signatures."
 msgstr "在“Okular”文档查看器中，您可以在PDF文件上进行注释和备注，甚至添加数字签名。"
-
 msgid ""
 "By right-clicking on an image file, you can make various edits, including resizing and converting, "
 "directly from the file manager."
 msgstr "通过右键单击图像文件，您可以直接从文件管理器进行各种编辑，包括调整大小和转换。"
-
 msgid ""
 "To convert Office documents to other formats, including PDF, just right-click and choose the "
 "format, directly from the file manager."
 msgstr "要将Office文档转换为其他格式，包括PDF，只需右键单击并从文件管理器中直接选择格式。"
-
 msgid ""
 "Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve "
 "mathematical calculations."
