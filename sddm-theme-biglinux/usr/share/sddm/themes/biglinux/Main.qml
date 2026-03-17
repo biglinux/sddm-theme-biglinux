@@ -39,6 +39,7 @@ Item {
     height: Screen.height
 
     property string notificationMessage
+    property string _pamInfoMsg: ""
 
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
@@ -504,9 +505,24 @@ Item {
 
     Connections {
         target: sddm
-        function onLoginFailed() {
-            notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed");
+        function onInformationMessage(msg) {
+            if (msg && !root._pamInfoMsg) {
+                root.notificationMessage = msg
+                root._pamInfoMsg = msg
+            }
         }
+        function onLoginFailed() {
+            if (!root._pamInfoMsg) {
+                root.notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed")
+            }
+            pamInfoTimer.restart()
+        }
+    }
+
+    Timer {
+        id: pamInfoTimer
+        interval: 500
+        onTriggered: root._pamInfoMsg = ""
     }
 
     onNotificationMessageChanged: {
@@ -517,7 +533,7 @@ Item {
 
     Timer {
         id: notificationResetTimer
-        interval: 3000
+        interval: 8000
         onTriggered: notificationMessage = ""
     }
 }
