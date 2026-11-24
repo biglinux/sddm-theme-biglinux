@@ -1,29 +1,69 @@
-/********************************************************************
- This file is part of the KDE project.
+/*
+    SPDX-FileCopyrightText: 2017 Martin Gräßlin <mgraesslin@kde.org>
 
-Copyright (C) 2017 Martin Gräßlin <mgraesslin@kde.org>
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+import QtQuick
+import QtQuick.VirtualKeyboard as QtVK
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+import org.kde.kirigami as Kirigami
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*********************************************************************/
-
-import QtQuick 2.5
-import QtQuick.VirtualKeyboard 2.1
-
-InputPanel {
+QtVK.InputPanel {
     id: inputPanel
     property bool activated: false
-    active: activated && Qt.inputMethod.visible
-    visible: active
+    active: activated && InputMethod.visible
     width: parent.width
+
+    states: [
+        State {
+            name: "visible"
+            when: inputPanel.active
+            PropertyChanges {
+                inputPanel.y: inputPanel.parent.height - inputPanel.height
+                inputPanel.opacity: 1
+                inputPanel.visible: true
+            }
+        },
+        State {
+            name: "hidden"
+            when: !inputPanel.active
+            PropertyChanges {
+                inputPanel.y: inputPanel.parent.height
+                inputPanel.opacity: 0
+                inputPanel.visible:false
+            }
+        }
+    ]
+
+    transitions: [
+        Transition {
+            to: "visible"
+            ParallelAnimation {
+                YAnimator {
+                    // NOTE this is necessary as otherwise the keyboard always starts the transition with Y as 0, due to the internal reparenting happening when becomes active
+                    from: inputPanel.parent.height
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.OutQuad
+                }
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.OutQuad
+                }
+            }
+        },
+        Transition {
+            to: "hidden"
+            ParallelAnimation {
+                YAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InQuad
+                }
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InQuad
+                }
+            }
+        }
+    ]
 }
