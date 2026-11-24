@@ -7,7 +7,7 @@ arch=('any')
 license=('GPL')
 url="https://github.com/biglinux/sddm-theme-biglinux"
 pkgdesc="Another sddm theme based in breeze"
-depends=('sddm' 'plasma-keyboard')
+depends=('sddm' 'plasma-keyboard' 'plasma-workspace' 'plasma5support')
 source=("git+https://github.com/biglinux/sddm-theme-biglinux.git")
 md5sums=(SKIP)
 if [ -e "${pkgname}.install" ];then

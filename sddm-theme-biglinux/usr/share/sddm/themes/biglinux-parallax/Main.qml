@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Effects
 import Qt5Compat.GraphicalEffects 1.0
 import org.kde.plasma.plasma5support 2.0 as Plasma5Support
+import org.kde.plasma.private.keyboardindicator as KeyboardIndicator
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.breeze.components
@@ -23,10 +24,9 @@ Item {
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
-    Plasma5Support.DataSource {
-        id: keystateSource
-        engine: "keystate"
-        connectedSources: "Caps Lock"
+    KeyboardIndicator.KeyState {
+        id: capsLockState
+        key: Qt.Key_CapsLock
     }
 
     Rectangle {
@@ -185,7 +185,7 @@ Item {
             }
         }
 
-        Keys.onPressed: {
+        Keys.onPressed: event => {
             uiVisible = true;
             event.accepted = false;
         }
@@ -210,6 +210,7 @@ Item {
             visible: false
             mipmap: false
             live: false
+            onSourceRectChanged: scheduleUpdate()
         }
 
         MultiEffect {
@@ -233,7 +234,7 @@ Item {
             width: mainStack.width
             height: mainStack.height
             x: root.width / 2 - width / 2
-            y: root.height / 2 - height / 2
+            y: mainStack.y
             radius: 16
             color: "#1e1e1e"
             opacity: 0.8
@@ -243,7 +244,7 @@ Item {
 
         StackView {
             id: mainStack
-            anchors.centerIn: parent
+            anchors.horizontalCenter: parent.horizontalCenter
             width: {
                 if (Screen.width >= 1700) {
                     return parent.width / 1.8;
@@ -265,7 +266,7 @@ Item {
                 anchors.fill: parent
                 anchors.margins: -root.width
                 hoverEnabled: true
-                onPositionChanged: {
+                onPositionChanged: mouse => {
                     var backgroundParallaxFactor = 0.02; // Adjust background parallax effect
 
                     // Move the background
@@ -295,8 +296,8 @@ Item {
 
                 notificationMessage: {
                     var text = ""
-                    if (keystateSource.data["Caps Lock"]["Locked"]) {
-                        text += i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Caps Lock is on")
+                    if (capsLockState.locked) {
+                        text += i18ndc("plasma-desktop-sddm-theme", "@info:status", "Caps Lock is on")
                         if (root.notificationMessage) {
                             text += " • "
                         }
@@ -316,7 +317,7 @@ Item {
 
                     Behavior on opacity {
                         OpacityAnimator {
-                            duration: units.longDuration
+                            duration: Kirigami.Units.longDuration
                         }
                     }
 
@@ -376,21 +377,21 @@ Item {
                 actionItems: [
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/suspend.svg")
-                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Suspend to RAM", "Sleep")
+                        text: i18ndc("plasma-desktop-sddm-theme", "@action:button Suspend to RAM", "Sleep")
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/restart.svg")
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Restart")
+                        text: i18ndc("plasma-desktop-sddm-theme", "@action:button", "Restart")
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                         visible: !inputPanel.keyboardActive
                     },
                     ActionButton {
                         iconSource: Qt.resolvedUrl("assets/shutdown.svg")
-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Shut Down")
+                        text: i18ndc("plasma-desktop-sddm-theme", "@action:button", "Shut Down")
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                         visible: !inputPanel.keyboardActive
@@ -404,7 +405,7 @@ Item {
 
                 Behavior on opacity {
                     OpacityAnimator {
-                        duration: units.longDuration
+                        duration: Kirigami.Units.longDuration
                     }
                 }
             }
@@ -443,7 +444,7 @@ Item {
 
                     Text {
                         id: virtualKeyboardButtonLabel
-                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
+                        text: i18ndc("plasma-desktop-sddm-theme", "Button to show/hide virtual keyboard", "Virtual Keyboard")
                         color: "transparent" // Inicialmente transparente
                         font.pointSize: config.fontSize
                         anchors.right: iconVirtualKeyboard.right
@@ -492,7 +493,7 @@ Item {
     Connections {
         target: sddm
         function onLoginFailed() {
-            notificationMessage = i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Login Failed");
+            notificationMessage = i18ndc("plasma-desktop-sddm-theme", "@info:status", "Login Failed");
         }
     }
 

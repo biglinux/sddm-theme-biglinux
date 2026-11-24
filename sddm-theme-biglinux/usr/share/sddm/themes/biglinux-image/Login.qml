@@ -7,6 +7,7 @@ import QtQuick.Controls 2.4
 
 import org.kde.plasma.plasma5support 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
+import org.kde.kirigami as Kirigami
 
 SessionManagementScreen {
     id: root
@@ -17,9 +18,14 @@ SessionManagementScreen {
     property string lastUserName
     property bool loginScreenUiVisible: false
 
-    //the y position that should be ensured visible when the on screen keyboard is visible
-    property int visibleBoundary: mapFromItem(loginButton, 0, 0).y
-    onHeightChanged: visibleBoundary = mapFromItem(loginButton, 0, 0).y + loginButton.height + units.smallSpacing
+    // The y position that must stay visible above the on-screen keyboard. Layout passes move
+    // the login button without resizing this item, so the binding reads every ancestor's y.
+    property real visibleBoundary: {
+        for (let item = loginButton; item && item !== root; item = item.parent) {
+            item.y;
+        }
+        return mapFromItem(loginButton, 0, loginButton.height).y + Kirigami.Units.smallSpacing;
+    }
 
     signal loginRequest(string username, string password)
 
@@ -53,7 +59,7 @@ SessionManagementScreen {
         text: lastUserName
         visible: showUsernamePrompt
         focus: showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
-        placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Username")
+        placeholderText: i18ndc("plasma-desktop-sddm-theme", "@info:placeholder in textfield", "Username")
 
         onAccepted:
             if (root.loginScreenUiVisible) {
@@ -64,7 +70,7 @@ SessionManagementScreen {
 
     Input {
         id: passwordBox
-        placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
+        placeholderText: i18ndc("plasma-desktop-sddm-theme", "@info:placeholder in textfield", "Password")
         focus: !showUsernamePrompt || lastUserName
         echoMode: TextInput.Password
         Layout.fillWidth: true
@@ -88,7 +94,7 @@ SessionManagementScreen {
 
         //if empty and left or right is pressed change selection in user switch
         //this cannot be in keys.onLeftPressed as then it doesn't reach the password box
-        Keys.onPressed: {
+        Keys.onPressed: event => {
             if (event.key == Qt.Key_Left && !text) {
                 userList.decrementCurrentIndex();
                 event.accepted = true
@@ -101,7 +107,7 @@ SessionManagementScreen {
 
         Connections {
             target: sddm
-            onLoginFailed: {
+            function onLoginFailed() {
                 passwordBox.selectAll()
                 passwordBox.forceActiveFocus()
             }
@@ -109,7 +115,7 @@ SessionManagementScreen {
     }
     PlasmaComponents.Button {
         id: loginButton
-        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
+        text: i18ndc("plasma-desktop-sddm-theme", "@action:button", "Log In")
         enabled: passwordBox.text != ""
         anchors.verticalCenter: passwordBox.verticalCenter
         anchors.left: passwordBox.right
