@@ -1,58 +1,72 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Slovak translations for sddm-theme-biglinux package.
+# Copyright (C) 2026 THE sddm-theme-biglinux'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the sddm-theme-biglinux package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Automatically generated, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: sddm-theme-biglinux\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: attranslate\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items in the current folder, or use 'Ctrl + F' to search within subfolders as well."
-msgstr "V súborovom manažéri 'Dolphin' stlačte kláves '/' a zadajte, čo hľadáte, aby ste filtrovali položky v aktuálnom priečinku, alebo použite 'Ctrl + F' na vyhľadávanie aj vo vnútorných priečinkoch."
+msgstr "V správcovi súborov „Dolphin“ stlačte kláves „/“ a zadaním hľadaného textu vyfiltrujte položky v aktuálnom priečinku, alebo použite „Ctrl + F“ a vyhľadávajte aj v podpriečinkoch."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as remote controls, and much more."
-msgstr "S KDEConnectom môžu vaše počítače, tablety a smartfóny komunikovať, vymieňať súbory, slúžiť ako diaľkové ovládanie a oveľa viac."
+msgstr "Vďaka KDEConnect môžu vaše počítače, tablety a smartfóny komunikovať, vymieňať si súbory, slúžiť ako diaľkové ovládače a mnoho ďalšieho."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote files with much greater ease."
-msgstr "V správcovi súborov môžete pristupovať k súborom na serveroch SSH, SFTP, Samba a ďalších. Prístup k vzdialeným súborom je oveľa jednoduchší."
+msgstr "V správcovi súborov máte prístup k súborom na serveroch SSH, SFTP, Samba a ďalších. So vzdialenými súbormi tak pracujete oveľa jednoduchšie."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded terminal. The best of graphical mode and terminal in the same place."
-msgstr "V súborovom manažéri 'Dolphin' a textovom editore 'Kate' stlačte 'F4' pre prístup k vloženému terminálu. Najlepšie z grafického režimu a terminálu na jednom mieste."
+msgstr "V správcovi súborov „Dolphin“ a textovom editore „Kate“ otvoríte klávesom „F4“ vstavaný terminál. To najlepšie z grafického režimu aj terminálu na jednom mieste."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, type what you want to filter the results."
-msgstr "Použite skratku „WinKey + V“ na prístup k histórii skopírovaných obsahov. Po použití skratky zadajte, čo chcete filtrovať výsledky."
+msgstr "Klávesovou skratkou „Windows + V“ otvoríte históriu skopírovaného obsahu. Potom zadajte text, podľa ktorého chcete výsledky filtrovať."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the system menu, besides finding programs, it is also easy to do calculations and conversions, for example, '5 + 7' or '5m'."
-msgstr "V systémovom menu je okrem vyhľadávania programov tiež jednoduché robiť výpočty a konverzie, napríklad '5 + 7' alebo '5m'."
+msgstr "V systémovej ponuke môžete okrem vyhľadávania programov aj jednoducho robiť výpočty a prevody, napríklad „5 + 7“ alebo „5m“."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To split the screen with more programs, move each window to one of the sides or corners of the screen."
-msgstr "Pre rozdelenie obrazovky s viacerými programami presuňte každé okno na jednu z bočných strán alebo rohov obrazovky."
+msgstr "Ak chcete rozdeliť obrazovku medzi viac programov, presuňte každé okno k jednému z okrajov alebo rohov obrazovky."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Most laptops perform better when plugged into a power outlet."
-msgstr "Väčšina notebookov pracuje efektívnejšie, keď sú pripojené do elektrickej zásuvky."
+msgstr "Väčšina notebookov má vyšší výkon, keď je pripojená do elektrickej zásuvky."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Every day, humans depend more on computing. Take advantage of using Linux and free software; here you can truly learn how things work."
-msgstr "Každý deň sa ľudia viac spoliehajú na počítače. Využite výhody používania Linuxu a slobodného softvéru; tu sa môžete skutočne naučiť, ako veci fungujú."
+msgstr "Ľudia sú každým dňom viac závislí od počítačov. Využite Linux a slobodný softvér: tu sa môžete naozaj naučiť, ako veci fungujú."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the image. You can also copy the image and paste it directly into programs without the need to save and attach."
-msgstr "Pri použití klávesy „Print Screen“ si všimnite tlačidla „Upraviť“, kde môžete rýchlo upraviť obrázok. Obrázok môžete tiež skopírovať a priamo ho vložiť do programov bez potreby uložiť a pripojiť."
+msgstr "Po stlačení klávesu „Print Screen“ si všimnite tlačidlo „Upraviť“, pomocou ktorého môžete obrázok rýchlo upraviť. Obrázok môžete aj skopírovať a vložiť priamo do programov bez toho, aby ste ho museli ukladať a prikladať."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add digital signatures."
-msgstr "V programe na prezeranie dokumentov 'Okular' môžete vytvárať poznámky a anotácie vo vašich súboroch PDF a dokonca pridávať digitálne podpisy."
+msgstr "V prehliadači dokumentov „Okular“ môžete do súborov PDF pridávať poznámky a komentáre, ba dokonca aj digitálne podpisy."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "By right-clicking on an image file, you can make various edits, including resizing and converting, directly from the file manager."
-msgstr "Kliknutím pravým tlačidlom na súbor s obrázkom môžete vykonávať rôzne úpravy, vrátane zmeny veľkosti a konverzie, priamo z manažéra súborov."
+msgstr "Kliknutím pravým tlačidlom myši na súbor obrázka môžete priamo v správcovi súborov robiť rôzne úpravy vrátane zmeny veľkosti a konverzie."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To convert Office documents to other formats, including PDF, just right-click and choose the format, directly from the file manager."
-msgstr "Na konverziu kancelárskych dokumentov do iných formátov, vrátane PDF, stačí kliknúť pravým tlačidlom myši a vybrať formát priamo z manažéra súborov."
+msgstr "Ak chcete previesť dokumenty Office do iných formátov vrátane PDF, stačí priamo v správcovi súborov kliknúť pravým tlačidlom myši a vybrať formát."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve mathematical calculations."
-msgstr "Použite 'KRunner' stlačením 'Alt + Medzerník' na vykonanie rýchlych vyhľadávaní, vykonanie príkazov a dokonca riešenie matematických výpočtov."
+msgstr "Stlačením „Alt + Medzerník“ spustíte „KRunner“, s ktorým môžete rýchlo vyhľadávať, spúšťať príkazy, a dokonca aj riešiť matematické výpočty."

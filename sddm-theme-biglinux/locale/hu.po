@@ -1,58 +1,72 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Hungarian translations for sddm-theme-biglinux package.
+# Copyright (C) 2026 THE sddm-theme-biglinux'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the sddm-theme-biglinux package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Automatically generated, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: sddm-theme-biglinux\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: attranslate\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items in the current folder, or use 'Ctrl + F' to search within subfolders as well."
-msgstr "A 'Dolphin' fájlkezelőben nyomja meg a '/' billentyűt, majd írja be, mit keres a jelenlegi mappában történő szűréshez, vagy használja a 'Ctrl + F' billentyűkombinációt a mappákban való kereséshez is."
+msgstr "A „Dolphin” fájlkezelőben nyomja meg a „/” billentyűt, és írja be, amit keres, így szűrheti az aktuális mappa elemeit; ha az almappákban is keresni szeretne, használja a „Ctrl + F” billentyűparancsot."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as remote controls, and much more."
-msgstr "A KDEConnect segítségével számítógépei, táblagépei és okostelefonjai kommunikálhatnak, fájlokat cserélhetnek, távoli vezérlőként is szolgálhatnak, és még sok másra is képesek."
+msgstr "A KDEConnect segítségével számítógépei, táblagépei és okostelefonjai kommunikálhatnak egymással, fájlokat cserélhetnek, távirányítóként szolgálhatnak, és még sok minden másra képesek."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote files with much greater ease."
-msgstr "A fájlkezelőben hozzáférhetsz fájlokhoz SSH, SFTP, Samba szervereken és még sok más helyen. Hozzáférés távoli fájlokhoz sokkal könnyebben."
+msgstr "A fájlkezelőben SSH-, SFTP-, Samba- és egyéb kiszolgálókon lévő fájlokat is elérhet. A távoli fájlok elérése így sokkal egyszerűbb."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded terminal. The best of graphical mode and terminal in the same place."
-msgstr "A 'Dolphin' fájlkezelőben és a 'Kate' szövegszerkesztőben nyomja meg az 'F4' billentyűt az beágyazott terminál eléréséhez. A grafikus mód és a terminál legjobb kombinációja ugyanabban a helyen."
+msgstr "A „Dolphin” fájlkezelőben és a „Kate” szövegszerkesztőben az „F4” billentyűvel érheti el a beágyazott terminált. A grafikus felület és a terminál legjobb oldala egy helyen."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, type what you want to filter the results."
-msgstr "Használd a 'WinKey + V' gyorsbillentyűt a másolt tartalmak előzményeinek eléréséhez. A gyorsbillentyű használata után írd be, mit szeretnél szűrni az eredmények között."
+msgstr "A „Windows + V” billentyűparanccsal megnyithatja a vágólapnaplót, azaz a korábban másolt tartalmakat. A billentyűparancs használata után kezdjen el gépelni a találatok szűréséhez."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the system menu, besides finding programs, it is also easy to do calculations and conversions, for example, '5 + 7' or '5m'."
-msgstr "A rendszer menüben nemcsak programokat talál, hanem könnyen végezhet számításokat és átalakításokat is, például '5 + 7' vagy '5m'."
+msgstr "A rendszermenüben a programok keresése mellett számításokat és átváltásokat is könnyen végezhet, például „5 + 7” vagy „5m”."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To split the screen with more programs, move each window to one of the sides or corners of the screen."
-msgstr "A képernyő felosztásához több programmal, mozgassa minden ablakot a képernyő egyik oldalára vagy sarkába."
+msgstr "A képernyő több program közötti felosztásához húzza az egyes ablakokat a képernyő valamelyik szélére vagy sarkába."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Most laptops perform better when plugged into a power outlet."
-msgstr "A legtöbb laptop jobban teljesít, amikor csatlakoztatva van az elektromos hálózathoz."
+msgstr "A legtöbb laptop jobb teljesítményt nyújt, ha konnektorhoz van csatlakoztatva."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Every day, humans depend more on computing. Take advantage of using Linux and free software; here you can truly learn how things work."
-msgstr "Minden nap egyre inkább számítógépekre támaszkodunk. Használd ki a Linuxot és a szabad szoftvert; itt valóban megtanulhatod, hogyan működnek a dolgok."
+msgstr "Az emberek napról napra jobban függenek a számítástechnikától. Használja ki a Linux és a szabad szoftverek előnyeit: itt valóban megtanulhatja, hogyan működnek a dolgok."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the image. You can also copy the image and paste it directly into programs without the need to save and attach."
-msgstr "Amikor a \"Print Screen\" billentyűt használja, vegye észre az \"Szerkesztés\" gombot, ahol gyors szerkesztéseket végezhet az képen. Emellett másolhatja a képet, és közvetlenül beillesztheti programokba anélkül, hogy el kellene mentenie és csatolnia."
+msgstr "A „Print Screen” billentyű használatakor figyelje meg a „Szerkesztés” gombot, amellyel gyorsan szerkesztheti a képet. A képet le is másolhatja, és közvetlenül beillesztheti a programokba, mentés és csatolás nélkül."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add digital signatures."
-msgstr "Az 'Okular' dokumentumnézőben megjegyzéseket és jegyzeteket készíthet PDF-fájljaiban, sőt digitális aláírásokat is hozzáadhat."
+msgstr "Az „Okular” dokumentummegjelenítőben jegyzeteket és megjegyzéseket fűzhet a PDF-fájljaihoz, sőt digitális aláírást is hozzáadhat."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "By right-clicking on an image file, you can make various edits, including resizing and converting, directly from the file manager."
-msgstr "A képfájlra jobb egérgombbal kattintva különféle szerkesztéseket végezhet el, beleértve az átméretezést és az átalakítást közvetlenül a fájlkezelőből."
+msgstr "Egy képfájlra jobb gombbal kattintva többféle szerkesztést végezhet, például átméretezést és konvertálást, közvetlenül a fájlkezelőből."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To convert Office documents to other formats, including PDF, just right-click and choose the format, directly from the file manager."
-msgstr "Az irodai dokumentumokat más formátumokba, beleértve a PDF-et is, egyszerűen kattintson jobb gombbal, majd válassza ki a formátumot közvetlenül a fájlkezelőből."
+msgstr "Ha Office-dokumentumokat szeretne más formátumba, többek között PDF-be konvertálni, egyszerűen kattintson rájuk jobb gombbal, és válassza ki a formátumot, közvetlenül a fájlkezelőből."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve mathematical calculations."
-msgstr "Használja a „KRunner” alkalmazást az „Alt + Space” billentyűkombináció lenyomásával gyors keresések végrehajtására, parancsok végrehajtására és matematikai számítások elvégzésére."
+msgstr "Az „Alt + Szóköz” billentyűkombinációval elindíthatja a „KRunner” alkalmazást, amellyel gyorsan kereshet, parancsokat futtathat, sőt matematikai számításokat is elvégezhet."
