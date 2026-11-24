@@ -1,58 +1,72 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Korean translations for sddm-theme-biglinux package.
+# Copyright (C) 2026 THE sddm-theme-biglinux'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the sddm-theme-biglinux package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Automatically generated, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: sddm-theme-biglinux\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: attranslate\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items in the current folder, or use 'Ctrl + F' to search within subfolders as well."
-msgstr "'Dolphin' 파일 관리자에서 '/' 키를 누르고 찾고 있는 항목을 필터링하려면 입력하거나 'Ctrl + F'를 사용하여 하위 폴더에서도 검색할 수 있습니다."
+msgstr "'Dolphin' 파일 관리자에서 '/' 키를 누르고 찾을 내용을 입력하면 현재 폴더의 항목을 필터링할 수 있으며, 'Ctrl + F'를 사용하면 하위 폴더까지 검색할 수 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as remote controls, and much more."
-msgstr "KDEConnect를 사용하면 컴퓨터, 태블릿 및 스마트폰이 통신하고 파일을 교환하며 원격 제어 장치로 사용되는 등 다양한 기능을 제공할 수 있습니다."
+msgstr "KDEConnect를 사용하면 컴퓨터, 태블릿, 스마트폰이 서로 통신하고, 파일을 주고받고, 리모컨 역할을 하는 등 다양한 일을 할 수 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote files with much greater ease."
-msgstr "파일 관리자에서 SSH, SFTP, Samba 서버 등의 파일에 액세스할 수 있습니다. 훨씬 더 쉽게 원격 파일에 액세스하세요."
+msgstr "파일 관리자에서 SSH, SFTP, Samba 등의 서버에 있는 파일에 접근할 수 있습니다. 원격 파일을 훨씬 쉽게 다룰 수 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded terminal. The best of graphical mode and terminal in the same place."
-msgstr "'Dolphin' 파일 관리자 및 'Kate' 텍스트 편집기에서 'F4'를 눌러 내장 터미널에 액세스하세요. 도형 모드와 터미널을 한 곳에서 사용하세요."
+msgstr "'Dolphin' 파일 관리자와 'Kate' 텍스트 편집기에서 'F4' 키를 누르면 내장 터미널을 사용할 수 있습니다. 그래픽 환경과 터미널의 장점을 한곳에서 모두 누릴 수 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, type what you want to filter the results."
-msgstr "'WinKey + V' 단축키를 사용하여 복사한 내용의 기록에 액세스하세요. 단축키를 사용한 후 결과를 필터링하려면 원하는 내용을 입력하세요."
+msgstr "'Windows 키 + V' 단축키를 사용하면 클립보드 과거 기록을 볼 수 있습니다. 단축키를 누른 다음 원하는 내용을 입력하면 결과를 필터링할 수 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the system menu, besides finding programs, it is also easy to do calculations and conversions, for example, '5 + 7' or '5m'."
-msgstr "시스템 메뉴에서 프로그램을 찾는 것 외에도 계산 및 변환을 쉽게 할 수 있습니다. 예를 들어 '5 + 7' 또는 '5m'과 같은 것이 있습니다."
+msgstr "시스템 메뉴에서는 프로그램을 찾는 것 외에도 '5 + 7'이나 '5m'처럼 계산과 변환도 쉽게 할 수 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To split the screen with more programs, move each window to one of the sides or corners of the screen."
-msgstr "더 많은 프로그램으로 화면을 분할하려면 각 창을 화면의 한쪽이나 모서리로 이동하세요."
+msgstr "화면을 나누어 여러 프로그램을 함께 사용하려면 각 창을 화면의 가장자리나 모서리로 옮기십시오."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Most laptops perform better when plugged into a power outlet."
-msgstr "대부분의 노트북은 전원 콘센트에 연결되어 있을 때 성능이 더 좋습니다."
+msgstr "대부분의 노트북은 전원 콘센트에 연결했을 때 성능이 더 좋습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Every day, humans depend more on computing. Take advantage of using Linux and free software; here you can truly learn how things work."
-msgstr "매일, 사람들은 컴퓨팅에 더 의존하고 있습니다. Linux와 무료 소프트웨어를 활용해보세요; 여기서 진정으로 어떻게 작동하는지 배울 수 있습니다."
+msgstr "사람들은 날마다 컴퓨터에 점점 더 의존하고 있습니다. Linux와 자유 소프트웨어를 활용해 보십시오. 이곳에서는 작동 원리를 제대로 배울 수 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the image. You can also copy the image and paste it directly into programs without the need to save and attach."
-msgstr "'Print Screen' 키를 사용할 때 '편집' 버튼을 참고하세요. 여기서 이미지에 빠르게 편집을 할 수 있습니다. 또한 이미지를 복사하여 저장 및 첨부 없이 프로그램에 직접 붙여넣을 수도 있습니다."
+msgstr "'Print Screen' 키를 누른 후에는 '편집' 버튼을 확인해 보십시오. 이미지를 빠르게 편집할 수 있습니다. 이미지를 복사해서 저장하거나 첨부할 필요 없이 프로그램에 바로 붙여 넣을 수도 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add digital signatures."
-msgstr "'Okular' 문서 뷰어에서 PDF 파일에 주석과 메모를 작성하고 디지털 서명을 추가할 수 있습니다."
+msgstr "'Okular' 문서 뷰어에서는 PDF 파일에 주석과 메모를 남길 수 있고, 디지털 서명도 추가할 수 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "By right-clicking on an image file, you can make various edits, including resizing and converting, directly from the file manager."
-msgstr "이미지 파일을 마우스 오른쪽 버튼으로 클릭하여 파일 관리자에서 직접 크기 조정 및 변환을 포함한 다양한 편집을 할 수 있습니다."
+msgstr "이미지 파일을 마우스 오른쪽 버튼으로 클릭하면 크기 조정과 변환 등 다양한 편집을 파일 관리자에서 바로 할 수 있습니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To convert Office documents to other formats, including PDF, just right-click and choose the format, directly from the file manager."
-msgstr "Office 문서를 다른 형식으로 변환하려면 파일 관리자에서 마우스 오른쪽 버튼을 클릭하고 형식을 선택하십시오."
+msgstr "Office 문서를 PDF 등 다른 형식으로 변환하려면 파일 관리자에서 마우스 오른쪽 버튼을 클릭하고 형식을 선택하기만 하면 됩니다."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve mathematical calculations."
-msgstr "'Alt + Space'를 눌러 'KRunner'를 사용하여 빠른 검색, 명령 실행 및 수학 계산도 수행할 수 있습니다."
+msgstr "'Alt + Space'를 눌러 'KRunner'를 사용하면 빠른 검색, 명령 실행은 물론 수학 계산까지 할 수 있습니다."

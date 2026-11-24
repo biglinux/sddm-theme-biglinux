@@ -1,58 +1,72 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# German translations for sddm-theme-biglinux package.
+# Copyright (C) 2026 THE sddm-theme-biglinux'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the sddm-theme-biglinux package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Automatically generated, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: sddm-theme-biglinux\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items in the current folder, or use 'Ctrl + F' to search within subfolders as well."
-msgstr "Im Dateimanager „Dolphin“ drücken Sie die Taste „/“ und tippen ein, wonach Sie suchen, um Elemente im aktuellen Ordner zu filtern, oder verwenden Sie „Strg + F“, um auch innerhalb von Unterordnern zu suchen."
+msgstr "Drücken Sie in der Dateiverwaltung „Dolphin“ die Taste „/“ und geben Sie ein, wonach Sie suchen, um die Elemente im aktuellen Ordner zu filtern, oder suchen Sie mit „Strg + F“ auch in Unterordnern."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as remote controls, and much more."
 msgstr "Mit KDEConnect können Ihre Computer, Tablets und Smartphones miteinander kommunizieren, Dateien austauschen, als Fernbedienung dienen und vieles mehr."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote files with much greater ease."
-msgstr "Im Dateimanager können Sie auf Dateien auf SSH-, SFTP-, Samba-Servern zugreifen, und mehr. Greifen Sie auf entfernte Dateien mit viel größerer Leichtigkeit zu."
+msgstr "In der Dateiverwaltung können Sie auf Dateien auf SSH-, SFTP-, Samba- und anderen Servern zugreifen. So erreichen Sie entfernte Dateien viel einfacher."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded terminal. The best of graphical mode and terminal in the same place."
-msgstr "Im Dateimanager „Dolphin“ und im Texteditor „Kate“ drücken Sie „F4“, um auf das eingebettete Terminal zuzugreifen. Das Beste aus grafischem Modus und Terminal am selben Ort."
+msgstr "Drücken Sie in der Dateiverwaltung „Dolphin“ und im Texteditor „Kate“ die Taste „F4“, um das eingebettete Terminal zu öffnen. Das Beste aus grafischer Oberfläche und Terminal an einem Ort."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, type what you want to filter the results."
-msgstr "Verwenden Sie den Shortcut „WinKey + V“, um auf die Historie der kopierten Inhalte zuzugreifen. Nach Verwendung des Shortcuts tippen Sie ein, wie Sie die Ergebnisse filtern möchten."
+msgstr "Mit dem Kurzbefehl „Windows-Taste + V“ öffnen Sie den Verlauf der Zwischenablage. Geben Sie danach ein, wonach Sie die Ergebnisse filtern möchten."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the system menu, besides finding programs, it is also easy to do calculations and conversions, for example, '5 + 7' or '5m'."
-msgstr "Im Systemmenü ist es neben der Suche nach Programmen auch einfach, Berechnungen und Umrechnungen durchzuführen, zum Beispiel „5 + 7“ oder „5m“."
+msgstr "Im Anwendungsstarter können Sie nicht nur Programme finden, sondern auch ganz einfach Berechnungen und Umrechnungen durchführen, zum Beispiel „5 + 7“ oder „5m“."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To split the screen with more programs, move each window to one of the sides or corners of the screen."
-msgstr "Um den Bildschirm mit mehreren Programmen zu teilen, verschieben Sie jedes Fenster an eine der Seiten oder Ecken des Bildschirms."
+msgstr "Um den Bildschirm zwischen mehreren Programmen aufzuteilen, ziehen Sie jedes Fenster an eine Seite oder in eine Ecke des Bildschirms."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Most laptops perform better when plugged into a power outlet."
-msgstr "Die meisten Laptops funktionieren besser, wenn sie an eine Netzsteckdose angeschlossen sind."
+msgstr "Die meisten Laptops bieten mehr Leistung, wenn sie an eine Steckdose angeschlossen sind."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Every day, humans depend more on computing. Take advantage of using Linux and free software; here you can truly learn how things work."
-msgstr "Jeden Tag sind Menschen mehr von Computern abhängig. Nutzen Sie die Vorteile der Verwendung von Linux und freier Software; hier können Sie wirklich lernen, wie Dinge funktionieren."
+msgstr "Die Menschen sind von Tag zu Tag stärker auf Computer angewiesen. Nutzen Sie Linux und freie Software: Hier können Sie wirklich lernen, wie die Dinge funktionieren."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the image. You can also copy the image and paste it directly into programs without the need to save and attach."
-msgstr "Wenn Sie die Taste „Druck (PrtSc)“ verwenden, beachten Sie den Button „Bearbeiten“, wo Sie schnelle Bearbeitungen an dem Bild vornehmen können. Sie können das Bild auch kopieren und direkt in Programme einfügen, ohne es speichern und anhängen zu müssen."
+msgstr "Achten Sie nach dem Drücken der Taste „Druck“ auf den Knopf „Bearbeiten“, mit dem Sie das Bild schnell bearbeiten können. Sie können das Bild auch kopieren und direkt in Programme einfügen, ohne es speichern und anhängen zu müssen."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add digital signatures."
-msgstr "Im Dokumentenbetrachter „Okular“ können Sie Ihre PDF-Dateien mit Annotationen und Notizen versehen und sogar digitale Signaturen hinzufügen."
+msgstr "Im Dokumentenbetrachter „Okular“ können Sie Ihre PDF-Dateien mit Anmerkungen und Notizen versehen und sogar digitale Signaturen hinzufügen."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "By right-clicking on an image file, you can make various edits, including resizing and converting, directly from the file manager."
-msgstr "Durch Rechtsklicken auf eine Bilddatei können Sie direkt aus dem Dateimanager heraus verschiedene Bearbeitungen vornehmen, darunter Größenänderung und Konvertierung."
+msgstr "Mit einem Rechtsklick auf eine Bilddatei können Sie direkt in der Dateiverwaltung verschiedene Bearbeitungen vornehmen, darunter die Größe ändern und das Bild konvertieren."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To convert Office documents to other formats, including PDF, just right-click and choose the format, directly from the file manager."
-msgstr "Um Office-Dokumente in andere Formate, einschließlich PDF, zu konvertieren, drücken Sie einfach die rechte Maustaste und wählen das Format direkt aus dem Dateimanager heraus."
+msgstr "Um Office-Dokumente in andere Formate wie PDF zu konvertieren, klicken Sie sie direkt in der Dateiverwaltung mit der rechten Maustaste an und wählen Sie das Format aus."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve mathematical calculations."
-msgstr "Verwenden Sie „KRunner“, indem Sie „Alt + Leertaste“ drücken, um Schnellsuchen durchzuführen, Befehle auszuführen und sogar mathematische Berechnungen zu lösen."
+msgstr "Verwenden Sie „KRunner“ mit „Alt + Leertaste“, um schnell zu suchen, Befehle auszuführen und sogar Rechenaufgaben zu lösen."

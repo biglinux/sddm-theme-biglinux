@@ -1,58 +1,72 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Icelandic translations for sddm-theme-biglinux package.
+# Copyright (C) 2026 THE sddm-theme-biglinux'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the sddm-theme-biglinux package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Automatically generated, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: sddm-theme-biglinux\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: is\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: attranslate\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items in the current folder, or use 'Ctrl + F' to search within subfolders as well."
-msgstr "Dalam pengurus fail 'Dolphin', tekan kekunci '/' dan taip apa yang anda cari untuk menyaring item dalam folder semasa, atau gunakan 'Ctrl + F' untuk mencari dalam subfolder juga."
+msgstr "Í skráastjóranum 'Dolphin' geturðu ýtt á '/' og slegið inn það sem þú leitar að til að sía atriði í núverandi möppu, eða notað 'Ctrl + F' til að leita líka í undirmöppum."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as remote controls, and much more."
-msgstr "Dengan KDEConnect, komputer, tablet, dan smartphone Anda dapat berkomunikasi, bertukar file, berfungsi sebagai remote control, dan banyak lagi."
+msgstr "Með KDEConnect geta tölvurnar, spjaldtölvurnar og snjallsímarnir þínir átt samskipti, skipst á skrám, virkað sem fjarstýringar og margt fleira."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote files with much greater ease."
-msgstr "Dalam pengurus fail, anda boleh mengakses fail-fail pada pelayan SSH, SFTP, Samba, dan lain-lain. Akses fail-fail jauh dengan lebih mudah."
+msgstr "Í skráastjóranum hefurðu aðgang að skrám á SSH-, SFTP- og Samba-þjónum og fleiru. Þannig er mun auðveldara að vinna með fjartengdar skrár."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded terminal. The best of graphical mode and terminal in the same place."
-msgstr "Di dalam pengurus fail 'Dolphin' dan penyunting teks 'Kate', tekan 'F4' untuk mengakses terminal yang terbenam. Gabungan mod grafik dan terminal di tempat yang sama."
+msgstr "Í skráastjóranum 'Dolphin' og textaritlinum 'Kate' geturðu ýtt á 'F4' til að opna innbyggða skjáherminn. Það besta úr myndræna viðmótinu og skjáherminum á einum stað."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, type what you want to filter the results."
-msgstr "Gunakan pintasan 'WinKey + V' untuk mengakses riwayat konten yang disalin. Setelah menggunakan pintasan, ketik apa yang ingin Anda filter dari hasil."
+msgstr "Notaðu flýtilykilinn 'Windows-lykill + V' til að opna klippispjaldsferilinn. Sláðu síðan inn það sem þú vilt sía niðurstöðurnar eftir."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the system menu, besides finding programs, it is also easy to do calculations and conversions, for example, '5 + 7' or '5m'."
-msgstr "Dalam menu sistem, selain menemukan program, juga mudah untuk melakukan perhitungan dan konversi, misalnya, '5 + 7' atau '5m'."
+msgstr "Í forritaræsinum geturðu ekki aðeins fundið forrit heldur líka auðveldlega reiknað og umreiknað, til dæmis '5 + 7' eða '5m'."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To split the screen with more programs, move each window to one of the sides or corners of the screen."
-msgstr "Untuk membagi layar dengan lebih banyak program, geser setiap jendela ke salah satu sisi atau sudut layar."
+msgstr "Til að skipta skjánum á milli fleiri forrita skaltu færa hvern glugga að einni af hliðum eða hornum skjásins."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Most laptops perform better when plugged into a power outlet."
-msgstr "Kebanyakan laptop berfungsi lebih baik ketika disambungkan ke soket listrik."
+msgstr "Flestar fartölvur skila betri afköstum þegar þær eru tengdar við innstungu."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Every day, humans depend more on computing. Take advantage of using Linux and free software; here you can truly learn how things work."
-msgstr "Setiap hari, manusia semakin bergantung pada komputasi. Manfaatkan penggunaan Linux dan perangkat lunak gratis; di sini Anda benar-benar dapat belajar bagaimana hal-hal berfungsi."
+msgstr "Fólk verður háðara tölvum með hverjum deginum. Nýttu þér Linux og frjálsan hugbúnað: hér geturðu raunverulega lært hvernig hlutirnir virka."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the image. You can also copy the image and paste it directly into programs without the need to save and attach."
-msgstr "Ketika menggunakan tombol 'Print Screen', perhatikan tombol 'Edit', di mana Anda dapat melakukan pengeditan cepat pada gambar. Anda juga dapat menyalin gambar dan menempelkannya langsung ke program tanpa perlu menyimpan dan melampirkannya."
+msgstr "Þegar þú notar 'Print Screen'-lykilinn skaltu taka eftir hnappnum 'Breyta', þar sem þú getur gert snöggar breytingar á myndinni. Þú getur líka afritað myndina og límt hana beint inn í forrit án þess að þurfa að vista hana og hengja við."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add digital signatures."
-msgstr "Dalam penampil dokumen 'Okular', Anda dapat membuat anotasi dan catatan pada file PDF Anda, dan bahkan menambahkan tanda tangan digital."
+msgstr "Í skjalaskoðaranum 'Okular' geturðu sett glósur og minnismiða á PDF-skrárnar þínar og jafnvel bætt við rafrænum undirritunum."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "By right-clicking on an image file, you can make various edits, including resizing and converting, directly from the file manager."
-msgstr "Dengan mengklik kanan pada file gambar, Anda dapat melakukan berbagai pengeditan, termasuk merubah ukuran dan mengonversi, langsung dari manajer file."
+msgstr "Með því að hægrismella á myndskrá geturðu gert ýmsar breytingar, meðal annars breytt stærð og umbreytt, beint úr skráastjóranum."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "To convert Office documents to other formats, including PDF, just right-click and choose the format, directly from the file manager."
-msgstr "Untuk mengonversi dokumen Office ke format lain, termasuk PDF, cukup klik kanan dan pilih format, langsung dari manajer file."
+msgstr "Til að umbreyta Office-skjölum í önnur snið, þar á meðal PDF, hægrismellirðu einfaldlega og velur sniðið, beint úr skráastjóranum."
 
+#: usr/share/sddm/scripts/sortphrases
 msgid "Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve mathematical calculations."
-msgstr "Gunakan 'KRunner' dengan menekan 'Alt + Spasi' untuk melakukan pencarian cepat, menjalankan perintah, dan bahkan menyelesaikan perhitungan matematika."
+msgstr "Notaðu 'KRunner' með því að ýta á 'Alt + Bilslá' til að leita hratt, keyra skipanir og jafnvel leysa stærðfræðilega útreikninga."

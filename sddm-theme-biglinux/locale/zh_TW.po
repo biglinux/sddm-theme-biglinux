@@ -1,0 +1,73 @@
+# Chinese translations for sddm-theme-biglinux package
+# sddm-theme-biglinux 套件的正體中文翻譯.
+# Copyright (C) 2026 THE sddm-theme-biglinux'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-theme-biglinux package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-theme-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "In the 'Dolphin' file manager, press the '/' key and type what you are looking for to filter items in the current folder, or use 'Ctrl + F' to search within subfolders as well."
+msgstr "在「Dolphin」檔案管理員中，按下「/」鍵並輸入要找的內容，即可過濾目前資料夾中的項目；若要連同子資料夾一起搜尋，請使用「Ctrl + F」。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "With KDEConnect, your computers, tablets, and smartphones can communicate, exchange files, serve as remote controls, and much more."
+msgstr "透過 KDEConnect，您的電腦、平板電腦與智慧型手機可以互相通訊、交換檔案、當作遙控器使用，還有更多功能。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "In the file manager, you can access files on SSH, SFTP, Samba servers, and more. Access remote files with much greater ease."
+msgstr "在檔案管理員中，您可以存取 SSH、SFTP、Samba 等伺服器上的檔案。存取遠端檔案變得輕鬆許多。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "In the 'Dolphin' file manager and the 'Kate' text editor, press 'F4' to access the embedded terminal. The best of graphical mode and terminal in the same place."
+msgstr "在「Dolphin」檔案管理員與「Kate」文字編輯器中，按下「F4」即可開啟內嵌終端機。圖形介面與終端機的優點，一次兼得。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "Use the 'WinKey + V' shortcut to access the history of copied contents. After using the shortcut, type what you want to filter the results."
+msgstr "使用「Win + V」快捷鍵即可查看剪貼簿歷史紀錄。按下快捷鍵後，輸入文字即可過濾結果。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "In the system menu, besides finding programs, it is also easy to do calculations and conversions, for example, '5 + 7' or '5m'."
+msgstr "在系統選單中，除了尋找程式，還能輕鬆進行計算與換算，例如「5 + 7」或「5m」。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "To split the screen with more programs, move each window to one of the sides or corners of the screen."
+msgstr "若要分割畫面同時使用多個程式，請將各個視窗移到螢幕的側邊或角落。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "Most laptops perform better when plugged into a power outlet."
+msgstr "大多數筆記型電腦在接上電源插座時效能較佳。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "Every day, humans depend more on computing. Take advantage of using Linux and free software; here you can truly learn how things work."
+msgstr "人類對電腦運算的依賴與日俱增。善用 Linux 與自由軟體吧，在這裡您可以真正了解事物的運作方式。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "When using the 'Print Screen' key, notice the 'Edit' button, where you can make quick edits to the image. You can also copy the image and paste it directly into programs without the need to save and attach."
+msgstr "按下「Print Screen」鍵後，請留意「編輯」按鈕，可用來快速編輯影像。您也可以複製影像，直接貼到程式中，不必先儲存再夾帶附件。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "In the 'Okular' document viewer, you can make annotations and notes on your PDF files, and even add digital signatures."
+msgstr "在「Okular」文件檢視器中，您可以在 PDF 檔案上加入註記與筆記，甚至加入數位簽名。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "By right-clicking on an image file, you can make various edits, including resizing and converting, directly from the file manager."
+msgstr "在影像檔上按右鍵，即可直接在檔案管理員中進行各種編輯，包括調整大小與轉換格式。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "To convert Office documents to other formats, including PDF, just right-click and choose the format, directly from the file manager."
+msgstr "若要將 Office 文件轉換為 PDF 等其他格式，只要在檔案管理員中按右鍵並選擇格式即可。"
+
+#: usr/share/sddm/scripts/sortphrases
+msgid "Use 'KRunner' by pressing 'Alt + Space' to perform quick searches, execute commands, and even solve mathematical calculations."
+msgstr "按下「Alt + 空白鍵」使用「KRunner」，即可快速搜尋、執行指令，甚至進行數學運算。"
