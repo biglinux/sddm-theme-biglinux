@@ -1,10 +1,10 @@
 [Unit]
 Description=SDDM change WallPaper
-ConditionUser=!root
+ConditionUser=!@system
+# Plasma writes its settings several times per change; a start limit would fail
+# the path unit and end the sync for the session.
+StartLimitIntervalSec=0
 
 [Service]
 Type=oneshot
 ExecStart=/usr/share/sddm/wallpaper/change-wallpaper.sh
-
-[Install]
-WantedBy=default.target

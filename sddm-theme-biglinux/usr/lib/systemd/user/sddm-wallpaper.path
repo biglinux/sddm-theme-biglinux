@@ -1,6 +1,7 @@
 [Unit]
 Description=SDDM change WallPaper
-ConditionUser=!root
+# System accounts, the greeter's among them, have no desktop.
+ConditionUser=!@system
 
 [Path]
 PathModified=%h/.config/plasma-org.kde.plasma.desktop-appletsrc
