@@ -8,14 +8,15 @@ post_install() {
 	systemctl --global enable sddm-wallpaper.path
 	# Each user's sddm-wallpaper.service copies their wallpaper over it.
 	chmod 666 /usr/share/sddm/wallpaper/image.png
-
-	systemctl enable --now sddm-fix.service
 }
 
 ## arg 2:  the old package version
-#pre_upgrade() {
-	# do something here
-#}
+pre_upgrade() {
+	# sddm-fix.service wanted sddm.service; drop its enablement while the unit exists.
+	if [ -e /usr/lib/systemd/system/sddm-fix.service ]; then
+		systemctl disable --no-reload sddm-fix.service
+	fi
+}
 
 ## arg 2:  the old package version
 post_upgrade() {
