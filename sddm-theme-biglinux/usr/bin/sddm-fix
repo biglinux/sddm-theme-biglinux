@@ -33,11 +33,3 @@ else
   fi
 
 fi
-
-# Numlock X11
-if [[ "$NumLockUser" = "true" ]]; then
-    echo '[General]
-Numlock=on' > /etc/sddm.conf.d/enable_numlock.conf
-else
-    rm -f /etc/sddm.conf.d/enable_numlock.conf
-fi
