@@ -12,7 +12,12 @@ session=$(loginctl show-seat seat0 --property=ActiveSession --value)
 
 image=$(grep -m1 -Po '(?<=^Image=).*' "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc")
 image=${image//[\";]/}
-image=${image#file://}
+if [[ $image == file://* ]]; then
+    # Qt keeps %, # and ? percent-encoded in a file URL.
+    image=${image#file://}
+    image=${image//\\/\\\\}
+    printf -v image '%b' "${image//%/\\x}"
+fi
 # A wallpaper package holds one image per resolution; take the largest file.
 if [[ -d $image ]]; then
     image=$(ls -S "$image"/contents/images/* 2>/dev/null | head -n1)
