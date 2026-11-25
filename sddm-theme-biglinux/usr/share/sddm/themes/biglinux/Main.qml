@@ -56,6 +56,9 @@ Item {
         width: parent.width
         source: config.type == "color" || !config.background ? config.auto_background : config.background
         asynchronous: false
+        // Decoded at the screen's size and cropped like the Plasma desktop.
+        sourceSize: Qt.size(width * Screen.devicePixelRatio, height * Screen.devicePixelRatio)
+        fillMode: Image.PreserveAspectCrop
         cache: true
         clip: true
         visible: true
