@@ -6,9 +6,3 @@ cp -f /usr/share/biglinux/themes/biglinux-dark/.config/plasmarc /var/lib/sddm/.c
 cp -f /etc/skel/.config/kcminputrc /var/lib/sddm/.config/kcminputrc
 
 chown -R sddm:sddm /var/lib/sddm/
-cp -f /usr/share/sddm/scripts/Xsetup-big /usr/share/sddm/scripts/Xsetup
-
-# Revert fix from update 0.20.0-2
-if grep -q 'InputMethod=qtvirtualkeyboard,compose *$' /etc/sddm.conf; then
-        sed -i 's|InputMethod=qtvirtualkeyboard,compose|InputMethod=qtvirtualkeyboard|g' /etc/sddm.conf
-fi

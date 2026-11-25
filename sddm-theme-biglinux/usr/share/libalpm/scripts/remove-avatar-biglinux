@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
+# Drops the KDE mascot avatars and stock photos plasma-workspace ships, leaving
+# the BigLinux avatars as the choice offered for new accounts.
 
-rm /usr/share/plasma/avatars/*Konqi*
-rm /usr/share/plasma/avatars/*Katie*
-rm -r /usr/share/plasma/avatars/photos
+rm -rf /usr/share/plasma/avatars/*Konqi* /usr/share/plasma/avatars/*Katie* /usr/share/plasma/avatars/photos
